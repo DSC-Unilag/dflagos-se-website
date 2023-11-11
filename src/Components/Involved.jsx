@@ -5,7 +5,7 @@ import asset2 from "../assets/get_involved2.png";
 
 const Involved = () => {
      return (
-        <div className="involved">
+        <div id="volunteer" className="involved">
                 <h1>Get involved</h1>
                 <p className="header-text">
                     DevFest 2023 is open to individuals who are excited, to not just be a part of the event but also want to contribute to the success of the event. Want to be a key player in making DevFest SE a big hit? Feel free to apply here

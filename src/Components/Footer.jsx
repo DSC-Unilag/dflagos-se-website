@@ -24,7 +24,7 @@ const Footer = () => {
                     <a href="j">Schedule/Workshops</a>
                 </div>
             </div>
-            <p className="copyright">c 2023 Devfest Lagos. All Rights Reserved.</p>
+            <p className="copyright">© 2023 Devfest Lagos. All Rights Reserved.</p>
         </footer>
     )
 }
