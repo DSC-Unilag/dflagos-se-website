@@ -1,0 +1,118 @@
+.speakers {
+    display: flex;
+    padding: 88px 0px 90px 124px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+}
+.speakers h1 {
+    color: #0D0D0D;
+    font-family: Product Sans;
+    font-size: 94px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 87%; /* 81.78px */
+    letter-spacing: -4.23px;
+}
+.speakers .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+.speakers .frame {
+    display: flex;
+height: 327px;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+}
+.speakers img {
+    width: 282px;
+flex: 1 0 0;
+border-radius: 16px;
+background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+.speakers .meta {
+    width: 250px;
+    color: #0D0D0D;
+    font-family: Google Sans Display;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.18px;
+}
+.countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 100px 20px;
+    gap: 120px;
+    border: 1px dotted #000;
+}
+.countdown .container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+.countdown h1 {
+    color: #0D0D0D;
+    text-align: center;
+    font-family: Google Sans Display;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.countdown .row {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 55px;
+}
+.countdown .time {
+    display: flex;
+    width: 139px;
+    height: 140px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: #4285F4;
+}
+.countdown .time p {
+    color: #FFF;
+    text-align: center;
+    font-family: Google Sans Display;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.countdown button {
+    display: flex;
+    padding: 17px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 48px;
+    background: #4285F4;
+}
+.countdown button p {
+    color: #FFF;
+    font-family: Product Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.countdown button img {
+    width: 32px;
+    height: 32px;
+}
