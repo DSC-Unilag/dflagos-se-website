@@ -1,8 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-=======
-import { feedback } from '../constants'
->>>>>>> 4b24cd1296d86121055ad5d54edc73d7cfd8c64c
 import styles from '../style'
 
 const Testimonials = () => {

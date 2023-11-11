@@ -5,7 +5,7 @@ import { Github, Microsoft, Google, AltSchool, Paystack, ArrowRight2, Mtn} from 
 
 const Clients = () => {
   return (
-   <section id='clients' className={`text-white my-[20px] sm:my-[30px] lg:mt-[55px]`}>
+   <section id='clients' className={`text-white my-[20px] sm:my-[30px] lg:mt-[55px] bg-[#fff]`}>
     <div className='w-full grid grid-col-1 sm:grid-cols-3 lg:grid-cols-6 gap-[40px] sm:gap-[20px] place-content-center place-items-center'>
 
      <div>

@@ -36,7 +36,7 @@ const Countdown = () => {
     }, [targetDate]);
 
     return (
-        <div className="countdown">
+        <div className="countdown font-sans italic">
             <div className="container">
                 <h1>Are you ready?</h1>
                 <div className="row">

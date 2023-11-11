@@ -6,7 +6,7 @@ import PlaceHolder3 from "../assets/ph3.png";
 
 const Speakers = () => {
     return (
-        <div className="speakers">
+        <div className="speakers font-sans italic">
             <h1>Featured Speakers</h1>
             <div className="container">
                 <div className="frame">
