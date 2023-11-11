@@ -8,6 +8,8 @@ import ArrowRight from "./Arrow Right.svg"
 import ArrowRight2 from "./Arrow Right (1).svg"
 import Microsoft from "./Microsoft svg.svg"
 import EventImage from "./Event.svg"
+import DownArrow from "./DownArrow.svg"
+import Logic from "./Logic.svg"
 
 export {
     Google,
@@ -19,5 +21,7 @@ export {
     ArrowRight,
     ArrowRight2,
     Microsoft,
-    EventImage
+    EventImage,
+    DownArrow,
+    Logic
 }

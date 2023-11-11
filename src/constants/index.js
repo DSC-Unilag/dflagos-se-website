@@ -19,48 +19,51 @@ export const navLinks = [
   },
 ];
 
-export const features = [
+export const Tabs = [
   {
-    id: "feature-1",
-    title: "Rewards",
-    content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+    id: 1,
+    content:"All Workshops",
   },
   {
-    id: "feature-2",
-    title: "100% Secured",
-    content:
-      "We take proactive steps make sure your information and transactions are secure.",
+    id: 2,
+    content:"Breakout Sessions",
   },
   {
-    id: "feature-3",
-    title: "Balance Transfer",
-    content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+    id: 3,
+    content:"Keynote Sessions",
+  },
+  {
+    id: 4,
+    content:"Engineering",
+  },
+  {
+    id: 5,
+    content:"Product and Design",
+  },
+  {
+    id: 6,
+    content:"Data and AI",
   },
 ];
 
-export const feedback = [
+export const breakoutSessionData = [
   {
-    id: "feedback-1",
-    content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
+    id: 1,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
   },
   {
-    id: "feedback-2",
-    content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Steve Mark",
-    title: "Founder & Leader",
+    id: 2,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
   },
   {
-    id: "feedback-3",
-    content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
-    title: "Founder & Leader"
+    id: 3,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
   },
 ];
 
