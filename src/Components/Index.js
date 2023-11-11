@@ -8,6 +8,11 @@ import Footer from "./Footer";
 import Tickets from "./Tickets";
 import Speakers from "./Speakers";
 import Countdown from "./Countdown";
+import  Edition from "./Edition";
+import Tickets from "./Tickets";
+import About from "./About";
+import EventSchedule from "./EventSchedule";
+import Footer from "./Footer";
 
 export {
     Navbar,
@@ -20,4 +25,7 @@ export {
     Footer,
     Speakers,
     Countdown,
+    About,
+    EventSchedule,
+    Footer
 }
