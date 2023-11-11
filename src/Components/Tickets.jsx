@@ -1,12 +1,12 @@
 import React from 'react'
-import { ArrowRight2 } from '../assets'
+import { ArrowRight2, EventImage } from '../assets'
 
 const Tickets = () => {
   return (
     <div className='pt-[64px]'>
-        <div className='flex flex-col lg:flex-row'>
+        <div className='flex flex-col lg:flex-row gap-[21.5px] lg:gap-[21.5px]'>
         <div className='flex flex-col text-[#fff] lg:pb-[164px]'>
-             <p className='text-[64px]' style={{fontWeight: 600}}>
+           <p className='text-[30px] lg:text-[64px]' style={{fontWeight: 600}}>
            Guess What? <br/>
            Its FREE
            </p>
@@ -22,9 +22,11 @@ const Tickets = () => {
           alt='arrow'
           />
          </button>
-
         </div>
           
+       <div className=''>
+         <img src={EventImage} alt="event"/>
+       </div>
 
         </div>
     </div>

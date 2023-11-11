@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +7,29 @@
   border: 3px solid green;
 }
 
+@font-face {
+  font-family: 'ProductSans';
+  src: url('../src/assets/fonts/Product-Sans\ \(1\).ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+.Product-sans{
+ font-family: "ProductSans"
+}
+.shadow-text{
+  color: black;
+  text-shadow: 2px 2px  white;
+}
+@layer base {
+  html {
+    font-family: ProductSans, system-ui, sans-serif;
+  }
+}
+
+.ticket-background{
+  background-image: url("/src/assets/TicketsBackground.svg");
+}
 
 :root {
   --black-gradient: linear-gradient(

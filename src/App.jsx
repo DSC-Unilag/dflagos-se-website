@@ -1,6 +1,5 @@
 import Style from "./style"
-import  {Navbar, Hero, Sponsors, Tickets, Edition, 
- Footer} from "./Components/Index"
+import  {Navbar, Hero, Sponsors, Tickets, Edition, About, EventSchedule, Footer} from "./Components/Index"
 
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
 
 <hr className="text-[#4285F4] border border-[#4285F4]"/>
 
-    <div className={`${Style.flexStart } bg-[#fff]`}>
+    <div className={`${Style.flexStart} font-sans bg-[#fff]`}>
       <div className={`${Style.boxWidth}`}>
           <Hero/>
       </div>
@@ -24,24 +23,31 @@ function App() {
 
   <hr className="text-[#4285F4] border-[1px] border-[#000000]"/>
 
-    <div className={`${Style.paddingX} ${Style.flexStart} text-white lg:pb-[53px]`}>
+    <div className={`${Style.paddingX}text-white font-sans lg:pb-[53px]`}>
       <div className={`${Style.boxWidth}`}>
-           <Sponsors/>
-           
+        <Sponsors/>
       </div>
     </div> 
     
-    <div className={`${Style.paddingX} ${Style.flexStart} text-white bg-blue-500`}>
+    <div className={`${Style.paddingX} ${Style.flexStart} font-sans text-white ticket-background`}>
       <div className={`${Style.boxWidth}`}>
        <Tickets/>
       </div>
     </div>
 
-    <div className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}>
+    <div className={`${Style.paddingX} ${Style.flexStart} font-sans bg-[#0D0D0D]`}>
      <div className={`${Style.boxWidth}`}>
        <Edition/>
      </div>
     </div>
+
+    <div className={`${Style.paddingX} ${Style.flexCenter} font-sans bg-[#fff] mb-[120px]`}>
+     <div className={`${Style.boxWidth}`}>
+       <About/>
+       <EventSchedule/>
+     </div>
+    </div>
+      
   </>
  ) 
    
