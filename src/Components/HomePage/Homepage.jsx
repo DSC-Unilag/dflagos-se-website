@@ -1,16 +1,16 @@
 import React from 'react'
-import  {Navbar, Hero, Sponsors, Tickets, Edition} from "./Index"
-import Style from '../style'
-import Speakers from './Speakers';
-import Countdown from './Countdown';
-import Involved from './Involved';
-import Faq from './Faq';
-import Footer from './Footer';
+import  {Navbar, Hero, Sponsors, Tickets, Edition} from "../Index"
+import Style from '../../style'
+import Speakers from '../Speakers';
+import Countdown from '../Countdown';
+import Involved from '../Involved';
+import Faq from '../Faq';
+import Footer from '../Footer';
 
 const HomePage = () => {
   return (
-    <div className=''>
-       <div className="bg-[#fff] font-sans w-full overflow-hidden">
+    <>
+      <div className="bg-[#fff] font-sans w-full overflow-hidden">
     <div className={`${Style.paddingX} ${Style.flexCenter}`}>
       <div className={`${Style.boxWidth}`}>
         <Navbar/>
@@ -20,7 +20,7 @@ const HomePage = () => {
 
 <hr className="text-[#4285F4] border border-[#4285F4]"/>
 
-    <div className={`${Style.flexStart } bg-[#fff]`}>
+    <div className={`bg-[#fff]`}>
       <div className={`${Style.boxWidth}`}>
           <Hero/>
       </div>
@@ -45,12 +45,14 @@ const HomePage = () => {
        <Edition/>
      </div>
     </div>
+
     <Speakers />
     <Countdown />
     <Involved />
     <Faq />
     <Footer /> 
-    </div> 
+    
+    </> 
   )
 }
 export default HomePage

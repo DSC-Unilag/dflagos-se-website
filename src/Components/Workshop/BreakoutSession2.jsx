@@ -11,11 +11,10 @@ const BreakoutSession = () => {
         <button className='bg-[#F9AB00] py-[8px] px-[16px] rounded-[8px] text-[#000] mb-[16px]'>BreakoutSession 2 </button> 
           
           {breakoutSessionData.map((item, index) => (
-            <>
             <div key={index} className={`flex flex-col rounded-[16px] ${index == 2 ? "mb-[0]" : "mb-[16px]"} ${index == 0 && "bg-[#EA4335]"} ${index == 1 && "bg-[#FDE293]"} ${index == 2 && "bg-[#000]"}   sxl:py-[56px] sxl:px-[24px]`}>
-                <div className='text-[#fff]'>
+                <div className={`${index == 1 ? 'text-[#000]' : "text-[#fff]"}`}>
                 <p className=''>{item.time}</p>
-                <p className='mt-[24px] mb-[16px]'>{item.title}</p>
+                <p className={`mt-[24px] mb-[16px] `}>{item.title}</p>
                 <p>{item.speaker} </p>
                 </div>      
                 <div className='mt-[40px] flex items-center justify-between bg-[#FFFAEB] rounded-[64px] px-[16px] py-[28px]' >
@@ -29,9 +28,6 @@ const BreakoutSession = () => {
                    </button>
                 </div>
               </div>
-             
-            </>
-             
           ))}
         </div>
     </div>

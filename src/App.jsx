@@ -1,4 +1,4 @@
-import HomePage from "./Components/HomePage"
+import HomePage from "./Components/HomePage/Homepage"
 import Workshop from "./Components/Workshop/Workshop"
 import Style from "./style"
 import {Route, Routes} from "react-router-dom"
