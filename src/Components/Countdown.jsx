@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
 import ArrowRight from '../assets/ArrowRight.svg'
+import {useNavigate} from "react-router-dom"
 
 const Countdown = () => {
+
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate("/workshops")
+  }
+
     const targetDate = new Date('2023-12-09T08:00:00');
 
     const calculateTimeLeft = () => {
@@ -57,7 +64,7 @@ const Countdown = () => {
                         <span>Seconds</span>
                     </div>
                 </div>
-                <button>
+                <button onClick={handleNavigate} className='hover:bg-blue-600'>
                     <p>Grab A Free Ticket</p>
                     <img src={ArrowRight} alt="" />
                 </button>

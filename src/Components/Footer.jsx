@@ -2,7 +2,7 @@ import logo from "../assets/googleDevfest.svg";
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="italic">
             <div className="row font-sans italic">
                 <div className="column">
                     <img src={logo} alt="" />

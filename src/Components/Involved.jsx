@@ -7,7 +7,7 @@ const Involved = () => {
      return (
         <div id="volunteer" className="involved font-sans italic">
                 <h1>Get involved</h1>
-                <p className="header-text">
+                <p className="header-text font-sans italic">
                     DevFest 2023 is open to individuals who are excited, to not just be a part of the event but also want to contribute to the success of the event. Want to be a key player in making DevFest SE a big hit? Feel free to apply here
                 </p>
                 <div className="row">

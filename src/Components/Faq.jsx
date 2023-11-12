@@ -61,7 +61,7 @@ const Faq = () => {
     }
 
     return (
-        <div id="faqs" className="faq">
+        <div id="faqs" className="faq font-sans italic">
             <h1>Lets answer some of your burning questions</h1>
             <p className="sub-heading">Check out our most asked questions here, mfjpm 😑🤚🏾</p>
             <div className="column">

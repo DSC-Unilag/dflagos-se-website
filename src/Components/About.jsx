@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className='pt-[40px] lg:pt-[92px]'>
+    <section id='about' className='pt-[40px] lg:pt-[92px]'>
 
      <div className='flex flex-col w-full lg:h-[50vh]'>
        <h1 className='lg:max-w-[253px] text-[40px] lg:text-[94px] leading-none tracking-normal' style={{fontWeight: 700}}>About <br/>Event</h1>
@@ -27,7 +27,7 @@ const About = () => {
      </div>
 
      </div>
-    </div>
+    </section>
   )
 }
 

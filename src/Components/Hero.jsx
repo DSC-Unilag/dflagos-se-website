@@ -2,8 +2,15 @@ import React from 'react'
 import styles from "../style"
 import GetStarted from './GetStarted'
 import { ArrowRight, ArrowRight2 } from '../assets'
+import {useNavigate} from "react-router-dom"
 
 const Hero = () => {
+
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate("/workshops")
+  }
   return (
     <section id='home'>
        <div className='flex flex-col lg:flex-row pl-[25px] pr-[20px] sm:pl-[124px] justify-between mb-[20px] sm:mb-[40px] lg:mb-0'>
@@ -24,13 +31,14 @@ const Hero = () => {
          Ultimate one-day event with speakers across Artificial Intelligence, Product, Mobile, Cloud, Intellectual Property and Startup Funding, Policy & Governance, and so much more!
          </p>
 
-         <button className='flex flex-row mt-[40px] sm:mb-[45px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#4285F4] hover:bg-blue-600 max-w-[293px]'>
+         <button onClick={handleNavigate} className='flex flex-row mt-[40px] sm:mb-[45px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#4285F4] hover:bg-blue-600 max-w-[293px]'>
           <p>Grab a Free Ticket</p>
           <img
           src={ArrowRight}
           alt='arrow'
           />
          </button>
+
         </div>
 
       </div>      
