@@ -9,14 +9,14 @@ const Navbar = () => {
   return (
      <nav className='w-full flex py-6 justify-between items-center navbar'>
         <img src={googleDevfest} alt={"Hoobank image"}
-         className="w-[120px] h-[86px]"
+         className="w-[10%]"
         />
         <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
           {navLinks.map((nav, index) => (
             <li
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] mr-3
-              ${index === navLinks.length - 1 ? 'mr-0': 'mr-10'} text-black`}>
+              ${index === navLinks.length - 1 ? 'mr-0': 'mr-[24px]'} text-black`}>
                <a href={`#${nav.id}`}>
                   {nav.title}
                </a>
