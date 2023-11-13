@@ -312,3 +312,35 @@ footer .copyright {
         margin: 0;
     }
 }
+.tab-flex {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.schedule-hero-rsvp {
+    gap: 50px;
+}
+.rsvp-button {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    align-items: center;
+}
+
+.session-rsvp input .session-rsvp button {
+    display: block !important;
+}
+@media (max-width: 800px) {
+.session {
+    padding: 20px !important;
+}
+    .session-rsvp {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 10px !important;
+        border-radius: 20px !important;
+    }
+    .rsvp-input {
+        width: 80% !important;
+    }
+}
