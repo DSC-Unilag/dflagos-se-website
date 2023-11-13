@@ -4,7 +4,7 @@ import styles from '../style'
 const Testimonials = () => {
   return (
   <section id="schedule" className={`${styles.paddingY} ${styles.flexCenter} flex-col 
-  relative py-[70px] md:py-[100px] lg:py-[200px] text-[#fff] success`}>
+  relative py-[70px] md:py-[100px] lg:py-[200px] text-[#fff]`}>
   <div className='flex flex-col'>
   <div className='flex flex-col'>
     <p className='text-[25px] sm:text-[40px] lg:text-[80px] leading-[-10px] tracking-tighter shadow-text' style={{fontWeight: 900}}>
