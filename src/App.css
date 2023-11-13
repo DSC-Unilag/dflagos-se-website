@@ -72,6 +72,7 @@
 }
 .countdown .row {
   display: inline-flex;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 55px;
@@ -197,7 +198,6 @@ letter-spacing: 0.16px;
 .involved .frame .img-container img {
     width: 100%;
     margin-top: 20px;
-    height: 288px;
     flex-shrink: 0;
     border: 3px solid orange;
     border-radius: 48px;
@@ -298,6 +298,12 @@ footer .copyright {
     text-align: center;
 }
 @media (max-width: 1000px) {
+    footer .row {
+        justify-content: left;
+        gap: 50px;
+    }
+}
+@media (max-width: 1000px) {
     .faq .qa {
         margin: 0 100px;
     }
@@ -332,7 +338,7 @@ footer .copyright {
 }
 @media (max-width: 800px) {
 .session {
-    padding: 20px !important;
+    padding: 2  0px !important;
 }
     .session-rsvp {
         flex-direction: column;
