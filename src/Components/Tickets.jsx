@@ -1,7 +1,7 @@
 import React from 'react'
 import { ArrowRight2, EventImage } from '../assets'
 import {useNavigate} from "react-router-dom"
-import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
+
 const Tickets = () => {
   const navigate = useNavigate()
 
@@ -31,10 +31,7 @@ const Tickets = () => {
         </div>
           
        <div className=''>
-        <SkeletonTheme baseColor='#000000'>
-          {<img src={EventImage} alt="event"/> || <Skeleton count={3}/>}
-        </SkeletonTheme>
-         
+         <img src={EventImage} alt="event"/>
        </div>
 
         </div>
