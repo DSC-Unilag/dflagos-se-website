@@ -31,7 +31,10 @@ const Tickets = () => {
         </div>
           
        <div className=''>
-         {<img src={EventImage} alt="event"/> || <Skeleton count={3}/>}
+        <SkeletonTheme baseColor='#000000'>
+          {<img src={EventImage} alt="event"/> || <Skeleton count={3}/>}
+        </SkeletonTheme>
+         
        </div>
 
         </div>
