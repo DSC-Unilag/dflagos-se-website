@@ -9,8 +9,7 @@
 
 
 .shadow-text{
-  color: black;
-  text-shadow: 6px 6px 1px  white;
+  text-shadow: 10px 10px 3px  black;
 }
 @layer base {
   html {
