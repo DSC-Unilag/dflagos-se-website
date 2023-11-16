@@ -28,8 +28,8 @@ const Workshop = () => {
     <div className="bg-[#fff] font-sans w-full overflow-hidden">
     <div className={`${Style.paddingX} ${Style.flexCenter}`}>
       <div className={`${Style.boxWidth}`}>
-        <BreakoutSession1/>
-        <BreakoutSession2/>
+         <BreakoutSession1/>
+       <BreakoutSession2/>
         <BreakoutSession3/>
       </div>
     </div>
