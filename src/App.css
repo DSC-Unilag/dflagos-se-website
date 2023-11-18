@@ -9,7 +9,6 @@
 }
 .speakers h1 {
   color: #0D0D0D;
-  font-family: Product Sans;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -114,7 +113,6 @@
 }
 .countdown button p {
   color: #FFF;
-  font-family: Product Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -132,7 +130,6 @@
 }
 .involved h1 {
   color: #0D0D0D;
-  font-family: Product Sans;
   font-size: 94px;
   font-style: normal;
   font-weight: 700;
@@ -141,9 +138,8 @@
   margin-bottom: 25px;
 }
 .involved .header-text {
-  color: #333;
-  padding-bottom: 20px;
-font-family: Product Sans;
+color: #333;
+padding-bottom: 20px;
 font-size: 18px;
 font-style: normal;
 font-weight: 400;
@@ -180,7 +176,6 @@ line-height: 150%; /* 27px */
 }
 .involved .frame .header p {
   color: #F9AB00;
-  font-family: Google Sans Display;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -188,7 +183,6 @@ line-height: 150%; /* 27px */
 }
 .involved .frame p {
   color: #FFF;
-font-family: Google Sans Display;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
@@ -220,7 +214,6 @@ letter-spacing: 0.16px;
 .faq p {
     color: #0D0D0D;
     text-align: center;
-    font-family: Google Sans Display;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -264,7 +257,6 @@ letter-spacing: 0.16px;
     flex: 1 0 0;
     color: #333;
     text-align: left;
-    font-family: Google Sans Display;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

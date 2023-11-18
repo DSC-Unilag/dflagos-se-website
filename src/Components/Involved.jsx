@@ -10,7 +10,7 @@ const Involved = () => {
                 <p className="header-text font-sans italic">
                     DevFest 2023 is open to individuals who are excited, to not just be a part of the event but also want to contribute to the success of the event. Want to be a key player in making DevFest SE a big hit? Feel free to apply here
                 </p>
-                <div className="row">
+                <div className="flex flex-col xs:flex-row gap-[48px]">
                     <div className="frame">
                         <div className="header">
                             <p>Apply as a speaker</p>

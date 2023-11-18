@@ -4,13 +4,17 @@ import { navLinks} from "../constants"
 import {googleDevfest} from "../assets/index"
 import {HiOutlineMenu} from "react-icons/hi"
 import {AiOutlineClose} from "react-icons/ai"
+import { Link } from 'react-router-dom'
 const Navbar = () => {
    const [toggle, setToggle] = useState(false)
   return (
      <nav className='w-full flex py-6 justify-between items-center navbar'>
+        <Link className="w-[28%] lg:w-[12%]" to={"/"}> 
         <img src={googleDevfest} alt={"Hoobank image"}
-         className="w-[28%] lg:w-[12%]"
+         
         />
+        </Link>
+       
         <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
           {navLinks.map((nav, index) => (
             <li
