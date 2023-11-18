@@ -61,10 +61,11 @@ const Faq = () => {
   };
 
     const FaqItem = ({ question, answer, isOpen, onClick }) => {
+        console.log(isOpen)
         return (
             <div onClick={onClick} className="qa font-sans italic">
                 <div className="q-row">
-                    <p className="q">{question}</p>
+                    <p className={`${isOpen ? "text-yellow-500" : ""  } q`}>{question}</p>
                     {isOpen ? <img src={close} alt="" /> : <img src={expand} alt="" />}
                 </div>
                 { isOpen && <p className="a">{answer}</p> }

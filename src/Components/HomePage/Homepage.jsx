@@ -1,5 +1,5 @@
 import React from 'react'
-import  {Navbar, Hero, Sponsors, Tickets, Edition} from "../Index"
+import  {Navbar, Hero, Sponsors, Tickets, EventSchedule, Edition, About} from "../Index"
 import Style from '../../style'
 import Speakers from '../Speakers';
 import Countdown from '../Countdown';
@@ -43,6 +43,18 @@ const HomePage = () => {
     <div className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}>
      <div className={`${Style.boxWidth}`}>
        <Edition/>
+     </div>
+    </div>
+
+    <div className={`px-6 lg:pl-[124px]`}>
+     <div className={`${Style.boxWidth}`}>
+       <About/>
+     </div>
+    </div>    
+
+    <div className={`${Style.paddingX} ${Style.flexStart}`}>
+     <div className={`${Style.boxWidth}`}>
+       <EventSchedule/>
      </div>
     </div>
 
