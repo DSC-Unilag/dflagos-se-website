@@ -65,7 +65,7 @@ const Faq = () => {
         return (
             <div onClick={onClick} className="qa font-sans italic">
                 <div className="q-row">
-                    <p className={`${isOpen ? "text-yellow-500" : ""  } q`}>{question}</p>
+                    <p className={`${isOpen ? "text-yellow-500 mb-[10px]" : ""  } q`}>{question}</p>
                     {isOpen ? <img src={close} alt="" /> : <img src={expand} alt="" />}
                 </div>
                 { isOpen && <p className="a">{answer}</p> }
@@ -75,7 +75,7 @@ const Faq = () => {
 
     return (
         <div id="faqs" className="faq font-sans italic">
-            <h1>Lets answer some of your burning questions</h1>
+            <h1 className='font font-bold text-[30px]'>Lets answer some of your burning questions</h1>
             <p className="sub-heading">Check out our most asked questions here, mfjpm 😑🤚🏾</p>
             <div className="column">
                 {data.map((item, index) => (
