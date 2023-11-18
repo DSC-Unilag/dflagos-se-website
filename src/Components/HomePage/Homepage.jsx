@@ -46,8 +46,8 @@ const HomePage = () => {
      </div>
     </div>
 
-    <div className={`px-6 lg:pl-[124px]`}>
-     <div className={`${Style.boxWidth}`}>
+    <div className={`px-6 md:px-0 md:pl-[124px]`}>
+     <div className={``}>
        <About/>
      </div>
     </div>    
