@@ -21,13 +21,13 @@ const Tickets = () => {
            Get FREE tickets to connect, explore a world of ever evolving digital experiences.
            </p>
 
-           <button onClick={handleNavigate} className='flex flex-row mt-[40px] text-[#000] border border-[#000] justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#FFFAEB] hover:bg-[#dcd1b2] max-w-[293px]'>
+           <a href='https://dscunilag.dev/df_lagos' onClick={handleNavigate} className='flex flex-row mt-[40px] text-[#000] border border-[#000] justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#FFFAEB] hover:bg-[#dcd1b2] max-w-[293px]'>
           <p>Grab a Free Ticket</p>
           <img
           src={ArrowRight2}
           alt='arrow'
           />
-         </button>
+         </a>
         </div>
           
        <div className=''>

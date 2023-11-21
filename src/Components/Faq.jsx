@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import expand from "../assets/expand.svg"
 import close from "../assets/close.svg";
+import doodle1 from "../assets/doodle-1.png";
+import doodle2 from "../assets/doodle-2.png";
+import doodle3 from "../assets/doodle-3.png";
+import doodle4 from "../assets/doodle-4.png";
+import doodle5 from "../assets/doodle-5.png";
 
 const Faq = () => {
     const data = [
@@ -89,6 +94,11 @@ const Faq = () => {
                   ))
                 }
             </div>
+            <img className='doodle doodle-1' src={doodle1} alt="" />
+            <img className='doodle doodle-2' src={doodle2} alt="" />
+            <img className='doodle doodle-3' src={doodle3} alt="" />
+            <img className='doodle doodle-4' src={doodle4} alt="" />
+            <img className='doodle doodle-5' src={doodle5} alt="" />
         </div>
     )
 }

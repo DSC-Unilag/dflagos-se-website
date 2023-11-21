@@ -1,4 +1,9 @@
 import logo from "../assets/googleDevfest.svg";
+import X from "../assets/Group.svg";
+import Email from "../assets/Email.svg";
+import IG from "../assets/InstagramLogo.svg";
+import YT from "../assets/mdi_youtube.svg";
+
 
 const Footer = () => {
     return (
@@ -22,6 +27,12 @@ const Footer = () => {
                     <a href="j">RSVP</a>
                     <a href="j">Schedule/Workshops</a>
                     <a href="j">Schedule/Workshops</a>
+                    <div className="socials">
+                        <a href=""><img src={X} alt="" /></a>
+                        <a href=""><img src={IG} alt="" /></a>
+                        <a href=""><img src={Email} alt="" /></a>
+                        <a href=""><img src={YT} alt="" /></a>
+                    </div>
                 </div>
             </div>
             <p className="copyright">© 2023 Devfest Lagos. All Rights Reserved.</p>

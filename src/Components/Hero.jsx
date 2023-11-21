@@ -31,13 +31,13 @@ const Hero = () => {
          Ultimate one-day event with speakers across Artificial Intelligence, Product, Mobile, Cloud, Intellectual Property and Startup Funding, Policy & Governance, and so much more!
          </p>
 
-         <button onClick={handleNavigate} className='flex flex-row mt-[40px] sm:mb-[50px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#4285F4] hover:bg-blue-600 max-w-[293px]'>
+         <a href='https://dscunilag.dev/df_lagos' onClick={handleNavigate} className='flex flex-row mt-[40px] sm:mb-[50px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#4285F4] hover:bg-blue-600 max-w-[293px]'>
           <p className="text-[#fff]">Grab a Free Ticket</p>
           <img
           src={ArrowRight}
           alt='arrow'
           />
-         </button>
+         </a>
 
         </div>
 

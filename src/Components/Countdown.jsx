@@ -64,10 +64,10 @@ const Countdown = () => {
                         <span>Seconds</span>
                     </div>
                 </div>
-                <button onClick={handleNavigate} className='hover:bg-blue-600'>
+                <a href='https://dscunilag.dev/df_lagos' onClick={handleNavigate} className='hover:bg-blue-600'>
                     <p>Grab A Free Ticket</p>
                     <img src={ArrowRight} alt="" />
-                </button>
+                </a>
             </div>
         </div>
     )
