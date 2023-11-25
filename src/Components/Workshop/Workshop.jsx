@@ -2,7 +2,8 @@ import React from 'react'
 import Style from "../../style"
 import Footer from '../Footer';
 import {Navbar} from "../Index"
-import {ScheduleHero, Tab, BreakoutSession1, BreakoutSession2, BreakoutSession3} from "./index"
+import {ScheduleHero, Tab} from "./index"
+import Breaksession from './BreakIndex';
 
 const Workshop = () => {
   return (
@@ -28,9 +29,7 @@ const Workshop = () => {
     <div className="bg-[#fff] font-sans w-full overflow-hidden">
     <div className={`${Style.paddingX} ${Style.flexCenter}`}>
       <div className={`${Style.boxWidth}`}>
-         <BreakoutSession1/>
-       <BreakoutSession2/>
-        <BreakoutSession3/>
+         <Breaksession/>
       </div>
     </div>
     </div>

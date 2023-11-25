@@ -3,6 +3,8 @@ import BreakoutSession2 from "./BreakoutSession2";
 import BreakoutSession3 from "./BreakoutSession3";
 import ScheduleHero from "./ScheduleHero"
 import Tab from "./Tab";
+import Breaksession from "./BreakIndex";
+import RsvpEvent from "./RsvpEvent";
 
 export { 
     ScheduleHero,
@@ -10,4 +12,6 @@ export {
     BreakoutSession1,
     BreakoutSession2,
     BreakoutSession3,
+    Breaksession,
+    RsvpEvent
 }
