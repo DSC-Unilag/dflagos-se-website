@@ -26,7 +26,7 @@ const Faq = () => {
             "answer": "The Student edition of DevFest 2023 will be held on Saturday 10th December 2023 by 9am."
         },
         {
-            "question": "How much is the ticket For DevFest UNILAG Edition 2023?💸",
+            "question": "How much is the ticket For DevFest Student Edition 2023?💸",
             "answer": "DevFestStudent Edition is totally FREE,  but seeing that the venue can only contain a certain number of persons, only those registered  will be allowed into the hall. We recommend you reserve your ticket as fast as possible to secure your seat at the event.  But you must RSVP to be allowed into the hall. You can get your ticket.."
         },
         {
