@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight2 } from '../assets'
+import { Link } from 'react-router-dom'
 
 const EventSchedule = () => {
   return (
@@ -13,13 +14,16 @@ const EventSchedule = () => {
              <p className='mt-[8px]'>Gotten Your ticket ?</p> 
             </div>
             
-           <button className='flex  flex-row mt-[8px] text-[#000] border-[2px] border-[#000] justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#FFFAEB] max-w-[250px] mb-[35.5px] sm:mb-0'>
+         <Link to={"/workshops"}>
+         <button className='flex  flex-row mt-[8px] text-[#000] border-[2px] border-[#000] justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#FFFAEB] max-w-[250px] mb-[35.5px] sm:mb-0'>
           <p className='font font-extrabold whitespace-nowrap'>Rsvp For A Session</p>
           <img
           src={ArrowRight2}
           alt='arrow'
           />
          </button>
+         </Link>   
+           
           </div>
 
           <div className='py-[64px] px-[24px] rounded-[24px] w-[298px] h-[295px] bg-[#EA4335] xl:mx-0'>

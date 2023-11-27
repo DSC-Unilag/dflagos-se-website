@@ -67,21 +67,44 @@ export const breakoutSessionData = [
   },
 ];
 
+
+
 export const stats = [
   {
-    id: "stats-1",
-    title: "User Active",
-    value: "3800+",
+    id: 1,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
   },
   {
-    id: "stats-2",
-    title: "Trusted by Company",
-    value: "230+",
+    id: 2,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola James - Product Designer, Google.",
+    title: "The Curious case of user Interface",
   },
   {
-    id: "stats-3",
-    title: "Transaction",
-    value: "$230M+",
+    id: 3,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Oxalade - Product Designer, Google.",
+    title: "The Curious case of user Interface",
+  },
+  {
+    id: 4,
+    time: "9.00AM - 11.00AM",
+    speaker: "Rodriguez Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
+  },
+  {
+    id: 5,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
+  },
+  {
+    id: 6,
+    time: "9.00AM - 11.00AM",
+    speaker: "Temilola Peter - Product Designer, Google.",
+    title: "The Curious case of user Interface",
   },
 ];
 

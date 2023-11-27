@@ -11,7 +11,7 @@ const Testimonials = () => {
        We are setting the standard <br/> for DevFest Student Edition!
     </p>
 
-    <div className='flex flex-col sm:flex-row sm:justify-between text-[16px] lg:text-[24px] py-[40px] xs:py-0'>
+    <div className='flex text-[#FFFAEB] flex-col sm:flex-row sm:justify-between text-[16px] lg:text-[24px] py-[40px] xs:py-0'>
       <p>
       When: 10th December⌚
       </p>

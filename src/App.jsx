@@ -4,9 +4,6 @@ import Banner from "./Components/Banner/Banner"
 import Style from "./style"
 import {Route, Routes} from "react-router-dom"
 
-
-
-
 function App() {
  return (
   <>
