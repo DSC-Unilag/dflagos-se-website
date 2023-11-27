@@ -13,10 +13,10 @@ const Involved = () => {
                 <div className="flex flex-col xs:flex-row gap-[48px]">
                     <div className="frame">
                         <div className="header">
-                            <p>Apply as a speaker</p>
+                            <p>RSVP for a session</p>
                             <img src={ArrowUp} alt="" />
                         </div>
-                        <p>Apply as a speaker for DevFest 2023 Student Edition</p>
+                        <p>You could be a novice or a professional, our workshop sessions are tailored to your skill level</p>
                         <div className="img-container">
                             <img src={asset1} alt="" />
                         </div>

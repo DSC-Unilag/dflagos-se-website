@@ -1,3 +1,8 @@
+.success{
+  border-radius: 3px solid red;
+}
+
+
 
 .speakers {
   display: flex;
@@ -274,10 +279,16 @@ letter-spacing: 0.16px;
 .faq .doodle-1 {
   top: 256px;
   left: 52px;
+  @media (max-width: 450px) {
+    top: -16px
+  }
 }
 .faq .doodle-2 {
   top: 256px;
   right: 52px;
+  @media (max-width: 450px) {
+    top: 58px
+  }
 }
 .faq .doodle-3 {
   bottom: 656px;

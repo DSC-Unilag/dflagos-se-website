@@ -12,7 +12,7 @@ export const getEventsData = async () => {
 
 export const createRsvpEvent = async (data) => {
     try {
-      const response = await axios.post("https://dfrsvpapi.azurewebsites.net/rsvp", data)
+      const response = await axios.post("https://dfrsvpapi.azurewebsites.net/rsvp/", data)
       console.log(response)
     } catch (error) {
       console.log(error)

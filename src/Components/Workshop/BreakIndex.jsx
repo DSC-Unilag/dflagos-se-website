@@ -4,6 +4,7 @@ import { createRsvpEvent } from '../../backend-services/rsvp'
 import toast from 'react-hot-toast'
 import { getEventsData } from '../../backend-services/rsvp'
 import {ColorRing} from "react-loader-spinner"
+import { useNavigate } from 'react-router-dom'
 
 const Breaksession = () => {
 
@@ -20,6 +21,10 @@ const [errorState, setErrorState] = useState("")
 const [data, setData] = useState([])
 
 const [isLoading, setIsloading] = useState(false)
+
+const [isRsvping, setIsRsvping] = useState(false)
+
+const navigate = useNavigate()
 
 const arrayValues = Object.values(eventId)
 
@@ -56,23 +61,37 @@ const handleTicketNumber = (e) => {
 
 
 const handleRsvpEvent = async (e) => {
+  setIsRsvping(true)
   e.preventDefault() 
+ let event_ids = filteredArray
+ let ticket_id = ticketNumber
  const data = {
-  ticketNumber,
-  filteredArray
+  ticket_id,
+  event_ids
  }
- console.log(filteredArray.length)
  if(filteredArray.length === 0 || ticketNumber === "") {
  toast.error("Fill in at least a required session and your ticket number") 
  return;
  }
+ try {
  const response = await createRsvpEvent(data)
+ console.log(response)
+ toast.success("succesfully Rsvp for an event")
+ navigate("/")
+ } catch (error) {
+  console.log(error)
+  toast.error(error)
+ }
+ finally{
+  setIsRsvping(false)
+ }
+
 }
 
 
   return (
     <form onSubmit={handleRsvpEvent}>
-    {isLoading ?  <ColorRing
+  {isLoading && data.length == 0 ?  <ColorRing
   visible={true}
   height="80"
   width="80"
@@ -88,8 +107,8 @@ const handleRsvpEvent = async (e) => {
 <BreakoutSession3 eventId={eventId} handleAddId={handleAddId} data={data}/>
 </>
 }   
-<RsvpEvent ticketNumber={ticketNumber} handleTicketNumber={handleTicketNumber} handleRsvpEvent={handleRsvpEvent} errorState={errorState}/>
-    </form>
+<RsvpEvent ticketNumber={ticketNumber} isRsvping={isRsvping} handleTicketNumber={handleTicketNumber} handleRsvpEvent={handleRsvpEvent} errorState={errorState}/>
+  </form>
   )
 }
 

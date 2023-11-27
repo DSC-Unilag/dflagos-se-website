@@ -13,7 +13,7 @@ const Hero = () => {
        <div className='flex flex-col lg:flex-row pl-[25px] pr-[20px] sm:pl-[124px] justify-between mb-[40px] sm:mb-[40px] lg:mb-0'>
 
         <div className='xl:pr-[70px]'>
-         <p className=' mt-[40px] lg:pb-[123px] text-[42px] xs:text-[50px] sm:text-[71px] xl:text-[94px] leading-none max-w-full lg:max-w-[667px] xl:whitespace-nowrap text-[#000] tracking-tighter font-sans italic' style={{fontWeight: 400}}>
+         <p className=' mt-[40px] lg:pb-[123px] text-[50px] xs:text-[55px] sm:text-[71px] xl:text-[94px] leading-none max-w-full lg:max-w-[667px] xl:whitespace-nowrap text-[#000] tracking-tighter font-sans italic font-extrabold' style={{fontWeight: 500}}>
          DevFest Student <br className='hidden xs:block'/> Edition Lagos 
         </p>
         </div>
