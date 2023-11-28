@@ -4,6 +4,7 @@ import Style from '../../style'
 import Speakers from '../Speakers';
 import Countdown from '../Countdown';
 import Involved from '../Involved';
+import GetBanner from '../GetBanner';
 import Faq from '../Faq';
 import Footer from '../Footer';
 
@@ -61,6 +62,7 @@ const HomePage = () => {
     <Speakers />
     <Countdown />
     <Involved />
+    <GetBanner/>
     <Faq />
     <Footer /> 
     
