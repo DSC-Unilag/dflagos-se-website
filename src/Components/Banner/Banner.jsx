@@ -58,7 +58,7 @@ const Banner = () => {
             
 
 
-            <div className="font-sans xl:max-w-[1280px] w-full get-banner">
+            <div className="font-sans italic xl:max-w-[1280px] w-full get-banner">
                 <h1>Generate custom banner</h1>
                 <p>Let people know you would be attending the event by generating a custom banner for yourself</p>
 
