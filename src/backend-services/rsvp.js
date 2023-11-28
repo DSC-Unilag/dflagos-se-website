@@ -16,5 +16,6 @@ export const createRsvpEvent = async (data) => {
       console.log(response)
     } catch (error) {
       console.log(error)
+      throw new Error(error)
     }
 }

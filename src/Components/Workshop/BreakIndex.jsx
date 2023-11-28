@@ -76,11 +76,14 @@ const handleRsvpEvent = async (e) => {
  try {
  const response = await createRsvpEvent(data)
  console.log(response)
- toast.success("succesfully Rsvp for an event")
- navigate("/")
+ if(response){
+  toast.success(`you have sucessfully Rsvp for ${filteredArray.length} sessions`)
+ }
  } catch (error) {
-  console.log(error)
-  toast.error(error)
+  if(error.message === "AxiosError: Request failed with status code 404"){
+    toast.error("Ticket not found")
+  }
+  throw new Error (error)
  }
  finally{
   setIsRsvping(false)

@@ -1,16 +1,17 @@
 import React from 'react'
 import { ArrowRight2 } from '../assets'
 import { Link } from 'react-router-dom'
+import { stats } from '../constants'
 
 const EventSchedule = () => {
   return (
     <section className='mt-[40px] sm:mt-[80px]'>
-
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4  md:gap-0 sxl:gap-[3em] xl:gap-0 place-items-center md:place-content-start'>
+   
+        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-[15px] xs:gap-0 md:gap-0 sxl:gap-[3em] xl:gap-0 place-items-center md:place-content-start'>
           <div className='flex flex-col lg:pt-[28.5px] w-fit'>
             <div>
-            <p className='lg:mb-[32px]'>9.00AM - 12.00AM</p>
-             <p className='lg:text-[40px] leading-none font-bold'>Event <br/> Schedule</p>
+            <p className='lg:mb-[25px]'>9.00AM - 12.00AM</p>
+             <p className='lg:text-[50px] leading-none font-extrabold'>Event <br/> Schedule</p>
              <p className='mt-[8px]'>Gotten Your ticket ?</p> 
             </div>
             
