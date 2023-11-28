@@ -73,38 +73,65 @@ export const stats = [
   {
     id: 1,
     time: "9.00AM - 11.00AM",
-    speaker: "Temilola Peter - Product Designer, Google.",
-    title: "The Curious case of user Interface",
+    speaker: "Oluwagbemileke Kolawole- Cloud Enginner",
+    title: "Introduction to GCP: A Guide to Google’s Cloud-9",
+    color: "bg-red-500"
   },
   {
     id: 2,
     time: "9.00AM - 11.00AM",
-    speaker: "Temilola James - Product Designer, Google.",
-    title: "The Curious case of user Interface",
+    speaker: "Chinaza Icheke- UI/UX Designer",
+    title: "Design and Motion: The Two Infinity Stones of Memorable User Experiences",
+    color: "bg-green-600"
   },
   {
     id: 3,
     time: "9.00AM - 11.00AM",
-    speaker: "Temilola Oxalade - Product Designer, Google.",
-    title: "The Curious case of user Interface",
+    speaker: "Idris Olubisi- Developer Advocate, Axelar",
+    title: "Web3 for Web2 Developers",
+    color: "bg-blue-500"
   },
   {
     id: 4,
     time: "9.00AM - 11.00AM",
-    speaker: "Rodriguez Peter - Product Designer, Google.",
-    title: "The Curious case of user Interface",
+    speaker: "Olayinka Atobiloye-GitHub Campus Expert",
+    title: "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
+    color: "bg-yellow-400"
   },
   {
     id: 5,
     time: "9.00AM - 11.00AM",
-    speaker: "Temilola Peter - Product Designer, Google.",
-    title: "The Curious case of user Interface",
+    speaker: "Jesus Akanle-Content Team Lead ",
+    title: "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
+    color: "bg-blue-300"
   },
   {
     id: 6,
     time: "9.00AM - 11.00AM",
-    speaker: "Temilola Peter - Product Designer, Google.",
-    title: "The Curious case of user Interface",
+    speaker: "Adejoke Haastrup-Software Engineer",
+    title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
+    color: "bg-black"
+  },
+  {
+    id: 7,
+    time: "9.00AM - 11.00AM",
+    speaker: "Ogbonna Emmanuella-Flutter Developer",
+    title: "Navigating the Feasibility and Future Trends of Machine Learning Integration in Flutter Applications",
+    color: "bg-blue-500"
+  },
+  {
+    id: 8,
+    time: "9.00AM - 11.00AM",
+    speaker: "TGoodness Ehizode- Product Leader",
+    title: "Leveraging User psychology for Product Growth",
+    color: "bg-red-300"
+  },
+  {
+    id: 9,
+    time: "9.00AM - 11.00AM",
+    speaker: "Salim Oyinlola- Gold Microsoft Ambassador",
+    title: "LangChain and LLMs: Building your own generation AI chatbot trained on your data with LangChain",
+    color: "bg-green-400"
   },
 ];
 

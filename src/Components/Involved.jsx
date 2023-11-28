@@ -1,9 +1,15 @@
 import ArrowUp from "../assets/ArrowUp.svg";
 import asset1 from "../assets/get_involved1.png";
 import asset2 from "../assets/get_involved2.png";
-
+import { useNavigate } from "react-router-dom";
 
 const Involved = () => {
+    const navigate = useNavigate()
+    
+    const navigateToWorkshops = () => {
+        navigate("/workshops")
+    }
+
      return (
         <div id="volunteer" className="involved font-sans italic">
                 <h1>Get involved</h1>
@@ -11,7 +17,7 @@ const Involved = () => {
                     DevFest 2023 is open to individuals who are excited, to not just be a part of the event but also want to contribute to the success of the event. Want to be a key player in making DevFest SE a big hit? Feel free to apply here
                 </p>
                 <div className="flex flex-col xs:flex-row gap-[48px]">
-                    <div className="frame">
+                    <div className="frame cursor-pointer" onClick={navigateToWorkshops}>
                         <div className="header">
                             <p>RSVP for a session</p>
                             <img src={ArrowUp} alt="" />
