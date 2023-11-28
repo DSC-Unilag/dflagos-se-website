@@ -10,6 +10,15 @@ import Microsoft from "./Microsoft svg.svg"
 import EventImage from "./Event.svg"
 import DownArrow from "./DownArrow.svg"
 import Logic from "./Logic.svg"
+import Goodness from "../assets/Goodness Ehizode.jpeg"
+import Chinaza from "../assets/chinaza icheke.jpg"
+import Idris from "../assets/Idris Olubisi.jpeg"
+import Olayinka from "../assets/Olayinka Atobiloye.jpeg"
+import Mileke from "../assets/Mileke Kolawole.jpeg"
+import Adejoke from "../assets/Adejoke Haastrup.jpeg"
+import Jesus from "../assets/Jesus Akanle.jpg"
+import Ijeoma from "../assets/Ijeoma Ogbonna.jpg"
+import Salim from "../assets/Salim Oyinlola.png"
 
 export {
     Google,
@@ -23,5 +32,14 @@ export {
     Microsoft,
     EventImage,
     DownArrow,
-    Logic
+    Logic,
+    Goodness,
+    Chinaza,
+    Idris,
+    Olayinka,
+    Mileke,
+    Adejoke,
+    Jesus,
+    Ijeoma,
+    Salim
 }

@@ -1,4 +1,15 @@
 
+import {
+  Goodness,
+  Chinaza,
+  Idris,
+  Olayinka,
+  Mileke,
+  Adejoke,
+  Jesus,
+  Ijeoma,
+  Salim } from '../assets';
+
 
 export const navLinks = [
   {
@@ -220,17 +231,50 @@ export const socialMedia = [
   },
 ];
 
-export const clients = [
+export const speakers = [
   {
-    id: "client-1",
+    id: "speaker-1",
+    url:  Chinaza,
+    name: "Chinaza Icheke"
   },
   {
-    id: "client-2",
+    id: "speaker-2",
+    url: Idris,
+    name: "Idris Olubisi"
   },
   {
-    id: "client-3",
+    id: "speaker-3",
+    url: Ijeoma,
+    name: "Ijeoma Ogbonna"
   },
   {
-    id: "client-4",
+    id: "speaker-4",
+    url: Jesus,
+    name: "Jesus Akanle"
+  },
+  {
+    id: "speaker-5",
+    url: Adejoke,
+    name: "Adejoke Haastrup"
+  },
+  {
+    id: "speaker-6",
+    url: Salim,
+    name: "Salim Oyinlola"
+  },
+  {
+    id: "speaker-7",
+    url: Olayinka,
+    name: "Olayinka Atobiloye"
+  },
+  {
+    id: "speaker-8",
+    url: Mileke,
+    name: "Mileke Kolawole"
+  },
+  {
+    id: "speaker-9",
+    url: Goodness,
+    name: "Goodness Ehizode"
   },
 ];

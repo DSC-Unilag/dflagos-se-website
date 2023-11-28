@@ -1,5 +1,4 @@
 import React from 'react'
-import {clients} from "../constants"
 import styles from "../style"
 import { Github, Microsoft, Google, AltSchool, Paystack, ArrowRight2, Mtn} from '../assets'
 
