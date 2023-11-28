@@ -91,10 +91,12 @@ const handleRsvpEvent = async (e) => {
 
 }
 
+console.log(data)
+
 
   return (
     <form onSubmit={handleRsvpEvent}>
-  {isLoading && data.length == 0 ?  <ColorRing
+  {isLoading && data.length == 0 || undefined ?  <ColorRing
   visible={true}
   height="80"
   width="80"

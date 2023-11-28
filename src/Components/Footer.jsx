@@ -13,20 +13,19 @@ const Footer = () => {
                     <img src={logo} alt="" />
                 </div>
                 <div className="column">
-                    <a href="j">Schedule/Workshops</a>
-                    <a href="j">RSVP</a>
+                    <a href="/Workshops">Schedule/Workshops</a>
+                    <a href="/Workshops">RSVP</a>
                 </div>
                 <div className="column">
-                    <a href="#">Schedule/Workshops</a>
-                    <a href="j">RSVP</a>
-                    <a href="j">Schedule/Workshops</a>
-                    <a href="j">Schedule/Workshops</a>
+                    <a href="#volunteer">Apply as a speaker</a>
+                    <a href="#volunteer">Apply as a sponsor</a>
+                    <a href="j">Join the Community</a>
+                    <a href="j">Community guidelines</a>
                 </div>
                 <div className="column">
-                    <a href="j">Schedule/Workshops</a>
-                    <a href="j">RSVP</a>
-                    <a href="j">Schedule/Workshops</a>
-                    <a href="j">Schedule/Workshops</a>
+                    <a href="j">Privacy Policy</a>
+                    <a href="j">Contact</a>
+                    <a href="j">Follow us on</a>
                     <div className="socials">
                         <a href=""><img src={X} alt="" /></a>
                         <a href=""><img src={IG} alt="" /></a>

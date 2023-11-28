@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { breakoutSessionData } from '../../constants'
 import { ArrowRight2 } from '../../assets'
 import useSessionData from '../../../utils/useSessionData'
+import {ColorRing} from "react-loader-spinner"
 
 const BreakoutSession = ({handleAddId, eventId, data}) => {
 
@@ -17,7 +18,7 @@ const BreakoutSession = ({handleAddId, eventId, data}) => {
   handleAddId(e, id)
  }
 
- const filteredData = data.filter((item) => item.id >= 0 && item.id <= 3)
+ const filteredData = data?.filter((item) => item.id >= 0 && item.id <= 3)
 
 console.log(filteredData)
 
@@ -27,7 +28,7 @@ console.log(filteredData)
         <div className='p-[10px] py-[30px] border-[2px] border-dashed border-[#0D0D0D] mt-[24px] mb-[40px] rounded-[16px]'>
 
         <button className='bg-[#F9AB00] py-[8px] px-[16px] rounded-[8px] text-[#000] mb-[16px]'>BreakoutSession 1 </button> 
-          {filteredData.map((item, index) => {
+          {filteredData ? filteredData.map((item, index) => {
             return (
               <div key={index} className={`flex flex-col p-[10px] lg:p-[30px] py-[30px] rounded-[16px] ${index == 2 ? "mb-[0]" : "mb-[16px]"} ${index == 0 && "bg-[#EA4335]"} ${index == 1 && "bg-[#34A853]"} ${index == 2 && "bg-[#4285F4]"}   sxl:py-[56px] sxl:px-[24px]`}>
                 <div className='text-[#fff]'>
@@ -52,7 +53,17 @@ console.log(filteredData)
               </div>
             )
           }
-        )}
+        ): 
+        <ColorRing
+        visible={true}
+        height="80"
+       width="80"
+       ariaLabel="blocks-loading"
+       wrapperStyle={{}}
+       wrapperClass="blocks-wrapper"
+         colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+/> 
+        }
         </div>
     </div>
   )

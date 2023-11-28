@@ -23,7 +23,7 @@ const Speakers = () => {
              <div className='grid px-[30px] lg:px-[134px] grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[10px]'>
                 {speakers.map((item, index) => (
                     <div key={index}>
-                     <img style={{width: 380, height: 420}} className='' src={item.url} alt="" />
+                     <img style={index == 3 ? {width: 260, height:340}: {width: 245, height:340}} className={``} src={item.url} alt="" />
                      <div className='meta mt-[5px]'>
                          {item.name}
                      </div>
