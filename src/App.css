@@ -210,9 +210,10 @@ letter-spacing: 0.16px;
 }
 .generate-banner h1 {
   font-size: 70px;
+  font-weight: bold;
 }
 .generate-banner p {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 20px;
 }
 .generate-banner a {
@@ -220,7 +221,7 @@ letter-spacing: 0.16px;
   border: none;
   border-radius: 48px;
   background: #4285F4;
-  margin-top: 30px;
+  margin-top: 50px;
   font-size: 20px;
   font-weight: 500;
   display: inline-block;
@@ -260,7 +261,8 @@ letter-spacing: 0.16px;
   border-radius: 250px;
 }
 .banner .statement {
-  background-color: #81c995;
+  background-color: #34a853;
+  color: #fff;
   padding: 20px 30px;
   text-align: center;
   width: 250px;
@@ -320,11 +322,14 @@ letter-spacing: 0.16px;
   color: #000;
 }
 .banner-container {
-  padding: 30px;
+  padding: 20px;
   max-width: 500px;
   margin: 50px auto;
   outline: 1px solid #d2d3d4;
   border-radius: 5px;
+}
+.get-banner {
+  padding-top: 30px;
 }
 .get-banner h1 {
   font-size: 50px !important;
@@ -349,6 +354,7 @@ input[type="file"] {
   background-color: #4285f4;
   color: #fff;
   padding: 10px 50px;
+  margin-top: 30px;
   border-radius: 5px;
 }
 .choose-image {
@@ -358,7 +364,7 @@ input[type="file"] {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   cursor: pointer;
 }
 .faq {
