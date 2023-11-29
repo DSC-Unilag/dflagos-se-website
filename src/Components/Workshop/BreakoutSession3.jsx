@@ -27,7 +27,7 @@ const BreakoutSession = ({handleAddId, eventId, data}) => {
           {filteredData? filteredData.map((item, index) => (
             <div key={index} className={`flex flex-col p-[10px] lg:p-[30px] py-[30px] rounded-[16px] ${index == 2 ? "mb-[0]" : "mb-[16px]"} ${index == 0 && "bg-[#EA4335]"} ${index == 1 && "bg-[#34A853]"} ${index == 2 && "bg-[#4285F4]"}   sxl:py-[56px] sxl:px-[24px]`}>
                  <div className='text-[#fff]'>
-                <p className=''>11.00am - 12.00am</p>
+                <p className=''>{item.time}</p>
                 <p className='mt-[24px] mb-[16px]'>{item.title}</p>
                 <p>{item.speaker ? item.speaker : "Temilola Peter - Product Designer, Google."} </p>
               </div> 
