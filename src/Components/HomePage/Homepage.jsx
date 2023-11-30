@@ -65,7 +65,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className={`${Style.paddingX} ${Style.flexStart}`}>
+      <div className={` ${Style.flexStart}`}>
         <div className={`${Style.boxWidth}`}>
           <EventSchedule />
         </div>

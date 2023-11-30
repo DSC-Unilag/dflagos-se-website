@@ -32,7 +32,7 @@ const Hero = () => {
 
           <a
             href="https://dscunilag.dev/df_lagos"
-            className="flex flex-row mt-[40px] sm:mb-[50px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#4285F4] hover:bg-blue-600 max-w-[293px]"
+            className="flex flex-row mt-[40px] sm:mb-[50px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[12px] px-[30px] bg-[#4285F4] hover:bg-blue-600 max-w-[293px]"
           >
             <p className="text-[#fff] font-bold">Grab A Free Ticket</p>
             <img src={ArrowRight} alt="arrow" />

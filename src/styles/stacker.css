@@ -1,15 +1,15 @@
 .wrapper {
-  min-height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .wrapper main {
-  height: 300px;
-  width: 200px;
+  height: 440px;
+  width: 300px;
   position: relative;
 }
 
@@ -19,9 +19,9 @@
   left: 0;
 }
 
-.wrapper main .box {
-  height: 300px;
-  width: 200px;
+.wrapper .box {
+  height: 440px;
+  width: 300px;
   border-radius: 8px;
   position: absolute;
   top: 0;
@@ -38,35 +38,47 @@
 
 .box.pos-0 {
   transform: rotate(0deg);
-  z-index: 4;
+  z-index: 10;
 }
 .box.pos-1 {
-  transform: rotate(10deg);
-  z-index: 3;
+  transform: rotate(5deg);
+  z-index: 9;
 }
 .box.pos-2 {
-  transform: rotate(20deg);
-  z-index: 2;
+  transform: rotate(10deg);
+  z-index: 8;
 }
 .box.pos-3 {
-  opacity: 0;
+  transform: rotate(15deg);
+  z-index: 7;
+}
+.box.pos-4 {
+  transform: rotate(20deg);
+  z-index: 6;
+}
+.box.pos-5 {
+  transform: rotate(25deg);
+  z-index: 5;
+}
+.box.pos-6 {
   transform: rotate(30deg);
+  z-index: 4;
+}
+.box.pos-7 {
+  transform: rotate(35deg);
+  z-index: 3;
+}
+.box.pos-8 {
+  transform: rotate(40deg);
+  z-index: 2;
+}
+.box.pos-9 {
+  opacity: 0;
+  transform: rotate(45deg);
   z-index: 1;
 }
 
 .box.close {
   transform: rotate(-90deg);
   opacity: 0;
-}
-
-.box.red {
-  background-color: red;
-}
-
-.box.green {
-  background-color: green;
-}
-
-.box.blue {
-  background-color: blue;
 }
