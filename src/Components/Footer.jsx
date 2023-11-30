@@ -20,10 +20,13 @@ const Footer = () => {
                     <a href="#volunteer">Apply as a sponsor</a>
                 </div>
                 <div className="column">
-                    <a href="j">Privacy Policy</a>
+                <a href="#volunteer">GDSC Unilag</a>
+                <a href="#volunteer">GDSC Lasu</a>
+                <a href="#volunteer">GDSC Caleb, </a>
+                <a href="#volunteer">GDSC Babcock</a>
                 </div>
             </div>
-            <p className="copyright">© 2023 Devfest Lagos. All Rights Reserved.</p>
+            <p className="copyright">© 2023 DevFest Lagos Student Edition 2023. All Rights Reserved.</p>
         </footer>
     )
 }

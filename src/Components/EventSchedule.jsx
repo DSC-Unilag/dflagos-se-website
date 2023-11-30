@@ -11,7 +11,7 @@ const EventSchedule = () => {
         <div className="flex flex-col mx-auto mb-4 lg:pt-[28.5px] w-fit">
           <div>
             <p className="mb-6 lg:mb-[25px] opacity-0">9.00AM - 12.00AM</p>
-            <p className="mb-2 text-[40px] lg:text-[50px] leading-none font-bold">
+            <p className="mb-2 text-[48px] min-[460px]:text-[40px] lg:text-[50px] leading-none font-bold">
               Event <br /> Schedule
             </p>
             <p className="text-[18px] leading-[27px] mt-[8px]">

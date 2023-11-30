@@ -26,34 +26,22 @@ export const navLinks = [
   {
     id: "volunteer",
     title: "Volunteer/Speak",
-  },
+  }
 ];
 
 export const Tabs = [
   {
-    id: 1,
-    content: "All Workshops",
-  },
-  {
     id: 2,
-    content: "Breakout Sessions",
-  },
-  {
-    id: 3,
-    content: "Keynote Sessions",
-  },
-  {
-    id: 4,
     content: "Engineering",
   },
   {
-    id: 5,
+    id: 3,
     content: "Product and Design",
   },
   {
-    id: 6,
+    id: 4,
     content: "Data and AI",
-  },
+  }
 ];
 
 export const breakoutSessionData = [
@@ -134,7 +122,7 @@ export const stats = [
   {
     id: 8,
     time: "11.30AM- 12.10AM",
-    speaker: "TGoodness Ehizode - Product Leader",
+    speaker: "Goodness Ehizode - Product Leader",
     title: "Leveraging User psychology for Product Growth",
     color: "bg-cards-200",
   },

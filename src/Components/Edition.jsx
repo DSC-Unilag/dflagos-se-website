@@ -10,7 +10,7 @@ const Testimonials = () => {
     >
       <div className="flex flex-col">
         <div className="flex flex-col">
-          <p className="text-[25px] min-[460px]:text-[35px] whitespace-nowrap xs:whitespace-normal min-[640px]:text-[40px] lg:text-[80px] leading-[-10px] tracking-tighter text-[#fff] shadow-text font-bold mb-4">
+          <p style={{fontWeight: 700}} className="min-[350px]:text-[28px] font-extrabold min-[460px]:text-[35px] whitespace-nowrap xs:whitespace-normal min-[640px]:text-[40px] lg:text-[80px] leading-[-30px] xs:leading-[-10px] tracking-tighter text-[#fff] shadow-text  mb-4">
             We are setting the standard <br /> for DevFest Student Edition!
           </p>
 
