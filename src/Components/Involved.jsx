@@ -55,7 +55,7 @@ const Involved = () => {
               </p>
               <img src={blackArrowRight} alt="" />
             </div>
-            <p>Apply as a volunteer for DevFest 2023 Student Edition</p>
+            <p>Apply as a volunteer for DevFest Lagos Student Edition 2023</p>
           </div>
           <div className="mt-8">
             <img
