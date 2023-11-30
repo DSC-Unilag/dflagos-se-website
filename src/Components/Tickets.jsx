@@ -14,7 +14,7 @@ const Tickets = () => {
         <div className="flex flex-col text-[#fff] lg:pb-[164px]">
           <p className="text-[44px] lg:text-[64px] font-bold mb-6">
             Guess What? <br />
-            Its FREE
+            It's FREE
           </p>
 
           <p className="max-w-[493px] text-[24px] font-bold mb-5">
