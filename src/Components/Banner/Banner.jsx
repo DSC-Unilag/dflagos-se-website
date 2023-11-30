@@ -2,7 +2,10 @@ import { useState } from "react";
 import Navbar from "../Navbar";
 import html2canvas from 'html2canvas';
 import Logo from "../../assets/Logo.png"
-
+import '../../styles/banner.css'
+import bannerAvatar from '../../assets/bannerAvatar.svg'
+import uploadArrow from '../../assets/uploadArrow.svg'
+import arrow from '../../assets/bannerArrow.svg'
 
 const Banner = () => {
     const [uploadedImage, setUploadedImage] = useState(null);
@@ -93,6 +96,17 @@ const Banner = () => {
         e.preventDefault();
         setGenerating(true)
         const container = document.getElementById('banner');
+
+        let name = document.getElementById('nameField');
+        // console.log(name);
+        // console.log(name.value)
+        if (name.value === "")
+        {
+            alert("Please add your name to the name field");
+            name.style.outline = "red";
+            setGenerating(false);
+            return;
+        }
     
         html2canvas(container, {scale: 1}).then((canvas) => {
             container.style.display = 'block';
@@ -109,24 +123,54 @@ const Banner = () => {
     };
 
     return (
-        <div style={{maxWidth: '980px', margin: '0 auto', padding: '0px 15px'}}>
-            <Navbar/>
+        <div >
+            <div className="bg-white">
+                <div className="max-w-[980px] mx-auto">
+            <Navbar id="banner-nav"/>
+            </div>
+            </div>
             <hr />
 
-            <div className="get-banner">
-                <h1 style={{ fontWeight: 'bold', lineHeight: '110%', marginBottom: '20px' }}>Generate custom banner</h1>
-                <p>Let people know you would be attending the event by generating a custom banner for yourself</p>
+            <div style={{
+            maxWidth: '980px',
+            margin: '0 auto',
+            padding: '0px 15px'
+        }} className="get-banner">
+               <span id="bannerText">
+                 <h1 style={{ fontWeight: 'bold', lineHeight: '110%', marginBottom: '10px' }}>I'll be attending!</h1>
+                 <img src={bannerAvatar} alt="" srcset="" id="bannerAvatar"/>
+                </span>
+                <p>Generate and share your unique Devfest </p> 
+                <p>Lagos Student Edition DP</p>
 
                 <div className="banner-container">
                     
                     <form onSubmit={handleDownload} className="form">
-                        <label htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={name}
-                            onChange={handleNameChange}
-                        />
+                        {/* <label htmlFor="name">Name</label> */}
+                        <div style={{
+                                // padding: "10px",
+                                // background: "black",
+                                display:"flex",
+                                paddingTop: "5px",
+                                paddingLeft: "8px",
+                                paddingRight: "8px",
+                                paddingBottom: "8px",
+                                // padding: "10px",
+                                borderRadius:"20px",
+                                border: "solid 1px #ccc",
+                                height: "43px",
+                                marginBottom: "20px"
+                            }}>
+                            <input
+                                type="text"
+                                name="name"
+                                id="nameField"
+                                value={name}
+                                onChange={handleNameChange}
+                                placeholder="Enter first name or nickname"
+                            />
+                        </div>
+                        
                         <label htmlFor="date">Choose Display picture</label>
                         <input type="file" onChange={handleImageUpload} accept="image/*" />
                         
@@ -138,12 +182,25 @@ const Banner = () => {
                             />
                         ) : (
                         <div onClick={handleSelectImage} className="choose-image">
-                            <p>Click to choose a square image</p>
+                            <div id="upload-area">
+                                <img src={uploadArrow} style={{marginBottom:"40px"}} alt="" />
+                                <p style={{fontStyle: "italic", color:"#777"}}>
+                                    Drag and drop to upload or
+                                </p>
+                                <p style={{color: "#34A853"}}>
+                                    <u>browse</u>
+                                </p>
+                            </div>
                         </div>
                         )}
-                        <p>Please upload only a square image</p>
-
-                        <button>{generating ? "Downloading" : "Download"}</button>
+                        <p style={{marginTop:"10px", fontStyle: "italic"}}>Please upload only a square image</p>
+                        
+                        <div>
+                            <button id="bannerBtn">{generating ? "Downloading" : "Generate your dp"}</button>
+                            <span>
+                                <img src={arrow} alt="" />
+                            </span>
+                        </div>
                     </form>
                 </div>
 
