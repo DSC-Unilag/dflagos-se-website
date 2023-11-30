@@ -2,6 +2,7 @@ import React from 'react'
 import { ArrowRight2 } from '../assets'
 import { Link } from 'react-router-dom'
 import { stats } from '../constants'
+import '../styles/event.css'
 
 const EventSchedule = () => {
   return (
@@ -16,7 +17,7 @@ const EventSchedule = () => {
             </div>
             
          <Link to={"/workshops"}>
-         <button className='flex  flex-row mt-[8px] text-[#000] border-[2px] border-[#000] justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#FFFAEB] max-w-[250px] mb-[35.5px] sm:mb-0'>
+         <button className='flex  flex-row mt-[8px] text-[#000] border-[2px] border-[#000] justify-center items-center gap-[8px] rounded-[48px] py-[17px] px-[30px] bg-[#FFFAEB] max-w-[250px] mb-[35.5px] sm:mb-12'>
           <p className='font font-extrabold whitespace-nowrap'>Rsvp For A Session</p>
           <img
           src={ArrowRight2}
@@ -30,11 +31,11 @@ const EventSchedule = () => {
        {stats.map((item) => {
         const {speaker, time, title, color} = item
         return (
-          <div className={`py-[50px] px-[24px] rounded-[24px] w-[298px] h-full  ${color} xl:mx-0`}>
-          <div className='text-[#fff]'>
-            <p className='mb-[32px]'>{time}</p>
-             <p className='lg:text-[24px] leading-none'>{title}</p>
-             <p className='mt-[8px] whitespace-normal'>{speaker}</p> 
+          <div className={`py-[50px] px-[24px] rounded-[48px] w-[298px] h-full text-[#fff]  ${color}  xl:mx-0`}>
+            <div className=''>
+                <p className='mb-[15px]'>{time}</p>
+                <p className='lg:text-[18px] leading-none session-cards'>{title}</p>
+                <p className='mt-[8px] whitespace-normal'>{speaker}</p> 
             </div>
           </div>
         )

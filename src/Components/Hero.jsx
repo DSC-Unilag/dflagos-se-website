@@ -14,7 +14,7 @@ const Hero = () => {
 
         <div className='xl:pr-[70px]'>
          <p className=' mt-[40px] lg:pb-[123px] text-[50px] xs:text-[55px] sm:text-[71px] xl:text-[94px] leading-none max-w-full lg:max-w-[667px] xl:whitespace-nowrap text-[#000] tracking-tighter font-sans italic font-extrabold' style={{fontWeight: 500}}>
-         DevFest Student <br className='hidden xs:block'/> Edition Lagos 
+         DevFest Lagos <br className='hidden xs:block'/>Student Edition 
         </p>
         </div>
         

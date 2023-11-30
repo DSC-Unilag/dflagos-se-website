@@ -86,63 +86,63 @@ export const stats = [
     time: "10.00AM- 10.40AM",
     speaker: "Oluwagbemileke Kolawole- Cloud Enginner",
     title: "Introduction to GCP: A Guide to Google’s Cloud-9",
-    color: "bg-red-500"
+    color: "bg-cards-100"
   },
   {
     id: 2,
     time: "10.00AM- 10.40AM",
     speaker: "Chinaza Icheke- UI/UX Designer",
     title: "Design and Motion: The Two Infinity Stones of Memorable User Experiences",
-    color: "bg-green-600"
+    color: "bg-cards-200"
   },
   {
     id: 3,
     time: "10.00AM- 10.40AM",
     speaker: "Idris Olubisi- Developer Advocate, Axelar",
     title: "Web3 for Web2 Developers",
-    color: "bg-blue-500"
+    color: "bg-cards-300"
   },
   {
     id: 4,
     time: "10.00AM- 11.45AM",
     speaker: "Olayinka Atobiloye-GitHub Campus Expert",
     title: "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
-    color: "bg-yellow-400"
+    color: "bg-cards-400 [&&]:text-text-dark"
   },
   {
     id: 5,
     time: "10.00AM- 11.45AM",
     speaker: "Jesus Akanle-Content Team Lead ",
     title: "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
-    color: "bg-blue-300"
+    color: "bg-cards-500"
   },
   {
     id: 6,
     time: "10.00AM- 11.45AM",
     speaker: "Adejoke Haastrup-Software Engineer",
     title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
-    color: "bg-black"
+    color: "bg-cards-600"
   },
   {
     id: 7,
     time: "11.30AM- 12.10AM",
     speaker: "Ogbonna Emmanuella-Flutter Developer",
     title: "Navigating the Feasibility and Future Trends of Machine Learning Integration in Flutter Applications",
-    color: "bg-blue-500"
+    color: "bg-cards-100"
   },
   {
     id: 8,
     time: "11.30AM- 12.10AM",
     speaker: "TGoodness Ehizode- Product Leader",
     title: "Leveraging User psychology for Product Growth",
-    color: "bg-red-300"
+    color: "bg-cards-200"
   },
   {
     id: 9,
     time: "11.30AM- 12.10AM",
     speaker: "Salim Oyinlola- Gold Microsoft Ambassador",
     title: "LangChain and LLMs: Building your own generation AI chatbot trained on your data with LangChain",
-    color: "bg-green-400"
+    color: "bg-cards-300"
   },
 ];
 
