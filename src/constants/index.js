@@ -249,8 +249,8 @@ export const speakers = [
   {
     id: "speaker-3",
     url: Ijeoma,
-    name: "Ijeoma Ogbonna",
-    bio: "Gold Microsoft Learn Student Ambassador & Github Campus Expert",
+    name: "Ogbonna Emmanuella",
+    bio: "CoFounder of GirlsCodeFlutter, Community Lead for Flutter Explore & Co-Founder of Self",
   },
   {
     id: "speaker-4",
@@ -280,7 +280,7 @@ export const speakers = [
     id: "speaker-8",
     url: Mileke,
     name: "Oluwagbemileke Kolawole",
-    bio: "CoFounder of GirlsCodeFlutter, Community Lead for Flutter Explore & Co-Founder of Self",
+    bio: "Cyber Security & Cloud Engineer, a Computer Science Graduate from Babcock University.",
   },
   {
     id: "speaker-9",
