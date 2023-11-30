@@ -1,4 +1,3 @@
-
 import {
   Goodness,
   Chinaza,
@@ -8,8 +7,8 @@ import {
   Adejoke,
   Jesus,
   Ijeoma,
-  Salim } from '../assets';
-
+  Salim,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -33,27 +32,27 @@ export const navLinks = [
 export const Tabs = [
   {
     id: 1,
-    content:"All Workshops",
+    content: "All Workshops",
   },
   {
     id: 2,
-    content:"Breakout Sessions",
+    content: "Breakout Sessions",
   },
   {
     id: 3,
-    content:"Keynote Sessions",
+    content: "Keynote Sessions",
   },
   {
     id: 4,
-    content:"Engineering",
+    content: "Engineering",
   },
   {
     id: 5,
-    content:"Product and Design",
+    content: "Product and Design",
   },
   {
     id: 6,
-    content:"Data and AI",
+    content: "Data and AI",
   },
 ];
 
@@ -78,71 +77,74 @@ export const breakoutSessionData = [
   },
 ];
 
-
-
 export const stats = [
   {
     id: 1,
     time: "10.00AM- 10.40AM",
-    speaker: "Oluwagbemileke Kolawole- Cloud Enginner",
+    speaker: "Oluwagbemileke Kolawole - Cloud Enginner",
     title: "Introduction to GCP: A Guide to Google’s Cloud-9",
-    color: "bg-red-500"
+    color: "bg-cards-100",
   },
   {
     id: 2,
     time: "10.00AM- 10.40AM",
     speaker: "Chinaza Icheke- UI/UX Designer",
-    title: "Design and Motion: The Two Infinity Stones of Memorable User Experiences",
-    color: "bg-green-600"
+    title:
+      "Design and Motion: The Two Infinity Stones of Memorable User Experiences",
+    color: "bg-cards-200",
   },
   {
     id: 3,
     time: "10.00AM- 10.40AM",
-    speaker: "Idris Olubisi- Developer Advocate, Axelar",
+    speaker: "Idris Olubisi - Developer Advocate, Axelar",
     title: "Web3 for Web2 Developers",
-    color: "bg-blue-500"
+    color: "bg-cards-300",
   },
   {
     id: 4,
     time: "10.00AM- 11.45AM",
     speaker: "Olayinka Atobiloye-GitHub Campus Expert",
-    title: "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
-    color: "bg-yellow-400"
+    title:
+      "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
+    color: "bg-cards-400 [&&]:text-text-dark",
   },
   {
     id: 5,
     time: "10.00AM- 11.45AM",
     speaker: "Jesus Akanle-Content Team Lead ",
-    title: "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
-    color: "bg-blue-300"
+    title:
+      "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
+    color: "bg-cards-500",
   },
   {
     id: 6,
     time: "10.00AM- 11.45AM",
-    speaker: "Adejoke Haastrup-Software Engineer",
+    speaker: "Adejoke Haastrup - Software Engineer",
     title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
-    color: "bg-black"
+    color: "bg-cards-600",
   },
   {
     id: 7,
     time: "11.30AM- 12.10AM",
     speaker: "Ogbonna Emmanuella-Flutter Developer",
-    title: "Navigating the Feasibility and Future Trends of Machine Learning Integration in Flutter Applications",
-    color: "bg-blue-500"
+    title:
+      "Navigating the Feasibility and Future Trends of Machine Learning Integration in Flutter Applications",
+    color: "bg-cards-100",
   },
   {
     id: 8,
     time: "11.30AM- 12.10AM",
-    speaker: "TGoodness Ehizode- Product Leader",
+    speaker: "TGoodness Ehizode - Product Leader",
     title: "Leveraging User psychology for Product Growth",
-    color: "bg-red-300"
+    color: "bg-cards-200",
   },
   {
     id: 9,
     time: "11.30AM- 12.10AM",
     speaker: "Salim Oyinlola- Gold Microsoft Ambassador",
-    title: "LangChain and LLMs: Building your own generation AI chatbot trained on your data with LangChain",
-    color: "bg-green-400"
+    title:
+      "LangChain and LLMs: Building your own generation AI chatbot trained on your data with LangChain",
+    color: "bg-cards-300",
   },
 ];
 
@@ -234,47 +236,47 @@ export const socialMedia = [
 export const speakers = [
   {
     id: "speaker-1",
-    url:  Chinaza,
-    name: "Chinaza Icheke"
+    url: Chinaza,
+    name: "Chinaza Icheke",
   },
   {
     id: "speaker-2",
     url: Idris,
-    name: "Idris Olubisi"
+    name: "Idris Olubisi",
   },
   {
     id: "speaker-3",
     url: Ijeoma,
-    name: "Ijeoma Ogbonna"
+    name: "Ijeoma Ogbonna",
   },
   {
     id: "speaker-4",
     url: Jesus,
-    name: "Jesus Akanle"
+    name: "Jesus Akanle",
   },
   {
     id: "speaker-5",
     url: Adejoke,
-    name: "Adejoke Haastrup"
+    name: "Adejoke Haastrup",
   },
   {
     id: "speaker-6",
     url: Salim,
-    name: "Salim Oyinlola"
+    name: "Salim Oyinlola",
   },
   {
     id: "speaker-7",
     url: Olayinka,
-    name: "Olayinka Atobiloye"
+    name: "Olayinka Atobiloye",
   },
   {
     id: "speaker-8",
     url: Mileke,
-    name: "Mileke Kolawole"
+    name: "Mileke Kolawole",
   },
   {
     id: "speaker-9",
     url: Goodness,
-    name: "Goodness Ehizode"
+    name: "Goodness Ehizode",
   },
 ];

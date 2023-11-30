@@ -39,7 +39,12 @@ const About = () => {
     },[])
   
   return (
-    <section id='about' className='pt-[40px] lg:pt-[92px]'>
+    <section id="about" className="pt-[40px] lg:pt-[92px]">
+      <div className="flex flex-col w-full lg:h-[50vh]">
+        <h1 className="lg:max-w-[253px] text-[54px] lg:text-[94px] leading-none font-bold tracking-[-1.5px]">
+          About <br />
+          Event
+        </h1>
 
      <div className='flex flex-col w-full lg:h-[50vh]'>
        <h1 className='lg:max-w-[253px] text-[40px] lg:text-[94px] leading-none tracking-normal' style={{fontWeight: 700}}>About <br/>Event</h1>
@@ -70,11 +75,11 @@ const About = () => {
               </motion.p>
            </div>
         </div>
-     </div>
-
-     </div>
+      </div>
+      </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
