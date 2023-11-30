@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import ArrowRight from "../assets/ArrowRight.svg";
 import { useNavigate } from "react-router-dom";
 
+import cupDoodle from "./../assets/cup-doodle.svg";
+import connectDoodle from "./../assets/connect-doodle.svg";
+import kiteDoodle from "./../assets/kite-doodle.svg";
+
 const Countdown = () => {
   const navigate = useNavigate();
   const handleNavigate = () => {
@@ -44,25 +48,56 @@ const Countdown = () => {
   }, [targetDate]);
 
   return (
-    <div className="countdown">
-      <div className="container">
-        <h1>Are you ready?</h1>
+    <div className="countdown relative py-40">
+      <div className="container max-w-[1280px] mx-auto">
+        <img
+          src={connectDoodle}
+          alt=""
+          className="absolute left-[80px] top-[130px] hidden min-[1280px]:block"
+        />
+        <img
+          src={cupDoodle}
+          alt=""
+          className="absolute right-[200px] bottom-[0] hidden min-[1280px]:block"
+        />
+        <img
+          src={kiteDoodle}
+          alt=""
+          className="absolute right-[60px] top-[100px] hidden min-[1280px]:block"
+        />
+        <h1 className="text-[56px] font-bold">Are you ready?</h1>
         <div className="row">
-          <div className="time">
-            <p>{timeLeft.days}</p>
-            <span>Days</span>
+          <div className="text-center">
+            <div className="time mb-2">
+              <p>{timeLeft.days}</p>
+            </div>
+            <span className="text-[#0d0d0d] text-[24px] leading-[30.5px] tracking-[0.5px]">
+              Days
+            </span>
           </div>
-          <div className="time">
-            <p>{timeLeft.hours}</p>
-            <span>Hours</span>
+          <div className="text-center">
+            <div className="time mb-2">
+              <p>{timeLeft.hours}</p>
+            </div>
+            <span className="text-[#0d0d0d] text-[24px] leading-[30.5px] tracking-[0.5px]">
+              Hours
+            </span>
           </div>
-          <div className="time">
-            <p>{timeLeft.minutes}</p>
-            <span>Minute</span>
+          <div className="text-center">
+            <div className="time mb-2">
+              <p>{timeLeft.minutes}</p>
+            </div>
+            <span className="text-[#0d0d0d] text-[24px] leading-[30.5px] tracking-[0.5px]">
+              Minutes
+            </span>
           </div>
-          <div className="time">
-            <p>{timeLeft.seconds}</p>
-            <span>Seconds</span>
+          <div className="text-center">
+            <div className="time mb-2">
+              <p>{timeLeft.seconds}</p>
+            </div>
+            <span className="text-[#0d0d0d] text-[24px] leading-[30.5px] tracking-[0.5px]">
+              Seconds
+            </span>
           </div>
         </div>
         <a

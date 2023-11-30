@@ -19,7 +19,7 @@ import Footer from "../Footer";
 const HomePage = () => {
   return (
     <>
-      <div className="bg-[#fff] font-sans w-full overflow-hidden">
+      <div className="bg-[#fff] w-full overflow-hidden">
         <div className={`${Style.paddingX} ${Style.flexCenter}`}>
           <div className={`${Style.boxWidth}`}>
             <Navbar />
@@ -27,15 +27,11 @@ const HomePage = () => {
         </div>
       </div>
 
-      <hr className="text-[#4285F4] border border-[#4285F4]" />
-
-      <div className={`bg-[#fff]`}>
-        <div className={`${Style.boxWidth}`}>
+      <div className={`bg-[#fff] border-b border-t border-[#4285F4]`}>
+        <div className={`${Style.boxWidth} mx-auto`}>
           <Hero />
         </div>
       </div>
-
-      <hr className="text-[#4285F4] border-[1px] border-[#000000]" />
 
       <div
         className={`${Style.paddingX} ${Style.flexStart} text-white bg-[#fff] lg:pb-[53px]`}
@@ -73,7 +69,7 @@ const HomePage = () => {
 
       <Speakers />
       <Countdown />
-      {/* <Involved /> */}
+      <Involved />
       <GetBanner />
       <Faq />
       <Footer />
