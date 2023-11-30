@@ -27,7 +27,7 @@ const Faq = () => {
     {
       question: " What Date will DevFest Student be holding? 💁",
       answer:
-        "The Student edition of DevFest 2023 will be held on Saturday 10th December 2023 by 9am.",
+        "The Student edition of DevFest 2023 will be held on Saturday 9th December 2023 by 9am.",
     },
     {
       question: "How much is the ticket For DevFest Student Edition 2023?💸",

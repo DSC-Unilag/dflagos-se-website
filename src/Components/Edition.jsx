@@ -15,7 +15,7 @@ const Testimonials = () => {
           </p>
 
           <div className="flex text-[#FFFAEB] flex-col min-[640px]:flex-row min-[640px]:justify-between text-[16px] lg:text-[24px] py-[40px] xs:py-0">
-            <p className="font-bold">When: 10th December⌚</p>
+            <p className="font-bold">When: 9th December⌚</p>
             <p className="font-bold">Where: Multipurpose hall, UNILAG📍</p>
           </div>
         </div>

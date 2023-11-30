@@ -33,6 +33,7 @@ const EventSchedule = () => {
           return (
             <div
               className={`py-[50px] px-[24px] flex justify-center items-center rounded-[24px] w-[300px] h-[440px] text-[#fff]  ${color} xl:mx-0 hidden min-[768px]:flex`}
+              key={speaker}
             >
               <div className="">
                 <p className="text-[14px] leading-[21px] tracking-[0.14px] mb-8">
