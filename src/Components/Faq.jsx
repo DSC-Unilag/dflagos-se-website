@@ -10,7 +10,7 @@ import doodle5 from "../assets/doodle-5.png";
 const Faq = () => {
   const data = [
     {
-      question: " What is DevFest Student Edition about?🧐",
+      question: "What is DevFest Student Edition about?🧐",
       answer:
         "DevFest is an annual tech conference organized by the Google Developer Groups (GDG) community. The Community hosts these events in different countries around the globe.If you’re enthusiastic about seeking and finding new opportunities, increasing your knowledge on the latest Google developer tools, leverage the DevFest platform as it offers opportunities for developers to connect, learn and build using Google's tools.",
     },
@@ -25,7 +25,7 @@ const Faq = () => {
         "DevFest is Google’s annual globally distributed conference. It is radically different from a meetup or speaker session, and hosts successful Tech experts who have built successful companies.. DevFest events happen during the end of the year where new innovations from Google are launched, so you have the opportunity to engage with these products",
     },
     {
-      question: " What Date will DevFest Student be holding? 💁",
+      question: "What Date will DevFest Student be holding? 💁",
       answer:
         "The Student edition of DevFest 2023 will be held on Saturday 9th December 2023 by 9am.",
     },
@@ -82,7 +82,7 @@ const Faq = () => {
 
   const FaqItem = ({ question, answer, isOpen, onClick }) => {
     return (
-      <div onClick={onClick} className="qa font-sans italic">
+      <div onClick={onClick} className="qa">
         <div className="q-row">
           <p className={`${isOpen ? "text-yellow-500 mb-[10px]" : ""} q`}>
             {question}
@@ -95,23 +95,25 @@ const Faq = () => {
   };
 
   return (
-    <div id="faqs" className="faq font-sans italic">
-      <h1 className="font font-bold text-[30px] z-50">
-        Lets answer some of your burning questions
-      </h1>
-      <p className="sub-heading">
-        Check out our most asked questions here, mfjpm 😑🤚🏾
-      </p>
-      <div className="column">
-        {data.map((item, index) => (
-          <FaqItem
-            key={index}
-            question={item.question}
-            answer={item.answer}
-            isOpen={index === openIndex}
-            onClick={() => handleItemClick(index)}
-          />
-        ))}
+    <div id="faqs" className="faq">
+      <div className="z-10 relative">
+        <h1 className="font font-bold text-[30px] z-50">
+          Lets answer some of your burning questions
+        </h1>
+        <p className="sub-heading">
+          Check out our most asked questions here, mfjpm 😑🤚🏾
+        </p>
+        <div className="column">
+          {data.map((item, index) => (
+            <FaqItem
+              key={index}
+              question={item.question}
+              answer={item.answer}
+              isOpen={index === openIndex}
+              onClick={() => handleItemClick(index)}
+            />
+          ))}
+        </div>
       </div>
       <img className="doodle doodle-1" src={doodle1} alt="" />
       <img className="doodle doodle-2" src={doodle2} alt="" />

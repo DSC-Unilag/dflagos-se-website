@@ -1,18 +1,13 @@
 import React from "react";
-import styles from "../style";
-import GetStarted from "./GetStarted";
-import { ArrowRight, ArrowRight2 } from "../assets";
-import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "../assets";
 
 const Hero = () => {
-  const navigate = useNavigate();
-
   return (
-    <section id="home">
-      <div className="flex flex-col lg:flex-row pl-[25px] pr-[20px] sm:pl-[124px] justify-between mb-[40px] sm:mb-[40px] lg:mb-0">
-        <div className="xl:pr-[70px]">
+    <section id="home" className="mx-auto">
+      <div className="flex flex-col lg:flex-row pl-[25px] pr-[20px] lg:pr-0 sm:pl-[124px] lg:pl-0 lg:mx-auto lg:relative lg:left-[50%] lg:-translate-x-1/2 justify-between lg:justify-center mb-[40px] sm:mb-[40px] lg:mb-0">
+        <div className="">
           <p
-            className=" mt-[40px] lg:pb-[123px] text-[50px] xs:text-[55px] sm:text-[71px] xl:text-[94px] leading-none max-w-full lg:max-w-[667px] xl:whitespace-nowrap text-[#000] tracking-tighter italic font-extrabold"
+            className=" mt-[40px] lg:pb-[123px] text-[50px] xs:text-[55px] sm:text-[71px]  leading-none max-w-full lg:max-w-[667px]  text-[#000] tracking-tighter italic font-extrabold lg:mr-[70px]"
             style={{ fontWeight: 500 }}
           >
             DevFest Lagos <br className="hidden xs:block" />Student Edition
@@ -20,11 +15,11 @@ const Hero = () => {
         </div>
 
         <div className="hidden lg:flex">
-          <div className="hidden sm:block border-l-2 border-[#4285F4] " />
+          <div className="hidden sm:block border-l border-[#4285F4] " />
         </div>
 
-        <div className="flex flex-col lg:pl-[67px]">
-          <p className="md:max-w-[470px] lg:max-w-[470px] mt-[45px] text-[#000] font-normal text-[24px] tracking-[-1.5px] leading-[34.2px] italic">
+        <div className="flex flex-col lg:py-11 lg:ml-[70px]">
+          <p className="md:max-w-[470px] lg:max-w-[470px] mt-[45px] lg:mt-0 text-[#000] font-normal text-[24px] tracking-[-1.5px] leading-[34.2px] italic">
             Ultimate one-day event with speakers across Artificial Intelligence,
             Product, Mobile, Cloud, Intellectual Property and Startup Funding,
             Policy & Governance, and so much more!
