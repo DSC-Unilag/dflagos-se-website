@@ -13,7 +13,7 @@ const About = () => {
           <div className="border-y-2 border-[#4285F4] w-[100%]">
             <div className="flex flex-col sm:flex-row">
               <p className="lg:max-w-[402px] pr-[14px] py-[19px] text-[20px] tracking-[-1.5px]">
-          DevFest Lagos Student Edition 2023 marks the inaugural event tailored specifically for students, aiming to bridge the gap between technology and the student community. This edition is dedicated to bringing technology closer to students and fostering a vibrant environment for tech enthusiasts passionate about the latest advancements in technology.
+          DevFest Lagos Student Edition 2023 marks the inaugural event tailored specifically for students, aiming to bridge the gap between technology and the student community.
               </p>
               <div className="hidden sm:block border-l-2 border-[#4285F4] " />
 
