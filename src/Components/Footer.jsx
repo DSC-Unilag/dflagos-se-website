@@ -16,7 +16,7 @@ const Footer = () => {
                     <a href="/Workshops">RSVP</a>
                 </div>
                 <div className="column">
-                    <a href="#volunteer">Apply as a speaker</a>
+                    <a href="#volunteer">Apply as a volunteer</a>
                     <a href="#volunteer">Apply as a sponsor</a>
                 </div>
                 <div className="column">
