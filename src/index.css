@@ -43,30 +43,70 @@ Variables
   --fixed-width: 620px;
 }
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.stdiv{
+@font-face {
+  font-family: "Google";
+  src: url("./assets/fonts/GoogleSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google";
+  src: url("./assets/fonts/GoogleSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google";
+  src: url("./assets/fonts/GoogleSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google";
+  src: url("./assets/fonts/GoogleSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google";
+  src: url("./assets/fonts/GoogleSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google";
+  src: url("./assets/fonts/GoogleSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.stdiv {
   border: 3px solid green;
 }
 
-
-.shadow-text{
-  text-shadow: 10px 10px 3px  black;
+.shadow-text {
+  text-shadow: 10px 10px 3px black;
 }
 @layer base {
   html {
-    font-family: ProductSans, system-ui, sans-serif;
+    font-family: Google, ProductSans, system-ui, sans-serif;
   }
   img {
     @apply inline-block;
   }
 }
 
-.ticket-background{
+.ticket-background {
   background-image: url("/src/assets/TicketsBackground.svg");
 }
 
@@ -84,11 +124,9 @@ Variables
   scroll-behavior: smooth;
 }
 
-.success{
+.success {
   border: 3px solid red;
 }
-
-
 
 .bg-blue-gradient {
   background: linear-gradient(
@@ -152,7 +190,6 @@ Variables
   display: flex;
   overflow: hidden;
 }
-
 
 .prev,
 .next {
