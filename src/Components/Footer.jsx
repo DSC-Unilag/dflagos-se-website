@@ -22,7 +22,7 @@ const Footer = () => {
                 <div className="column">
                 <a href="#volunteer">GDSC Unilag</a>
                 <a href="#volunteer">GDSC Lasu</a>
-                <a href="#volunteer">GDSC Caleb, </a>
+                <a href="#volunteer">GDSC Caleb </a>
                 <a href="#volunteer">GDSC Babcock</a>
                 </div>
             </div>
