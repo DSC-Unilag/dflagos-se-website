@@ -7,10 +7,17 @@ import Involved from '../Involved';
 import GetBanner from '../GetBanner';
 import Faq from '../Faq';
 import Footer from '../Footer';
+import { motion, useScroll } from "framer-motion";
 
 const HomePage = () => {
+  const { scrollYProgress } = useScroll();
   return (
     <>
+    <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
+      
       <div className="bg-[#fff] font-sans w-full overflow-hidden">
     <div className={`${Style.paddingX} ${Style.flexCenter}`}>
       <div className={`${Style.boxWidth}`}>
