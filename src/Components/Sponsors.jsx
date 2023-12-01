@@ -29,7 +29,7 @@ const Clients = () => {
       </div>
 
       <div>
-        <a href="" target="_blank">
+        <a href="requestmechanic.com" target="_blank">
           <img src={requestMechanic} alt='Google'/>
         </a>
       </div>

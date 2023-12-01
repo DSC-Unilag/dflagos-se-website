@@ -190,7 +190,7 @@ body {
   padding: 50px;
   background: url("./assets/bg.jpg");
 }
-.banner img {
+.banner .logo {
   width: 200px;
 }
 .banner .dp-statement-row {
@@ -212,11 +212,35 @@ body {
   border-radius: 250px;
 }
 .banner .statement {
+  position: relative;
   background-color: #34a853;
   color: #fff;
   padding: 20px 30px;
   text-align: center;
   width: 250px;
+}
+.banner .statement svg {
+  width: 50px;
+  position: absolute;
+  top: 35px;
+}
+.banner .statement svg:nth-child(1) {
+  right: 10px;
+}
+.banner .statement svg:nth-child(2) {
+  right: 30px;
+}
+.banner .statement svg:nth-child(3) {
+  right: 10px;
+}
+.banner .statement svg:nth-child(4) {
+  right: 50px;
+}
+.banner .statement svg:nth-child(5) {
+  right: 70px;
+}
+.banner .statement svg:nth-child(6) {
+  right: 90px;
 }
 .banner .statement p {
   font-size: 30px;
@@ -246,10 +270,20 @@ body {
   color: #fff;
 }
 .time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background-color: #4285f4;
   padding: 7px 20px;
 }
+.time img {
+  width: 20px;
+  height: 20px;
+}
 .date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background-color: #34a853;
   padding: 10px 25px;
 }
@@ -266,8 +300,14 @@ body {
   color: #fff;
   background-color: #4285f4;
 }
+.banner .address img {
+  width: 20px;
+}
 .banner .address {
-  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
   padding: 7px 20px;
   background-color: #f9ab00;
   color: #000;
