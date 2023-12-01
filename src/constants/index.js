@@ -12,19 +12,19 @@ import {
 
 export const navLinks = [
   {
-    id: "about",
+    id: "#about",
     title: "About",
   },
   {
-    id: "schedule",
+    id: "#schedule",
     title: "Schedule",
   },
   {
-    id: "faqs",
+    id: "#faqs",
     title: "FAQs",
   },
   {
-    id: "volunteer",
+    id: "https://dscunilag.dev/dflagos-se-cfv",
     title: "Volunteer",
   }
 ];
