@@ -10,67 +10,33 @@ import doodle5 from "../assets/doodle-5.png";
 const Faq = () => {
   const data = [
     {
-      question: "What is DevFest Student Edition about?🧐",
+      question: "What is DevFest Lagos Student Edition about?🧐",
       answer:
-        "DevFest is an annual tech conference organized by the Google Developer Groups (GDG) community. The Community hosts these events in different countries around the globe.If you’re enthusiastic about seeking and finding new opportunities, increasing your knowledge on the latest Google developer tools, leverage the DevFest platform as it offers opportunities for developers to connect, learn and build using Google's tools.",
+        "This is the first edition of the DevFest Lagos Student Edition, an initiative of GDSC communities across Unilag, LASU, Caleb University, Babcock University, Yaba Tech, and Pan Atlantic University. It is a one-day tech conference aimed at students across Lagos state to network, connect, and learn about Google technologies from experts.",
     },
     {
-      question: "Why should I attend DevFest?🗿",
+      question: "Why should I attend DevFest Lagos Student Edition 2023?🗿",
       answer:
-        "DevFest is an annual tech conference organized by the Google Developer Groups (GDG) community. The Community hosts these events in different countries around the globe. If you’re enthusiastic about seeking and finding new opportunities, increasing your knowledge on the latest Google developer tools, leverage the DevFest platform as it offers opportunities for developers to connect, learn and build using Google's tools.",
-    },
-    {
-      question: "What is Unique about the Student Edition?🦻",
-      answer:
-        "DevFest is Google’s annual globally distributed conference. It is radically different from a meetup or speaker session, and hosts successful Tech experts who have built successful companies.. DevFest events happen during the end of the year where new innovations from Google are launched, so you have the opportunity to engage with these products",
-    },
-    {
-      question: "What Date will DevFestLagos Student Edition  be holding? 💁",
-      answer:
-        "The Student edition of DevFest 2023 will be held on Saturday 9th December 2023 by 9am.",
-    },
-    {
-      question: "How much is the ticket For DevFestLagos Student Edition 2023?💸",
-      answer:
-        "DevFestStudent Edition is totally FREE,  but seeing that the venue can only contain a certain number of persons, only those registered  will be allowed into the hall. We recommend you reserve your ticket as fast as possible to secure your seat at the event.  But you must RSVP to be allowed into the hall. You can get your ticket..",
-    },
-    {
-      question: "Who will be speaking at the Events📢",
-      answer:
-        "Leading Tech experts and Developers in Nigeria and from around the world. Hence you should come listen and learn and have all questions you may have answered by them.",
-    },
-    {
-      question: "What kind of topics will be covered at the Event?🤔 ",
-      answer:
-        "Topics covered will include, Design, Technical Writing, Cloud Development, Web development,  Big Data, Cyber security, AI/ Machine learning and a lot more. It will also cover opportunities and topics on how non techies could get into the Tech space.",
+        "If you’re enthusiastic about seeking and finding new opportunities, increasing your knowledge on the latest Google developer tools, leverage the DevFest Lagos Student Edition event as it offers opportunities for developers to connect, learn and build using Google's tools then you should attend.",
     },
     {
       question:
-        "Can I get access to the speakers' slides after their presentations and where?🫠",
+        "How much is the ticket For DevFest Lagos Student Edition 2023?💸",
       answer:
-        "Yes, you can download the Speakers slides on their bio after the event. The slides will be annexed to each speaker’s profile on the GDSC website.",
+        "DevFest Lagos Student Edition is totally FREE,  but seeing that the venue can only contain a certain number of persons, only those registered will be allowed into the hall. You can get your free ticket here - ",
+      link: "https://dscunilag.dev/df_lagos",
+    },
+    {
+      question: "What kind of topics will be covered at the Event?🎥",
+      answer:
+        "Topics covered will include, Design, Technical Writing, Cloud Development, Web development,  Product Design, Product Management, , AI/ Machine learning and a lot more. It will cover opportunities and topics on how both techies and non-techies could get into the Tech space.",
     },
     {
       question:
-        "I am a student developer with experience and would love to   speak at the event. Can I speak? And if Yes, How can I apply to speak?🤓",
-      answer: "Yes. But you must first apply and submit your proposal to ……",
-    },
-    {
-      question:
-        "How can I become a member of the Google Developer Student Community UNILAG chapter?😎",
+        "Can I be a volunteer to make DevFest Lagos Student Edition a success?",
       answer:
-        " Follow this link to GDSC Unilag whatsapp group Google Developer Student Clubs University Of Lagos .",
-    },
-    {
-      question:
-        "Can I be a volunteer to make DevFestLagos Student Edition a success?😊",
-      answer:
-        "Of course you can. We welcome volunteers who are passionate about contributing to the success of DevFest Lagos 2023. To join our volunteer team, please follow us on our social media channels for updates and information on how to get involved",
-    },
-    {
-      question: "How can I RSVP for sessions?🤔",
-      answer:
-        "Here's how you can RSVP for sessions. Visit our website (input website link) click on the free registration for the event. You'll then get a ticket ID sent to your mail along with a list of the available sessions you can RSVP for",
+        "Of course you can. We welcome volunteers who are passionate about contributing to the success of DevFest Lagos Student Edition 2023. To join our volunteer team, apply here - ",
+      link: "https://dscunilag.dev/dflagos-se-cfv",
     },
   ];
 
@@ -80,7 +46,7 @@ const Faq = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const FaqItem = ({ question, answer, isOpen, onClick }) => {
+  const FaqItem = ({ question, answer, isOpen, onClick, link }) => {
     return (
       <div onClick={onClick} className="qa">
         <div className="q-row">
@@ -89,7 +55,16 @@ const Faq = () => {
           </p>
           {isOpen ? <img src={close} alt="" /> : <img src={expand} alt="" />}
         </div>
-        {isOpen && <p className="a">{answer}</p>}
+        {isOpen && (
+          <p className="a">
+            {answer}{" "}
+            {link && (
+              <a className="text-blue-500" href={link}>
+                {link}
+              </a>
+            )}
+          </p>
+        )}
       </div>
     );
   };
@@ -109,10 +84,43 @@ const Faq = () => {
               key={index}
               question={item.question}
               answer={item.answer}
+              link={item.link}
               isOpen={index === openIndex}
               onClick={() => handleItemClick(index)}
             />
           ))}
+
+          <div onClick={() => handleItemClick(data.length)} className="qa">
+            <div className="q-row">
+              <p
+                className={`${
+                  data.length == openIndex ? "text-yellow-500 mb-[10px]" : ""
+                } q`}
+              >
+                How can I RSVP for sessions?
+              </p>
+              {data.length == openIndex ? (
+                <img src={close} alt="" />
+              ) : (
+                <img src={expand} alt="" />
+              )}
+            </div>
+            {data.length == openIndex && (
+              <p className="a">
+                Here's how you can RSVP for sessions. Get your free ticket here,
+                then visit our website -{" "}
+                <a
+                  className="text-blue-500"
+                  href="https://devfest.dscunilag.dev/workshops"
+                >
+                  https://devfest.dscunilag.dev/workshops
+                </a>{" "}
+                to RSVP for breakout sessions you’ll like to attend. You'll get
+                a confirmation notification with a list of the
+                sessions you RSVP’d for
+              </p>
+            )}
+          </div>
         </div>
       </div>
       <img className="doodle doodle-1" src={doodle1} alt="" />

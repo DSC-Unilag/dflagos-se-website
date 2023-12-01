@@ -46,6 +46,9 @@ export const ScheduleStack = () => {
       }
     };
     mainBox?.addEventListener("touchstart", startFn);
+    mainBox?.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+    });
     mainBox?.addEventListener("touchend", endFn);
   }, []);
 
