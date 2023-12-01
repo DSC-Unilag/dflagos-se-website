@@ -70,7 +70,7 @@ const BreakoutSessions = () => {
     for (let id of data.event_ids) {
       if (!!Number(id)) eventCount++;
     }
-    if (!eventCount || ticketNumber === "") {
+    if (eventCount != 3 || ticketNumber === "") {
       toast.error(
         "Fill in at least a required session and your ticket number",
         { position: "bottom-center" }
