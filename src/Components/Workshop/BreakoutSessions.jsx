@@ -89,7 +89,7 @@ const BreakoutSessions = () => {
       if (error.message === "AxiosError: Request failed with status code 404") {
         toast.error("Ticket not found", { position: "bottom-center" });
       } else if (
-        error.message === "AxiosError: Request failed with status code 500"
+        error.message === "AxiosError: Request failed with status code 409"
       ) {
         toast.error("This ticket has RSVPd already", {
           position: "bottom-center",
