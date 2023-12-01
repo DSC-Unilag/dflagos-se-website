@@ -1,26 +1,50 @@
-import React from 'react'
-import { ArrowRight2 } from '../../assets'
+import React from "react";
+import { ArrowRight2 } from "../../assets";
 
-
-const RsvpEvent = ({ticketNumber, handleTicketNumber, handleRsvpEvent, errorState, isRsvping}) => {
-
+const RsvpEvent = ({
+  ticketNumber,
+  handleTicketNumber,
+  handleRsvpEvent,
+  errorState,
+  isRsvping,
+}) => {
   return (
-    <div className='mt-[80px] mb-[30px]'>
-        <p className='text-[24px]'>RSVP for your selected breakout sessions by putting in your ticket number.</p>
-        <div className='mt-[40px] flex items-center sm:justify-between bg-[#FFFAEB] rounded-[64px] py-[10px] px-[5px] sm:px-[17px] sm:py-[17px]' >
-            
-            <input onChange={handleTicketNumber} type='text' value={ticketNumber} name='ticketNumber' className='px-[10px] py-[10px] rounded-[10px] w-[50%]  md:h-10 outline-none text-[8px] sm:text-[16px]' placeholder='Enter your ticket number E.g DSCA231907690'/>
-            <button type='submit' onSubmit={handleRsvpEvent} className='flex flex-row text-[#000] border border-[#000] justify-center items-center gap-[8px] rounded-[48px] pl-[8px] py-[7px] md:py-[17px] md:px-[30px] bg-[#FFFAEB] lg:max-w-[250px] mb-0'>
-            <p className='text-[10px] lg:text-[18px] whitespace-nowrap'>{isRsvping ? "Please wait...." :  "Rsvp For A Session"}</p>
-             <img
-                      src={ArrowRight2}
-                      alt='arrow'
-                    />
-            </button>
-        </div>
-        <p className='text-red-500 ml-[10px]'>{errorState}</p>
+    <div className="mt-[80px] mb-[30px]">
+      <p className="text-[24px] leading-[38.25px] tracking-tighter">
+        RSVP for your selected breakout sessions by putting in your ticket
+        number.
+      </p>
+      <div className="mt-4 border-4 border-[#0d0d0d] bg-[#FFFAEB] rounded-[64px] p-4 mb-4 md:flex">
+        <input
+          onChange={handleTicketNumber}
+          type="text"
+          value={ticketNumber}
+          name="ticketNumber"
+          className="px-4 py-3 rounded-[64px] w-full"
+          placeholder="Enter your ticket number E.g DSCA231907690"
+        />
+        <button
+          type="submit"
+          onSubmit={handleRsvpEvent}
+          className="text-[#000] border-2 border-[#000]  rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full hidden md:block md:w-auto md:shrink-0 md:ml-20"
+        >
+          <p className="font-bold">
+            {isRsvping ? "Please wait...." : "RSVP For Selected Sessions"}
+          </p>
+        </button>
+      </div>
+      <button
+        type="submit"
+        onSubmit={handleRsvpEvent}
+        className="text-[#000] border-2 border-[#000]  rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full md:hidden"
+      >
+        <p className="font-bold">
+          {isRsvping ? "Please wait...." : "RSVP For Selected Sessions"}
+        </p>
+      </button>
+      <p className="text-red-500 ml-[10px]">{errorState}</p>
     </div>
-  )
-}
+  );
+};
 
-export default RsvpEvent
+export default RsvpEvent;
