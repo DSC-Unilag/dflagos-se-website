@@ -2,19 +2,12 @@ import React, { useEffect, useState } from "react";
 import { ColorRing } from "react-loader-spinner";
 import checkmark from "./../../assets/tick.png";
 
-export const BreakoutSession = ({ handleAddId, locationId, sessions }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const [checkedStates, setCheckedStates] = useState([false, false, false]);
-
-  const handleChange = (e, index, id) => {
-    const updatedCheckedStates = checkedStates.map((state, i) =>
-      i === index ? !state : state
-    );
-    setCheckedStates(updatedCheckedStates);
-    handleAddId(e, id);
-  };
-
+export const BreakoutSession = ({
+  locationId,
+  sessions,
+  updateEventId,
+  eventId,
+}) => {
   const locationSessions = sessions?.filter(
     (session) => session.session_id == locationId
   );
@@ -25,13 +18,12 @@ export const BreakoutSession = ({ handleAddId, locationId, sessions }) => {
         <button className="bg-[#F9AB00] border-2 border-[#0d0d0d] font-bold py-[8px] px-[16px] rounded-[8px] text-[#000] mb-[16px]">
           Breakout Session {locationId}
         </button>
-        {console.log(locationSessions)}
         {locationSessions.length ? (
-          locationSessions.map(({ speaker, time, title, color }) => {
+          locationSessions.map(({ speaker, time, title, color, id }) => {
             return (
               <div
                 className={`py-[50px] px-6 flex  rounded-[24px] mb-4  ${color} xl:mx-0  min-[768px]:flex`}
-                key={speaker}
+                key={id}
               >
                 <div>
                   <p className="text-[14px] leading-[21px] tracking-[0.14px] mb-8">
@@ -52,6 +44,10 @@ export const BreakoutSession = ({ handleAddId, locationId, sessions }) => {
                       <input
                         className="h-[0] w-[0] border-none rounded-lg"
                         type="checkbox"
+                        onChange={(e) => {
+                          updateEventId(id);
+                        }}
+                        checked={eventId === id}
                         id={`select-${title}`}
                       />
                       <div className="h-[40px] relative w-[40px] mr-2 rounded-lg bg-transparent border-2 border-white">

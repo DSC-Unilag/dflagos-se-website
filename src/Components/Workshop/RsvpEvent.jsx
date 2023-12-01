@@ -1,6 +1,3 @@
-import React from "react";
-import { ArrowRight2 } from "../../assets";
-
 const RsvpEvent = ({
   ticketNumber,
   handleTicketNumber,
@@ -25,7 +22,7 @@ const RsvpEvent = ({
         />
         <button
           type="submit"
-          onSubmit={handleRsvpEvent}
+          onClick={handleRsvpEvent}
           className="text-[#000] border-2 border-[#000]  rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full hidden md:block md:w-auto md:shrink-0 md:ml-20"
         >
           <p className="font-bold">
@@ -35,7 +32,7 @@ const RsvpEvent = ({
       </div>
       <button
         type="submit"
-        onSubmit={handleRsvpEvent}
+        onClick={handleRsvpEvent}
         className="text-[#000] border-2 border-[#000]  rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full md:hidden"
       >
         <p className="font-bold">

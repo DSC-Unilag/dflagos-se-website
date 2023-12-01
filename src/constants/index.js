@@ -78,7 +78,7 @@ export const stats = [
   {
     id: 2,
     time: "10.00AM- 10.40AM",
-    speaker: "Chinaza Icheke- UI/UX Designer",
+    speaker: "Chinaza Icheke - UI/UX Designer",
     title:
       "Design and Motion: The Two Infinity Stones of Memorable User Experiences",
     color: "bg-cards-200",
@@ -93,7 +93,7 @@ export const stats = [
   {
     id: 4,
     time: "10.00AM- 11.45AM",
-    speaker: "Olayinka Atobiloye-GitHub Campus Expert",
+    speaker: "Olayinka Atobiloye - GitHub Campus Expert",
     title:
       "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
     color: "bg-cards-400 [&&]:text-text-dark",
@@ -101,7 +101,7 @@ export const stats = [
   {
     id: 5,
     time: "10.00AM- 11.45AM",
-    speaker: "Jesus Akanle-Content Team Lead ",
+    speaker: "Jesus Akanle - Content Team Lead ",
     title:
       "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
     color: "bg-cards-500",
@@ -116,7 +116,7 @@ export const stats = [
   {
     id: 7,
     time: "11.30AM- 12.10AM",
-    speaker: "Ogbonna Emmanuella-Flutter Developer",
+    speaker: "Ogbonna Emmanuella - Flutter Developer",
     title:
       "Navigating the Feasibility and Future Trends of Machine Learning Integration in Flutter Applications",
     color: "bg-cards-100",
@@ -131,7 +131,7 @@ export const stats = [
   {
     id: 9,
     time: "11.30AM- 12.10AM",
-    speaker: "Salim Oyinlola- Gold Microsoft Ambassador",
+    speaker: "Salim Oyinlola - Gold Microsoft Ambassador",
     title:
       "LangChain and LLMs: Building your own generation AI chatbot trained on your data with LangChain",
     color: "bg-cards-300",
