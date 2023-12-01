@@ -75,12 +75,12 @@ const BreakoutSessions = () => {
         "Fill in at least a required session and your ticket number",
         { position: "bottom-center" }
       );
+      setIsRsvping(false);
       return;
     }
     try {
       const response = await createRsvpEvent(data);
-      console.log(response);
-      if (response) {
+      if (response.status == 202) {
         toast.success(`You have sucessfully RSVPd for ${eventCount} sessions`, {
           position: "bottom-center",
         });
@@ -88,7 +88,14 @@ const BreakoutSessions = () => {
     } catch (error) {
       if (error.message === "AxiosError: Request failed with status code 404") {
         toast.error("Ticket not found", { position: "bottom-center" });
+      } else if (
+        error.message === "AxiosError: Request failed with status code 500"
+      ) {
+        toast.error("This ticket has RSVPd already", {
+          position: "bottom-center",
+        });
       }
+      console.log(error.message);
       throw new Error(error);
     } finally {
       setIsRsvping(false);
