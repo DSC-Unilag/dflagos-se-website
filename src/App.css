@@ -275,28 +275,28 @@ body {
   text-align: center;
   width: 250px;
 }
-.banner .statement svg {
+.banner .statement .arrows img {
   width: 50px;
   position: absolute;
-  top: 35px;
+  top: 105px;
 }
-.banner .statement svg:nth-child(1) {
-  right: 10px;
+.banner .statement .arrows img:nth-child(1) {
+  right: 20px;
 }
-.banner .statement svg:nth-child(2) {
-  right: 30px;
+.banner .statement .arrows img:nth-child(2) {
+  right: 40px;
 }
-.banner .statement svg:nth-child(3) {
-  right: 10px;
+.banner .statement .arrows img:nth-child(3) {
+  right: 60px;
 }
-.banner .statement svg:nth-child(4) {
-  right: 50px;
+.banner .statement .arrows img:nth-child(4) {
+  right: 80px;
 }
-.banner .statement svg:nth-child(5) {
-  right: 70px;
+.banner .statement .arrows img:nth-child(5) {
+  right: 100px;
 }
-.banner .statement svg:nth-child(6) {
-  right: 90px;
+.banner .statement .arrows img:nth-child(6) {
+  right: 120px;
 }
 .banner .statement p {
   font-size: 30px;

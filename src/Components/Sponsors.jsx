@@ -25,13 +25,13 @@ const Clients = () => {
       </div>
 
       <div>
-        <a href="www.mytherapist.ng" target="_blank">
+        <a href="https://www.mytherapist.ng" target="_blank">
           <img src={myTherapist} alt='Google'/>
         </a>
       </div>
 
       <div>
-        <a href="requestmechanic.com" target="_blank">
+        <a href="https://requestmechanic.com" target="_blank">
           <img src={requestMechanic} alt='Google'/>
         </a>
       </div>
