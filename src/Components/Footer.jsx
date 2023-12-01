@@ -1,8 +1,4 @@
 import logo from "../assets/googleDevfest.svg";
-import X from "../assets/Group.svg";
-import Email from "../assets/Email.svg";
-import IG from "../assets/InstagramLogo.svg";
-import YT from "../assets/mdi_youtube.svg";
 
 const Footer = () => {
   return (

@@ -3,7 +3,7 @@ import Style from "../../style";
 import Footer from "../Footer";
 import { Navbar } from "../Index";
 import { ScheduleHero, Tab } from "./index";
-import Breaksession from "./BreakIndex";
+import BreakoutSessions from "./BreakoutSessions";
 
 const Workshop = () => {
   return (
@@ -28,7 +28,7 @@ const Workshop = () => {
       <div className="w-full overflow-hidden">
         <div className={`px-6 ${Style.flexCenter}`}>
           <div className={`${Style.boxWidth}`}>
-            <Breaksession />
+            <BreakoutSessions />
           </div>
         </div>
       </div>
