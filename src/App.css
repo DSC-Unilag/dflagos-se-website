@@ -326,9 +326,6 @@ body {
 .get-banner {
   padding-top: 30px;
 }
-.get-banner h1 {
-  font-size: 50px !important;
-}
 .get-banner label {
   display: block;
   font-size: 20px;

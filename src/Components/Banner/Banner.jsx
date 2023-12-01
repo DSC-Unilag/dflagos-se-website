@@ -8,6 +8,7 @@ import uploadArrow from "../../assets/uploadArrow.svg";
 import arrow from "../../assets/bannerArrow.svg";
 import angleRight from "../../assets/angle_right.svg";
 import toast from "react-hot-toast";
+import Footer from "./../Footer";
 
 const Banner = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -136,25 +137,30 @@ const Banner = () => {
         }}
         className="get-banner"
       >
-        <div className="block pt-8 mb-4">
+        <div className="block pt-8 mb-4 md:flex md:mb-2">
           <h1
             style={{
               fontWeight: "bold",
               lineHeight: "110%",
               marginBottom: "10px",
             }}
-            className="text-center tracking-tighter"
+            className="text-center tracking-tighter text-[50px] md:text-[72px]"
           >
             I'll be attending!
           </h1>
-          <img src={bannerAvatar} alt="" srcSet="" className="mx-auto block" />
+          <img
+            src={bannerAvatar}
+            alt=""
+            srcSet=""
+            className="mx-auto block md:w-[85px] md:h-[85px] md:ml-4"
+          />
         </div>
-        <p className="italic text-center text-[#666] ">
+        <p className="italic text-center text-[#666] md:text-[24px]">
           <span className="block">Generate and share your unique Devfest</span>
           <span className="block">Lagos Student Edition DP</span>
         </p>
 
-        <div className="">
+        <div className="w-full max-w-[640px] mx-auto">
           <form onSubmit={handleDownload} className="mt-8">
             <div className="flex border border-[#ccc] h-[75px] rounded-[64px] justify-center items-center p-4">
               <input
@@ -201,15 +207,15 @@ const Banner = () => {
               Please upload only a square image
             </p>
 
-            <div className="text-center">
+            <div className="text-center ">
               <button
                 id="bannerBtn"
                 disabled={uploadedImage ? "false" : "true"}
-                className="w-screen"
+                className="w-full md:h-[66px]"
               >
                 {generating ? "Downloading" : "Generate your dp"}
 
-                <img src={arrow} alt="" />
+                <img src={arrow} className="md:ml-2" alt="" />
               </button>
             </div>
           </form>
@@ -401,6 +407,9 @@ const Banner = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-[#f5f9fe]">
+        <Footer />
       </div>
     </div>
   );
