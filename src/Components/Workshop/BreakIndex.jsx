@@ -83,6 +83,7 @@ const handleRsvpEvent = async (e) => {
   if(error.message === "AxiosError: Request failed with status code 404"){
     toast.error("Ticket not found")
   }
+  toast.error(error)
   throw new Error (error)
  }
  finally{
