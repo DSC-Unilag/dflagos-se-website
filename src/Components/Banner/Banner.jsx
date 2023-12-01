@@ -7,6 +7,8 @@ import bannerAvatar from "../../assets/bannerAvatar.svg";
 import uploadArrow from "../../assets/uploadArrow.svg";
 import arrow from "../../assets/bannerArrow.svg";
 import angleRight from "../../assets/angle_right.svg";
+import toast from "react-hot-toast";
+import Footer from "./../Footer";
 
 const Banner = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -81,7 +83,7 @@ const Banner = () => {
             reader.readAsDataURL(file);
           } else {
             // Display an error or take appropriate action for non-square images
-            console.log("Please upload a square or almost square image.");
+            toast.error("Please upload a square or almost square image.");
           }
         })
         .catch((error) => {
@@ -97,10 +99,8 @@ const Banner = () => {
     const container = document.getElementById("banner");
 
     let name = document.getElementById("nameField");
-    // console.log(name);
-    // console.log(name.value)
     if (name.value === "") {
-      alert("Please add your name to the name field");
+      toast.error("Please add your name to the name field");
       name.style.outline = "red";
       setGenerating(false);
       return;
@@ -133,55 +133,46 @@ const Banner = () => {
         style={{
           maxWidth: "980px",
           margin: "0 auto",
-          padding: "0px 15px",
+          padding: "40px 15px",
         }}
         className="get-banner"
       >
-        <span id="bannerText">
+        <div className="block pt-8 mb-4 md:flex md:mb-2">
           <h1
             style={{
               fontWeight: "bold",
               lineHeight: "110%",
               marginBottom: "10px",
             }}
+            className="text-center tracking-tighter text-[50px] md:text-[72px]"
           >
             I'll be attending!
           </h1>
-          <img src={bannerAvatar} alt="" srcSet="" id="bannerAvatar" />
-        </span>
-        <p>Generate and share your unique Devfest </p>
-        <p>Lagos Student Edition DP</p>
+          <img
+            src={bannerAvatar}
+            alt=""
+            srcSet=""
+            className="mx-auto block md:w-[85px] md:h-[85px] md:ml-4"
+          />
+        </div>
+        <p className="italic text-center text-[#666] md:text-[24px]">
+          <span className="block">Generate and share your unique Devfest</span>
+          <span className="block">Lagos Student Edition DP</span>
+        </p>
 
-        <div className="banner-container">
-          <form onSubmit={handleDownload} className="form">
-            {/* <label htmlFor="name">Name</label> */}
-            <div
-              style={{
-                // padding: "10px",
-                // background: "black",
-                display: "flex",
-                paddingTop: "5px",
-                paddingLeft: "8px",
-                paddingRight: "8px",
-                paddingBottom: "8px",
-                // padding: "10px",
-                borderRadius: "20px",
-                border: "solid 1px #ccc",
-                height: "43px",
-                marginBottom: "20px",
-              }}
-            >
+        <div className="w-full max-w-[640px] mx-auto">
+          <form onSubmit={handleDownload} className="mt-8">
+            <div className="flex border border-[#ccc] h-[75px] rounded-[64px] justify-center items-center p-4">
               <input
                 type="text"
                 name="name"
-                id="nameField"
                 value={name}
                 onChange={handleNameChange}
                 placeholder="Enter first name or nickname"
+                className="outline-none rounded-[48px] px-4 py-3 bg-[#f5f9fe] w-full"
               />
             </div>
 
-            <label htmlFor="date">Choose Display picture</label>
             <input type="file" onChange={handleImageUpload} accept="image/*" />
 
             {uploadedImage ? (
@@ -196,7 +187,7 @@ const Banner = () => {
                 }}
               />
             ) : (
-              <div onClick={handleSelectImage} className="choose-image">
+              <div onClick={handleSelectImage} className="choose-image mt-8">
                 <div id="upload-area">
                   <img
                     src={uploadArrow}
@@ -216,16 +207,16 @@ const Banner = () => {
               Please upload only a square image
             </p>
 
-            <div>
+            <div className="text-center ">
               <button
                 id="bannerBtn"
                 disabled={uploadedImage ? "false" : "true"}
+                className="w-full md:h-[66px]"
               >
                 {generating ? "Downloading" : "Generate your dp"}
+
+                <img src={arrow} className="md:ml-2" alt="" />
               </button>
-              <span>
-                <img src={arrow} alt="" />
-              </span>
             </div>
           </form>
         </div>
@@ -416,6 +407,9 @@ const Banner = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-[#f5f9fe]">
+        <Footer />
       </div>
     </div>
   );

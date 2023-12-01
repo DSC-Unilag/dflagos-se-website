@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-6 justify-between items-center navbar px-6">
       <Link className="w-[120px]" to={"/"}>
         <img src={logo} alt={"Hoobank image"} />
       </Link>
