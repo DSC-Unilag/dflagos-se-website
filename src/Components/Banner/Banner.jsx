@@ -98,8 +98,8 @@ const Banner = () => {
     setGenerating(true);
     const container = document.getElementById("banner");
 
-    let name = document.getElementById("nameField");
-    if (name.value === "") {
+    //let name = document.getElementById("nameField");
+    if (name === "") {
       toast.error("Please add your name to the name field");
       name.style.outline = "red";
       setGenerating(false);
@@ -184,6 +184,7 @@ const Banner = () => {
                   height: "100%",
                   borderRadius: "5px",
                   marginBottom: "30px",
+                  marginTop: "30px"
                 }}
               />
             ) : (
@@ -210,7 +211,6 @@ const Banner = () => {
             <div className="text-center ">
               <button
                 id="bannerBtn"
-                disabled={uploadedImage ? "false" : "true"}
                 className="w-full md:h-[66px]"
               >
                 {generating ? "Downloading" : "Generate your dp"}
@@ -230,154 +230,15 @@ const Banner = () => {
               </div>
               <div className="statement">
                 <p>I will be attending</p>
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
-
-                <svg
-                  fill="#ffae00"
-                  width="189px"
-                  height="189px"
-                  viewBox="0 0 512.00 512.00"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffae00"
-                  stroke-width="0.00512"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="#CCCCCC"
-                    stroke-width="1.024"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                  </g>
-                </svg>
+                <div className="arrows">
+                  <img src={angleRight} alt="" />
+                  <img src={angleRight} alt="" />
+                  <img src={angleRight} alt="" />
+                  <img src={angleRight} alt="" />
+                  <img src={angleRight} alt="" />
+                  <img src={angleRight} alt="" />
+                </div>
+                
               </div>
             </div>
             <div className="name-datetime-row">
