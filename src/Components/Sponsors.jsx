@@ -1,36 +1,40 @@
 import React from 'react'
 import styles from "../style"
-import { Github, Microsoft, Google, AltSchool, Paystack, ArrowRight2, Mtn} from '../assets'
+import { Google} from '../assets'
+import newwave from '../assets/newwave.webp';
+import requestMechanic from '../assets/Request_mechanic.jpeg';
+import myTherapist from '../assets/Mytherapist.ng_logo_dark.png';
+import Marquee from "react-fast-marquee";
 
 const Clients = () => {
   return (
    <section id='clients' className={`text-white my-[20px] sm:my-[30px] lg:mt-[55px] bg-[#fff]`}>
-    <div className='w-full grid grid-col-1 sm:grid-cols-3 lg:grid-cols-6 gap-[40px] sm:gap-[20px] place-content-center place-items-center py-[40px] xs:py-0'>
+    <div className='w-full grid grid-col-1 sm:grid-cols-3 lg:grid-cols-4 gap-[40px] sm:gap-[20px] place-content-center place-items-center py-[40px] xs:py-0'>
+
 
      <div>
-        <img src={Google} alt='Google'/>
+        <a href="https://google.com" target="_blank">
+          <img src={Google} alt='Google'/>
+        </a>
       </div>
 
       <div>
-        <img src={Microsoft} alt='Google'/>
+        <a href="https://newwave.io" target="_blank">
+          <img src={newwave} alt='Google'/>
+        </a>
       </div>
 
       <div>
-        <img src={Paystack} alt='Google'/>
+        <a href="https://www.mytherapist.ng" target="_blank">
+          <img src={myTherapist} alt='Google'/>
+        </a>
       </div>
 
       <div>
-        <img src={Mtn} alt='Google'/>
+        <a href="https://requestmechanic.com" target="_blank">
+          <img src={requestMechanic} alt='Google'/>
+        </a>
       </div>
-
-      <div>
-        <img src={AltSchool} alt='Google'/>
-      </div>
-
-      <div>
-        <img src={Github} alt='Google'/>
-      </div>
-
     </div>
      
    </section>

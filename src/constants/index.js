@@ -10,23 +10,25 @@ import {
   Salim,
 } from "../assets";
 
+export const breakoutLocationCodes = ["event1", "event2", "event3"];
+
 export const navLinks = [
   {
-    id: "about",
+    id: "#about",
     title: "About",
   },
   {
-    id: "schedule",
+    id: "#schedule",
     title: "Schedule",
   },
   {
-    id: "faqs",
+    id: "#faqs",
     title: "FAQs",
   },
   {
-    id: "volunteer",
-    title: "Volunteer/Speak",
-  }
+    id: "https://dscunilag.dev/dflagos-se-cfv",
+    title: "Volunteer",
+  },
 ];
 
 export const Tabs = [
@@ -41,7 +43,7 @@ export const Tabs = [
   {
     id: 4,
     content: "Data and AI",
-  }
+  },
 ];
 
 export const breakoutSessionData = [

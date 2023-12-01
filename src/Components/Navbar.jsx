@@ -1,16 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { navLinks } from "../constants";
-import { googleDevfest } from "../assets/index";
+import logo from "./../assets/devfest logo.png";
 import { HiOutlineMenu } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      <Link className="w-[28%] lg:w-[12%]" to={"/"}>
-        <img src={googleDevfest} alt={"Hoobank image"} />
+    <nav className="w-full flex py-6 justify-between items-center navbar px-6">
+      <Link className="w-[120px]" to={"/"}>
+        <img src={logo} alt={"Hoobank image"} />
       </Link>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -24,7 +24,7 @@ const Navbar = () => {
                   : "[&]:mr-6 [&]:lg:mr-10"
               } text-black`}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a href={`${nav.id}`}>{nav.title}</a>
           </li>
         ))}
       </ul>

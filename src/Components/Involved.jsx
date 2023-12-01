@@ -1,7 +1,7 @@
 import ArrowUp from "../assets/ArrowUp.svg";
 import blackArrowRight from "../assets/black-arrow-right.svg";
-import asset1 from "../assets/get_involved1.png";
-import asset2 from "../assets/get_involved2.png";
+import asset1 from "../assets/community-1.jpg";
+import asset2 from "../assets/community-2.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Involved = () => {
@@ -53,9 +53,9 @@ const Involved = () => {
               <p className="text-[32px] font-bold leading-[41px]">
                 Apply as a volunteer
               </p>
-              <img src={blackArrowRight} alt="" />
+              <a href="https://dscunilag.dev/dflagos-se-cfv"><img src={blackArrowRight} alt="" /></a>
             </div>
-            <p>Apply as a volunteer for DevFest 2023 Student Edition</p>
+            <p>Apply as a volunteer for DevFest Lagos Student Edition 2023</p>
           </div>
           <div className="mt-8">
             <img

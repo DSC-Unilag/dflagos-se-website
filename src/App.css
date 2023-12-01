@@ -6,6 +6,58 @@ body {
   border-radius: 3px solid red;
 }
 
+.arrow-anim {
+  animation: downwards 1s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes downwards {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+.checkbox-wrapper {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-wrapper .checkmark {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.checkbox-wrapper input:checked ~ div .checkmark {
+  display: block;
+}
+
+.checkbox-wrapper input:checked ~ div {
+  background-color: #f5f9fe;
+}
+
 .countdown {
   display: flex;
   flex-direction: column;
@@ -35,7 +87,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 55px;
+  gap: 45px;
 }
 .countdown .time {
   display: flex;
@@ -86,7 +138,7 @@ body {
 }
 .involved {
   width: 100%;
-  padding: 100px 10px;
+  padding: 100px 20px;
 }
 .involved h1 {
   color: #0d0d0d;
@@ -183,6 +235,10 @@ body {
   overflow: hidden;
   height: 0px;
 }
+.progress-bar {
+  height: 5px !important;
+  background-color: #34a853 !important;
+}
 .banner {
   position: relative;
   width: 700px;
@@ -190,7 +246,7 @@ body {
   padding: 50px;
   background: url("./assets/bg.jpg");
 }
-.banner img {
+.banner .logo {
   width: 200px;
 }
 .banner .dp-statement-row {
@@ -212,11 +268,35 @@ body {
   border-radius: 250px;
 }
 .banner .statement {
+  position: relative;
   background-color: #34a853;
   color: #fff;
   padding: 20px 30px;
   text-align: center;
   width: 250px;
+}
+.banner .statement .arrows img {
+  width: 50px;
+  position: absolute;
+  top: 105px;
+}
+.banner .statement .arrows img:nth-child(1) {
+  right: 20px;
+}
+.banner .statement .arrows img:nth-child(2) {
+  right: 40px;
+}
+.banner .statement .arrows img:nth-child(3) {
+  right: 60px;
+}
+.banner .statement .arrows img:nth-child(4) {
+  right: 80px;
+}
+.banner .statement .arrows img:nth-child(5) {
+  right: 100px;
+}
+.banner .statement .arrows img:nth-child(6) {
+  right: 120px;
 }
 .banner .statement p {
   font-size: 30px;
@@ -246,10 +326,20 @@ body {
   color: #fff;
 }
 .time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background-color: #4285f4;
   padding: 7px 20px;
 }
+.time img {
+  width: 20px;
+  height: 20px;
+}
 .date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background-color: #34a853;
   padding: 10px 25px;
 }
@@ -266,8 +356,14 @@ body {
   color: #fff;
   background-color: #4285f4;
 }
+.banner .address img {
+  width: 20px;
+}
 .banner .address {
-  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
   padding: 7px 20px;
   background-color: #f9ab00;
   color: #000;
@@ -282,21 +378,11 @@ body {
 .get-banner {
   padding-top: 30px;
 }
-.get-banner h1 {
-  font-size: 50px !important;
-}
 .get-banner label {
   display: block;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
-}
-.get-banner form input {
-  width: 100%;
-  outline: 1px solid #d2d3d4;
-  padding: 10px;
-  margin-bottom: 30px;
-  border-radius: 5px;
 }
 input[type="file"] {
   display: none;
@@ -309,7 +395,7 @@ input[type="file"] {
   border-radius: 5px;
 }
 .choose-image {
-  padding: 80px;
+  padding: 80px 40px;
   background-color: #d6eaff;
   border-radius: 5px;
   text-align: center;
@@ -406,11 +492,11 @@ input[type="file"] {
   }
 }
 .faq .doodle-3 {
-  bottom: 656px;
+  top: 656px;
   left: 52px;
 }
 .faq .doodle-4 {
-  bottom: 756px;
+  top: 756px;
   right: 52px;
 }
 .faq .doodle-5 {
@@ -435,7 +521,6 @@ footer .row .column a {
   color: #000;
   text-align: left;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   text-decoration-line: underline;
 }
@@ -469,10 +554,6 @@ footer .copyright {
   .faq .qa {
     margin: 0;
   }
-}
-.tab-flex {
-  white-space: nowrap;
-  overflow: auto;
 }
 
 .schedule-hero-rsvp {
