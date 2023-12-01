@@ -14,10 +14,7 @@ const Footer = () => {
                 <div className="column">
                     <a href="/Workshops">Schedule/Workshops</a>
                     <a href="/Workshops">RSVP</a>
-                </div>
-                <div className="column">
-                    <a href="#volunteer">Apply as a volunteer</a>
-                    <a href="#volunteer">Apply as a sponsor</a>
+                    <a href="https://dscunilag.dev/dflagos-se-cfv">Apply as a volunteer</a>
                 </div>
                 <div className="column">
                 <a href="https://gdsc.community.dev/university-of-lagos/">GDSC Unilag</a>

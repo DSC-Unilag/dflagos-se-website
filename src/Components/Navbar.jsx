@@ -24,7 +24,7 @@ const Navbar = () => {
                   : "[&]:mr-6 [&]:lg:mr-10"
               } text-black`}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a href={`https://dscunilag.dev/dflagos-se-cfv`}>{nav.title}</a>
           </li>
         ))}
       </ul>
