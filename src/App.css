@@ -183,6 +183,9 @@ body {
   overflow: hidden;
   height: 0px;
 }
+.progress-bar {
+  height: 5px !important;
+}
 .banner {
   position: relative;
   width: 700px;
