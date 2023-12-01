@@ -450,11 +450,11 @@ input[type="file"] {
   }
 }
 .faq .doodle-3 {
-  bottom: 656px;
+  top: 656px;
   left: 52px;
 }
 .faq .doodle-4 {
-  bottom: 756px;
+  top: 756px;
   right: 52px;
 }
 .faq .doodle-5 {
