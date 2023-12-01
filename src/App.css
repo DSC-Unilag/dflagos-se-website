@@ -335,13 +335,6 @@ body {
   font-weight: 600;
   margin-bottom: 10px;
 }
-.get-banner form input {
-  width: 100%;
-  outline: 1px solid #d2d3d4;
-  padding: 10px;
-  margin-bottom: 30px;
-  border-radius: 5px;
-}
 input[type="file"] {
   display: none;
 }
@@ -353,7 +346,7 @@ input[type="file"] {
   border-radius: 5px;
 }
 .choose-image {
-  padding: 80px;
+  padding: 80px 40px;
   background-color: #d6eaff;
   border-radius: 5px;
   text-align: center;
