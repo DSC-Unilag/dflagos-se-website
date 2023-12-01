@@ -25,7 +25,7 @@ export const navLinks = [
   },
   {
     id: "volunteer",
-    title: "Volunteer/Speak",
+    title: "Volunteer",
   }
 ];
 
