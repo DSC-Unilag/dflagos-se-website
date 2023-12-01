@@ -28,21 +28,21 @@ export const BreakoutSession = ({
                 <div>
                   <p
                     className={`text-[14px] leading-[21px] tracking-[0.14px] mb-8 ${
-                      eventId != id ? "blur-[2px]" : ""
+                      eventId != 0 && eventId != id ? "blur-[2px]" : ""
                     }`}
                   >
                     {time}
                   </p>
                   <p
                     className={`text-2xl font-bold leading-9 tracking-[0.24px] lg:text-[24px] mb-4 ${
-                      eventId != id ? "blur-[2px]" : ""
+                      eventId != 0 && eventId != id ? "blur-[2px]" : ""
                     }`}
                   >
                     {title}
                   </p>
                   <p
                     className={`text-base leading-6 tracking-[0.16px] mt-[8px] ${
-                      eventId != id ? "blur-[2px]" : ""
+                      eventId != 0 && eventId != id ? "blur-[2px]" : ""
                     }`}
                   >
                     {speaker}
