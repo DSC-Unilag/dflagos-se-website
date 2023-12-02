@@ -1,8 +1,18 @@
 import React from "react";
 import { ArrowRight2, EventImage } from "../assets";
 import { useNavigate } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Tickets = () => {
+  const [ref, inView] = useInView({threshold: 0.8})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({y: 0, opacity:100})
+    }
+  },[inView])
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -11,7 +21,13 @@ const Tickets = () => {
   return (
     <div className="pt-[64px]">
       <div className="flex flex-col pb-12 lg:flex-row gap-[21.5px] lg:gap-[21.5px]">
-        <div className="flex flex-col text-[#fff] lg:pb-[164px]">
+        <motion.div 
+        className="flex flex-col text-[#fff] lg:pb-[164px]"
+        ref={ref}
+        initial={{y: -100, opacity:0}}
+        animate={controls}
+        transition={{duration: 2}}
+        >
           <p className="text-[44px] lg:text-[64px] font-bold mb-6">
             Guess What? <br />
             It's FREE
@@ -29,11 +45,16 @@ const Tickets = () => {
             <p className=" font-bold">Grab A Free Ticket</p>
             <img src={ArrowRight2} alt="arrow" />
           </a>
-        </div>
+        </motion.div>
 
-        <div className="">
+        <motion.div className=""
+          ref={ref}
+          initial={{y: 100, opacity: 0}}
+          animate={controls}
+          transition={{duration: 2}}
+        >
           <img src={EventImage} alt="event" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
