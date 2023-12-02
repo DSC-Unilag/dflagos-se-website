@@ -61,6 +61,7 @@ const BreakoutSessions = () => {
   };
 
   const generatePdf = (userData) => {
+    console.log("hello")
     if (!userData) {
       console.error('User data not available');
       return;
@@ -78,9 +79,11 @@ const BreakoutSessions = () => {
     });
    const baseImage = document.getElementById("qrcode").toDataURL()
  
-    pdfDoc.addImage(baseImage, 'PNG',  20, 140);
-     pdfDoc.save("RsvpConfirmation.pdf")
+    pdfDoc.addImage(baseImage, 'PNG', 80 ,120, 100, 100);
+    pdfDoc.save("RsvpConfirmation.pdf")
   };
+
+ 
 
   const handleRsvpEvent = async (e) => {
     setIsRsvping(true);
@@ -107,7 +110,7 @@ const BreakoutSessions = () => {
       const response = await createRsvpEvent(data);
       console.log(response)
       setUserData(response)
-      generatePdf(response)
+      generatePdf(response)      
       if (response.status == 202) {
         toast.success(`You have sucessfully RSVPd for ${eventCount} sessions`, {
           position: "bottom-center",
@@ -176,7 +179,7 @@ const BreakoutSessions = () => {
       />
       <div>
         {userData.length !==0 &&
-         <QRCode value ={"http://cravecookie.com"} id = 'qrcode'/>
+         <QRCode value ={'https://erikmartinjordan.com'} id='qrcode'/>
         }
       </div>
       
