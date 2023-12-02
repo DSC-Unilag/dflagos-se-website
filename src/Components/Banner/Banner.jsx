@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Navbar from "../Navbar";
+import ReactCrop from 'react-image-crop';
+import 'react-image-crop/dist/ReactCrop.css';
 import html2canvas from "html2canvas";
 import Logo from "../../assets/Logo.png";
 import "../../styles/banner.css";
@@ -12,6 +14,16 @@ import Footer from "./../Footer";
 
 const Banner = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [croppedImage, setCroppedImage] = useState(null);
+  const [src, setSrc] = useState(null);
+  const [crop, setCrop] = useState({
+    aspect: 1,
+    // unit: '%', // Can be 'px' or '%'
+    // x: 25,
+    // y: 25,
+    // width: 50,
+    // height: 50
+  });
   const [name, setName] = useState("");
   const [generating, setGenerating] = useState(false);
 
@@ -23,84 +35,126 @@ const Banner = () => {
     document.querySelector('input[type="file"]').click();
   };
 
-  // const handleImageUpload = (e) => {
-  //     const file = e.target.files[0];
-  //     const reader = new FileReader();
-  //     getAspectRatio(file)
+  const selectImage = (file) => {
+    setSrc(URL.createObjectURL(file));
+    
+    
+  };
 
-  //     reader.onload = () => {
-  //         setUploadedImage(reader.result);
-  //     };
+  const cropImage = () => {
+    const canvas = document.createElement('canvas');
+    const scaleX = uploadedImage.naturalWidth / uploadedImage.width;
+    const scaleY = uploadedImage.naturalHeight / uploadedImage.height;
+    canvas.width = crop.width;
+    canvas.height = crop.height;
+    const ctx = canvas.getContext('2d');
 
-  //     if (file) {
-  //         reader.readAsDataURL(file);
-  //     }
-  // };
+    const pixelRatio = window.devicePixelRatio;
+    canvas.width = crop.width * pixelRatio;
+    canvas.height = crop.height * pixelRatio;
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    ctx.imageSmoothingQuality = 'high';
+
+    ctx.drawImage(
+        uploadedImage,
+        crop.x * scaleX,
+        crop.y * scaleY,
+        crop.width * scaleX,
+        crop.height * scaleY,
+        0,
+        0,
+        crop.width,
+        crop.height,
+    );
+
+    // Converting to base64
+    const base64Image = canvas.toDataURL('image/jpeg');
+    setCroppedImage(base64Image);
+};
+
+const onImageLoaded = (image) => {
+  // Set the initial crop state based on the image dimensions
+  setCrop({ width: 50, height: 50, aspect: 1 / 1 }); // Adjust the initial dimensions as needed
+};
 
   const handleImageUpload = (e) => {
-    const file = e.target.files[0];
+      const file = e.target.files[0];
+      
+      const reader = new FileReader();
 
-    // Function to get the aspect ratio of an image
-    const getAspectRatio = (image) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = URL.createObjectURL(image);
+      reader.onload = () => {
+          setUploadedImage(reader.result);
+          setSrc(reader.result);
+      };
 
-        img.onload = () => {
-          const width = img.width;
-          const height = img.height;
-          let aspectRatio;
-          if (width < height) {
-            aspectRatio = width / height;
-          } else {
-            aspectRatio = height / width;
-          }
-          console.log(width, height, aspectRatio);
-          resolve(aspectRatio);
-        };
-
-        img.onerror = (error) => {
-          reject(error);
-        };
-      });
-    };
-
-    if (file) {
-      // Check the aspect ratio
-      getAspectRatio(file)
-        .then((aspectRatio) => {
-          // Define a threshold for an almost square image (e.g., 0.95)
-          const threshold = 0.95;
-
-          if (aspectRatio > threshold) {
-            // The image is a square or almost a square
-            const reader = new FileReader();
-
-            reader.onload = () => {
-              setUploadedImage(reader.result);
-            };
-
-            reader.readAsDataURL(file);
-          } else {
-            // Display an error or take appropriate action for non-square images
-            toast.error("Please upload a square or almost square image.");
-          }
-        })
-        .catch((error) => {
-          // Handle errors during aspect ratio calculation
-          console.error("Error getting aspect ratio:", error);
-        });
-    }
+      if (file) {
+          reader.readAsDataURL(file);
+      }
   };
+
+  // const handleImageUpload = (e) => {
+  //   const file = e.target.files[0];
+
+  //   // Function to get the aspect ratio of an image
+  //   const getAspectRatio = (image) => {
+  //     return new Promise((resolve, reject) => {
+  //       const img = new Image();
+  //       img.src = URL.createObjectURL(image);
+
+  //       img.onload = () => {
+  //         const width = img.width;
+  //         const height = img.height;
+  //         let aspectRatio;
+  //         if (width < height) {
+  //           aspectRatio = width / height;
+  //         } else {
+  //           aspectRatio = height / width;
+  //         }
+  //         console.log(width, height, aspectRatio);
+  //         resolve(aspectRatio);
+  //       };
+
+  //       img.onerror = (error) => {
+  //         reject(error);
+  //       };
+  //     });
+  //   };
+
+  //   if (file) {
+  //     // Check the aspect ratio
+  //     getAspectRatio(file)
+  //       .then((aspectRatio) => {
+  //         // Define a threshold for an almost square image (e.g., 0.95)
+  //         const threshold = 0.95;
+
+  //         if (aspectRatio > threshold) {
+  //           // The image is a square or almost a square
+  //           const reader = new FileReader();
+
+  //           reader.onload = () => {
+  //             setUploadedImage(reader.result);
+  //           };
+
+  //           reader.readAsDataURL(file);
+  //         } else {
+  //           // Display an error or take appropriate action for non-square images
+  //           toast.error("Please upload a square or almost square image.");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         // Handle errors during aspect ratio calculation
+  //         console.error("Error getting aspect ratio:", error);
+  //       });
+  //   }
+  // };
 
   const handleDownload = (e) => {
     e.preventDefault();
     setGenerating(true);
     const container = document.getElementById("banner");
 
-    //let name = document.getElementById("nameField");
-    if (name === "") {
-      toast.error("Please add your name to the name field");
+    if (name === "" && croppedImage === null) {
+      toast.error("Please add your name and image");
       name.style.outline = "red";
       setGenerating(false);
       return;
@@ -221,12 +275,28 @@ const Banner = () => {
           </form>
         </div>
 
+        {uploadedImage && (
+          <div>
+              
+              <ReactCrop
+                crop={crop}
+                onChange={c => setCrop(c)}
+                onImageLoaded={(image) => onImageLoaded(image)}
+              >
+                <img src={src} />
+              </ReactCrop>
+              <button onClick={cropImage}>Crop</button>
+              <br />
+              <br />
+          </div>
+        )}
+
         <div className="preview">
           <div id="banner" className="banner">
             <img className="logo" src={Logo} alt="" />
             <div className="dp-statement-row">
               <div className="img">
-                <img src={uploadedImage} alt="" />
+                <img src={croppedImage} alt="" />
               </div>
               <div className="statement">
                 <p>I will be attending</p>
