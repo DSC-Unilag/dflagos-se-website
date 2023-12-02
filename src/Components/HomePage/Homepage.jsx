@@ -71,7 +71,7 @@ const HomePage = () => {
       </div>
 
       <div className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}
-        initial={{opacity: 0}}
+        initial={!isMobile &&{opacity: 0}}
         ref={ref}
         animate={controls}
         transition={{duration: 1}}

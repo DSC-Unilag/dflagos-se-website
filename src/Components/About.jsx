@@ -7,9 +7,9 @@ const About = () => {
 
   const [ref, inView] = useInView({threshold: 0.8})
   const controls = useAnimation()
-
+  const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({x: 0, opacity:100})
     }
   },[inView])
@@ -19,7 +19,7 @@ const About = () => {
       <div className="flex flex-col w-full lg:h-[50vh]">
         <motion.h1 
           ref={ref}
-          initial={{x: -100, opacity:0}}
+          initial={!isMobile && {x: -100, opacity:0}}
           animate={controls}
           transition={{duration: 1}}
         className="lg:max-w-[253px] text-[54px] lg:text-[94px] leading-none font-bold tracking-[-1.5px]">
@@ -30,7 +30,7 @@ const About = () => {
         <div className="w-full flex mt-[24px] lg:pl-[305px]">
           <motion.div 
            ref={ref}
-           initial={{x: 100, opacity:0}}
+           initial={!isMobile && {x: 100, opacity:0}}
            animate={controls}
            transition={{duration: 1}}
           className="border-y-2 border-[#4285F4] w-[100%]">

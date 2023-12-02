@@ -7,9 +7,9 @@ import { useInView } from "react-intersection-observer";
 const Tickets = () => {
   const [ref, inView] = useInView({threshold: 0.9})
   const controls = useAnimation()
-
+  const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({y: 0, opacity:100})
     }
   },[inView])
@@ -24,7 +24,7 @@ const Tickets = () => {
         <motion.div 
         className="flex flex-col text-[#fff] lg:pb-[164px]"
         ref={ref}
-        initial={{y: -100, opacity:0}}
+        initial={!isMobile && {y: -100, opacity:0}}
         animate={controls}
         transition={{duration: 0.9}}
         >
@@ -49,7 +49,7 @@ const Tickets = () => {
 
         <motion.div className=""
           ref={ref}
-          initial={{y: 100, opacity: 0}}
+          initial={!isMobile && {y: 100, opacity: 0}}
           animate={controls}
           transition={{duration: 0.9}}
         >

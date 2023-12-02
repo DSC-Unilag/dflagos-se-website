@@ -12,9 +12,9 @@ const Countdown = () => {
 
   const [ref, inView] = useInView({threshold: 0.5})
   const controls = useAnimation()
-
+  const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({x:0, opacity:100, scale:1})
     }
   },[inView])
@@ -80,7 +80,7 @@ const Countdown = () => {
         />
         <motion.h1 
           ref={ref}
-          initial={{opacity: 100, scale: 0.5}}
+          initial={!isMobile && {opacity: 100, scale: 0.5}}
            animate={controls}
           transition={{duration: 1}}
         className="text-[56px] font-bold">Are you ready?</motion.h1>

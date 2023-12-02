@@ -13,9 +13,9 @@ import { useInView } from "react-intersection-observer";
 const Faq = () => {
   const [ref, inView] = useInView({threshold: 0.5})
   const controls = useAnimation()
-
+  const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({y: 0, opacity:100})
     }
   },[inView])
@@ -85,7 +85,7 @@ const Faq = () => {
       <div className="z-10 relative">
         <motion.div
           ref={ref}
-          initial={{opacity: 0, y: 100}}
+          initial={!isMobile && {opacity: 0, y: 100}}
            animate={controls}
            transition={{duration: 1}}>
           <h1 className="font font-bold text-[30px] z-50">

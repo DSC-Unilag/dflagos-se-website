@@ -8,8 +8,12 @@ const Hero = () => {
   const [ref, inView] = useInView({threshold: 0.8})
   const controls = useAnimation()
 
+  const isMobile = window.innerWidth <= 768;
+
+
+
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({x: 0})
     }
   },[inView])
@@ -20,9 +24,9 @@ const Hero = () => {
         <div className="">
           <motion.p
             ref={ref}
-            className=" mt-[40px] lg:pb-[123px] text-[50px] xs:text-[55px] sm:text-[71px]  leading-none max-w-full lg:max-w-[667px]  text-[#000] tracking-tighter italic font-extrabold lg:mr-[70px]"
+            className={`mt-[40px] lg:pb-[123px] text-[50px] xs:text-[55px] sm:text-[71px]  leading-none max-w-full lg:max-w-[667px] ${isMobile ? 'disable-animation' : ''}  text-[#000] tracking-tighter italic font-extrabold lg:mr-[70px]`}
             style={{ fontWeight: 500 }}
-            initial={{x:-100}}
+            initial={!isMobile && {x:-100}}
             animate={controls}
             transition={{duration: 1}}
           >

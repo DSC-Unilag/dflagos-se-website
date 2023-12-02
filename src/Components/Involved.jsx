@@ -11,9 +11,10 @@ const Involved = () => {
   const navigate = useNavigate();
   const [ref, inView] = useInView({threshold: 0.8})
   const controls = useAnimation()
+  const isMobile = window.innerWidth <= 768;
 
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({x:0, opacity:100, scale:1})
     }
   },[inView])
@@ -30,7 +31,7 @@ const Involved = () => {
       <h1 className="font-bold text-[94px] leading-[81px] tracking-[-4.5px]">
         <motion.div 
           ref={ref}
-          initial={{opacity: 100, scale: 0.8}}
+          initial={!isMobile && {opacity: 100, scale: 0.8}}
            animate={controls}
           transition={{duration: 1}}
         >
@@ -40,7 +41,7 @@ const Involved = () => {
       </h1>
       <motion.p 
        ref={ref}
-       initial={{opacity: 100, scale: 0.5}}
+       initial={!isMobile && {opacity: 100, scale: 0.5}}
       animate={controls}
        transition={{duration: 1}}
       className="header-text font-medium text-lg leading-7 max-w-[755px] ml-auto">
@@ -54,7 +55,7 @@ const Involved = () => {
           className="frame cursor-pointer p-14 min-[800px]:flex min-[800px]:flex-col min-[800px]:justify-between md:max-w-[580px] md:mr-4"
           onClick={navigateToWorkshops}
           ref={ref}
-         initial={{opacity: 0, x: -100}}
+         initial={!isMobile && {opacity: 0, x: -100}}
          animate={controls}
          transition={{duration: 2}}
         >
@@ -76,7 +77,7 @@ const Involved = () => {
         </motion.div>
         <motion.div 
         ref={ref}
-        initial={{opacity: 0, x: 100}}
+        initial={!isMobile && {opacity: 0, x: 100}}
         animate={controls}
         transition={{duration: 2}}
         className="frame cursor-pointer p-14 min-[800px]:flex min-[800px]:flex-col min-[800px]:justify-between md:max-w-[580px]">

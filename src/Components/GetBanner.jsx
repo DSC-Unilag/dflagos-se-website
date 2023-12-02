@@ -7,9 +7,9 @@ import { useInView } from "react-intersection-observer";
 const GetBanner = () => {
   const [ref, inView] = useInView({ threshold: 0.5 });
   const controls = useAnimation();
-
+  const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if (inView) {
+    if (inView && !isMobile) {
       controls.start({ y: 0, opacity: 100 });
     }
   }, [inView]);
@@ -17,7 +17,7 @@ const GetBanner = () => {
     <motion.div
       className="generate-banner"
       ref={ref}
-      initial={{ opacity: 0, y: -100 }}
+      initial={!isMobile && { opacity: 0, y: -100 }}
       animate={controls}
       transition={{ duration: 1 }}
     >

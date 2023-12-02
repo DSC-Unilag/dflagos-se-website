@@ -11,9 +11,9 @@ import { useInView } from 'react-intersection-observer';
 const Clients = () => {
   const [ref, inView] = useInView({threshold: 0.8})
   const controls = useAnimation()
-
+  const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if(inView){
+    if(inView && !isMobile){
        controls.start({rotate: 0})
     }
   },[inView])
@@ -24,7 +24,7 @@ const Clients = () => {
 
      <motion.div
      ref={ref}
-     initial={{rotate: 50}}
+     initial={!isMobile && {rotate: 50}}
      animate={controls}
      transition={{duration: 1}}
      >
@@ -35,7 +35,7 @@ const Clients = () => {
 
       <motion.div
       ref={ref}
-      initial={{rotate: -60}}
+      initial={!isMobile && {rotate: -60}}
       animate={controls}
       transition={{duration: 1}}
       >
@@ -46,7 +46,7 @@ const Clients = () => {
 
       <motion.div
       ref={ref}
-      initial={{rotate: 50}}
+      initial={!isMobile && {rotate: 50}}
       animate={controls}
       transition={{duration: 2}}>
         <a href="https://www.mytherapist.ng" target="_blank">
@@ -56,7 +56,7 @@ const Clients = () => {
 
       <motion.div
       ref={ref}
-      initial={{rotate: -90}}
+      initial={!isMobile && {rotate: -90}}
       animate={controls}
       transition={{duration: 2}}>
         <a href="https://requestmechanic.com" target="_blank">
