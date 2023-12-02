@@ -1,4 +1,4 @@
-import logo from "../assets/googleDevfest.svg";
+import logo from "../assets/devfest logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +8,6 @@ const Footer = () => {
           <img className="max-w-[150px]" src={logo} alt="" />
         </div>
         <div className="flex flex-col gap-2">
-          <a className="inline-block underline" href="/Workshops">
-            Schedule/Workshops
-          </a>
           <a className="underline" href="/Workshops">
             RSVP
           </a>
