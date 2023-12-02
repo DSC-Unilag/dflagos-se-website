@@ -133,7 +133,11 @@ const Breaksession = () => {
     }
   };
 
- console.log(userData)
+
+
+ useEffect(() => {
+  console.log(userData)
+ },[])
 
   return (
     <form onSubmit={handleRsvpEvent}>
