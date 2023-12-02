@@ -12,6 +12,8 @@ import {
 
 export const breakoutLocationCodes = ["event1", "event2", "event3"];
 
+export const eventIdsStringSeparator = "#!";
+
 export const navLinks = [
   {
     id: "#about",

@@ -23,7 +23,7 @@ const Faq = () => {
       question:
         "How much is the ticket For DevFest Lagos Student Edition 2023?💸",
       answer:
-        "DevFest Lagos Student Edition is totally FREE,  but seeing that the venue can only contain a certain number of persons, only those registered will be allowed into the hall. You can get your free ticket here - ",
+        "DevFest Lagos Student Edition is totally FREE,  but seeing that the venue can only contain a certain number of persons, only those registered will be allowed into the hall. You can get your free ticket ",
       link: "https://dscunilag.dev/df_lagos",
     },
     {
@@ -33,9 +33,9 @@ const Faq = () => {
     },
     {
       question:
-        "Can I be a volunteer to make DevFest Lagos Student Edition a success?",
+        "Can I be a volunteer to make DevFest Lagos Student Edition a success?💯",
       answer:
-        "Of course you can. We welcome volunteers who are passionate about contributing to the success of DevFest Lagos Student Edition 2023. To join our volunteer team, apply here - ",
+        "Of course you can. We welcome volunteers who are passionate about contributing to the success of DevFest Lagos Student Edition 2023. To join our volunteer team, apply ",
       link: "https://dscunilag.dev/dflagos-se-cfv",
     },
   ];
@@ -60,7 +60,7 @@ const Faq = () => {
             {answer}{" "}
             {link && (
               <a className="text-blue-500" href={link}>
-                {link}
+                here.
               </a>
             )}
           </p>
@@ -97,7 +97,7 @@ const Faq = () => {
                   data.length == openIndex ? "text-yellow-500 mb-[10px]" : ""
                 } q`}
               >
-                How can I RSVP for sessions?
+                How can I RSVP for sessions?🤷🏽‍♂️
               </p>
               {data.length == openIndex ? (
                 <img src={close} alt="" />
@@ -108,12 +108,12 @@ const Faq = () => {
             {data.length == openIndex && (
               <p className="a">
                 Here's how you can RSVP for sessions. Get your free ticket here,
-                then visit our website -{" "}
+                then visit our{" "}
                 <a
                   className="text-blue-500"
                   href="https://devfest.dscunilag.dev/workshops"
                 >
-                  https://devfest.dscunilag.dev/workshops
+                  website
                 </a>{" "}
                 to RSVP for breakout sessions you’ll like to attend. You'll get
                 a confirmation notification with a list of the
