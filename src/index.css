@@ -118,7 +118,10 @@ body{
   overflow-x: hidden;
 }
 
-
+.disable-animation {
+  /* Disable animations for mobile devices */
+  animation: none !important;
+}
 
 :root {
   --black-gradient: linear-gradient(

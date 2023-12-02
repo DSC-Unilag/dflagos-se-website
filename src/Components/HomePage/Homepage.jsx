@@ -21,6 +21,7 @@ import { useInView } from "react-intersection-observer";
 
 
 const HomePage = () => {
+  const isMobile = window.innerWidth <= 768;
   const { scrollYProgress } = useScroll();
   const [ref, inView] = useInView({threshold: 0.8})
   const controls = useAnimation()
@@ -31,7 +32,7 @@ const HomePage = () => {
     }
   },[inView])
   return (
-    <>
+    <motion.div className={`animation-container ${isMobile ? 'disable-animation' : ''}`}>
       <motion.div
         className="progress-bar"
         style={{ scaleX: scrollYProgress }}
@@ -98,7 +99,7 @@ const HomePage = () => {
       <GetBanner />
       <Faq />
       <Footer />
-    </>
+    </motion.div>
   );
 };
 export default HomePage;
