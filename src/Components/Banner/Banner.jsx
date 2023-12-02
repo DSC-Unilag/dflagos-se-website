@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar";
-import ReactCrop from 'react-image-crop';
-import 'react-image-crop/dist/ReactCrop.css';
-import ImageCropper from "./ImageCropper";
+import ReactCrop from "react-image-crop";
+import "react-image-crop/dist/ReactCrop.css";
 import html2canvas from "html2canvas";
 import Logo from "../../assets/Logo.png";
 import "../../styles/banner.css";
@@ -12,20 +11,43 @@ import arrow from "../../assets/bannerArrow.svg";
 import angleRight from "../../assets/angle_right.svg";
 import toast from "react-hot-toast";
 import Footer from "./../Footer";
+import { canvasPreview, toBlob } from "../../../utils/crop";
+
+function blobToBase64(blob) {
+  return new Promise((resolve, _) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.readAsDataURL(blob);
+  });
+}
 
 const Banner = () => {
-  const [uploadedImage, setUploadedImage] = useState(null);
-  const [croppedImage, setCroppedImage] = useState(null);
+  const [uploadedImageSrc, setUploadedImageSrc] = useState("");
   const [crop, setCrop] = useState({
     aspect: 1,
-    unit: '%', // Can be 'px' or '%'
+    unit: "px", // Can be 'px' or '%'
     x: 25,
     y: 25,
-    width: 50,
-    height: 50
+    width: 200,
+    height: 200,
   });
   const [name, setName] = useState("");
+  const [croppedImage, setCroppedImage] = useState("");
   const [generating, setGenerating] = useState(false);
+  const imgRef = useRef(null);
+  const previewCanvasRef = useRef(null);
+  const croppedUrlRef = useRef("");
+
+  useEffect(() => {
+    if (
+      crop.width &&
+      crop.height &&
+      imgRef.current &&
+      previewCanvasRef.current
+    ) {
+      canvasPreview(imgRef.current, previewCanvasRef.current, crop);
+    }
+  }, [crop]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -36,135 +58,87 @@ const Banner = () => {
   };
 
   const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    
-    const reader = new FileReader();
-
-    reader.onload = () => {
-        setUploadedImage(reader.result);
-        //setSrc(reader.result);
-    };
-
-    if (file) {
-        reader.readAsDataURL(file);
+    if (e.target.files && e.target.files.length > 0) {
+      // setCrop(undefined); // Makes crop preview update between images.
+      const reader = new FileReader();
+      reader.addEventListener("load", () =>
+        setUploadedImageSrc(reader.result?.toString() || "")
+      );
+      reader.readAsDataURL(e.target.files[0]);
     }
-};
+  };
 
+  const cropImage = async () => {
+    const image = imgRef.current;
+    const previewCanvas = previewCanvasRef.current;
+    if (!image || !previewCanvas || !crop) {
+      throw new Error("Crop canvas does not exist");
+    }
+    const scaleX = image.naturalWidth / image.width;
+    const scaleY = image.naturalHeight / image.height;
 
-  const cropImage = () => {
-
-    const canvas = document.createElement('canvas');
-    const scaleX = uploadedImage.naturalWidth / uploadedImage.width;
-    const scaleY = uploadedImage.naturalHeight / uploadedImage.height;
-    canvas.width = crop.width;
-    canvas.height = crop.height;
-    const ctx = canvas.getContext('2d');
-
-    const pixelRatio = window.devicePixelRatio;
-    canvas.width = crop.width * pixelRatio;
-    canvas.height = crop.height * pixelRatio;
-    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    ctx.imageSmoothingQuality = 'high';
+    const offscreen = new OffscreenCanvas(
+      crop.width * scaleX,
+      crop.height * scaleY
+    );
+    const ctx = previewCanvas.getContext("2d");
+    if (!ctx) {
+      throw new Error("No 2d context");
+    }
 
     ctx.drawImage(
-        canvas,
-        crop.x * scaleX,
-        crop.y * scaleY,
-        crop.width * scaleX,
-        crop.height * scaleY,
-        0,
-        0,
-        crop.width,
-        crop.height,
+      previewCanvas,
+      0,
+      0,
+      previewCanvas.width,
+      previewCanvas.height,
+      0,
+      0,
+      offscreen.width,
+      offscreen.height
     );
 
     // Converting to base64
-    const base64Image = canvas.toDataURL('image/png');
-    // const blobImage = canvas.toBlob(URL.createObjectURL(image))
-    setCroppedImage(base64Image);
-};
+    const blob = await toBlob(previewCanvas);
 
+    // const blob = await offscreen.convertToBlob();
+    setCroppedImage(await blobToBase64(blob));
+  };
 
-  // const handleImageUpload = (e) => {
-  //   const file = e.target.files[0];
-
-  //   // Function to get the aspect ratio of an image
-  //   const getAspectRatio = (image) => {
-  //     return new Promise((resolve, reject) => {
-  //       const img = new Image();
-  //       img.src = URL.createObjectURL(image);
-
-  //       img.onload = () => {
-  //         const width = img.width;
-  //         const height = img.height;
-  //         let aspectRatio;
-  //         if (width < height) {
-  //           aspectRatio = width / height;
-  //         } else {
-  //           aspectRatio = height / width;
-  //         }
-  //         console.log(width, height, aspectRatio);
-  //         resolve(aspectRatio);
-  //       };
-
-  //       img.onerror = (error) => {
-  //         reject(error);
-  //       };
-  //     });
-  //   };
-
-  //   if (file) {
-  //     // Check the aspect ratio
-  //     getAspectRatio(file)
-  //       .then((aspectRatio) => {
-  //         // Define a threshold for an almost square image (e.g., 0.95)
-  //         const threshold = 0.95;
-
-  //         if (aspectRatio > threshold) {
-  //           // The image is a square or almost a square
-  //           const reader = new FileReader();
-
-  //           reader.onload = () => {
-  //             setUploadedImage(reader.result);
-  //           };
-
-  //           reader.readAsDataURL(file);
-  //         } else {
-  //           // Display an error or take appropriate action for non-square images
-  //           toast.error("Please upload a square or almost square image.");
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         // Handle errors during aspect ratio calculation
-  //         console.error("Error getting aspect ratio:", error);
-  //       });
-  //   }
-  // };
-
-  const handleDownload = (e) => {
+  const handleDownload = async (e) => {
     e.preventDefault();
     setGenerating(true);
     const container = document.getElementById("banner");
+    console.log(croppedImage);
+    const img = container.querySelector(".croppedImage");
+    img.src = croppedImage;
 
     if (name === "" && croppedImage === null) {
       toast.error("Please add your name and image");
-      name.style.outline = "red";
       setGenerating(false);
       return;
     }
 
-    html2canvas(container, { scale: 1 }).then((canvas) => {
-      container.style.display = "block";
-      const image = canvas.toDataURL("image/png");
-      const link = document.createElement("a");
-      link.href = image;
-      link.download = "devfest.png";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
+    await cropImage();
 
-    setGenerating(false);
+    setTimeout(() => {
+      html2canvas(container, { scale: 1 }).then((canvas) => {
+        container.style.display = "block";
+        const image = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = image;
+        link.download = "devfest.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      setGenerating(false);
+    }, 1000);
+  };
+
+  const handleCropUpdate = (newCrop, newPercentCrop) => {
+    setCrop(newCrop);
   };
 
   return (
@@ -222,18 +196,17 @@ const Banner = () => {
 
             <input type="file" onChange={handleImageUpload} accept="image/*" />
 
-            {uploadedImage ? (
-              <img
-                src={uploadedImage}
-                alt="Uploaded"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "5px",
-                  marginBottom: "30px",
-                  marginTop: "30px"
-                }}
-              />
+            {uploadedImageSrc ? (
+              <div className="max-w-[980px] w-[300px] sm:w-[450px] md:w-[600px] mx-auto flex flex-col mt-8">
+                <ReactCrop aspect={1} crop={crop} onChange={handleCropUpdate}>
+                  <img
+                    className="w-[300px] sm:w-[450px] md:w-[600px] mx-auto"
+                    ref={imgRef}
+                    src={uploadedImageSrc}
+                  />
+                </ReactCrop>
+                {/* <img src={} /> */}
+              </div>
             ) : (
               <div onClick={handleSelectImage} className="choose-image mt-8">
                 <div id="upload-area">
@@ -251,15 +224,9 @@ const Banner = () => {
                 </div>
               </div>
             )}
-            <p style={{ marginTop: "10px", fontStyle: "italic" }}>
-              Please upload only a square image
-            </p>
 
             <div className="text-center ">
-              <button
-                id="bannerBtn"
-                className="w-full md:h-[66px]"
-              >
+              <button id="bannerBtn" className="w-full md:h-[66px]">
                 {generating ? "Downloading" : "Generate your dp"}
 
                 <img src={arrow} className="md:ml-2" alt="" />
@@ -268,26 +235,17 @@ const Banner = () => {
           </form>
         </div>
 
-        {uploadedImage && (
-          <div>
-              
-              <ReactCrop
-                crop={crop}
-                onChange={c => setCrop(c)}
-                onComplete={(crop) => cropImage(crop)}
-              >
-                <img src={uploadedImage} />
-              </ReactCrop>
-              <button onClick={cropImage}>Crop</button>
-              <br />
-              <br />
-              <img src={croppedImage} />
-              {/* <ImageCropper
-                imageToCrop={imageToCrop}
-                onImageCropped={(croppedImage) => setCroppedImage(croppedImage)}
-              /> */}
-              
-          </div>
+        {crop && (
+          <canvas
+            ref={previewCanvasRef}
+            style={{
+              border: "1px solid black",
+              objectFit: "contain",
+              width: 0,
+              height: 0,
+              opacity: 0,
+            }}
+          />
         )}
 
         <div className="preview">
@@ -295,7 +253,7 @@ const Banner = () => {
             <img className="logo" src={Logo} alt="" />
             <div className="dp-statement-row">
               <div className="img">
-                <img src={croppedImage} alt="" />
+                <img className="croppedImage" src={croppedImage} alt="" />
               </div>
               <div className="statement">
                 <p>I will be attending</p>
@@ -307,7 +265,6 @@ const Banner = () => {
                   <img src={angleRight} alt="" />
                   <img src={angleRight} alt="" />
                 </div>
-                
               </div>
             </div>
             <div className="name-datetime-row">

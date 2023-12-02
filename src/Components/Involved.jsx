@@ -16,7 +16,7 @@ const Involved = () => {
       id="volunteer"
       className="involved px-6 min-[800px]:max-w-[1180px] mx-auto lg:py-[120px]"
     >
-      <h1 className="font-bold text-[94px] leading-[81px] tracking-[-4.5px]">
+      <h1 className="font-bold text-[70px] md:text-[94px] leading-[81px] tracking-[-4.5px]">
         <span className="block">Get</span>
         <span className="block"> Involved </span>
       </h1>
@@ -53,7 +53,9 @@ const Involved = () => {
               <p className="text-[32px] font-bold leading-[41px]">
                 Apply as a volunteer
               </p>
-              <a href="https://dscunilag.dev/dflagos-se-cfv"><img src={blackArrowRight} alt="" /></a>
+              <a href="https://dscunilag.dev/dflagos-se-cfv">
+                <img src={blackArrowRight} alt="" />
+              </a>
             </div>
             <p>Apply as a volunteer for DevFest Lagos Student Edition 2023</p>
           </div>
