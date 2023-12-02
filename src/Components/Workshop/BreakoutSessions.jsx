@@ -6,7 +6,8 @@ import { getEventsData } from "../../backend-services/rsvp";
 import { ColorRing } from "react-loader-spinner";
 import BreakoutSession from "./BreakoutSession";
 import jsPDF from "jspdf";
-import QRCode from 'qrcode.react';
+import QRCode from "qrcode.react";
+import { eventIdsStringSeparator } from "../../constants";
 
 const colorsMap = {
   0: "bg-cards-100 text-[#fff]",
@@ -29,7 +30,7 @@ const BreakoutSessions = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isRsvping, setIsRsvping] = useState(false);
-  const [userData, setUserData] = useState([])
+  const [eventIdsString, setEventIdsString] = useState("nil");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,21 +62,45 @@ const BreakoutSessions = () => {
   };
 
   const generatePdf = (userData) => {
-    console.log("hello")
+    // const userDataEx = [
+    //   {
+    //     id: 3,
+    //     title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
+    //   },
+    //   {
+    //     id: 5,
+    //     title:
+    //       "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
+    //   },
+    //   {
+    //     id: 7,
+    //     title:
+    //       "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
+    //   },
+    // ];
     if (!userData) {
-      console.error('User data not available');
+      console.error("User data not available");
       return;
     }
-    const pdfDoc = new jsPDF()
+
+    let idsString = "";
+    for (let event of userData) {
+      idsString += event.id + eventIdsStringSeparator;
+    }
+
+    setEventIdsString(idsString);
+
+    const pdfDoc = new jsPDF();
     pdfDoc.setFontSize(16);
-    pdfDoc.text('RSVP Confirmation', 20, 15);
+    pdfDoc.text("RSVP Confirmation", 20, 15);
     pdfDoc.setFontSize(14);
+    pdfDoc.text(`Ticket No: ${ticketNumber}`, 20, 30);
     pdfDoc.setTextColor(100, 100, 100);
-    pdfDoc.text('List of your selected sessions', 20, 25);
+    pdfDoc.text("Selected Sessions:", 20, 50);
     userData.forEach((user, index) => {
       pdfDoc.setFontSize(12);
       pdfDoc.setTextColor(0, 0, 0);
-      pdfDoc.text(`${index + 1}. ${user.title}`, 20, 40 + index * 20);
+      pdfDoc.text(`${index + 1}. ${user.title}`, 20, 60 + index * 10);
     });
    const baseImage = document.getElementById("qrcode").toDataURL()
     console.log(baseImage)
@@ -121,14 +146,15 @@ const BreakoutSessions = () => {
     }
     try {
       const response = await createRsvpEvent(data);
-      console.log(response)
-      setUserData(response)
-      generatePdf(response)      
-      if (response.status == 202) {
-        toast.success(`You have sucessfully RSVPd for ${eventCount} sessions`, {
-          position: "bottom-center",
-        });
-      
+      console.log(response);
+      generatePdf(response);
+      if (response) {
+        toast.success(
+          `You have sucessfully RSVPd for ${eventCount} sessions. Present your RSVP Confirmation at the breakout session venue.`,
+          {
+            position: "bottom-center",
+          }
+        );
       }
 
     } catch (error) {
@@ -149,10 +175,8 @@ const BreakoutSessions = () => {
     }
   };
 
-
   return (
     <form>
-
       {(isLoading && data.length == 0) || undefined ? (
         <ColorRing
           visible={true}
@@ -195,7 +219,6 @@ const BreakoutSessions = () => {
       <div className="hidden">
          <QRCode value ={ticketNumber} id='qrcode'/>
       </div>
-      
     </form>
   );
 };

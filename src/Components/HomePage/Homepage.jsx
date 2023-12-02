@@ -27,7 +27,9 @@ const HomePage = () => {
       />
 
       <div className="bg-[#fff] w-full overflow-hidden">
-        <div className={`${Style.paddingX} ${Style.flexCenter}`}>
+        <div
+          className={`${Style.paddingX} ${Style.flexCenter} sm:px-[20px] lg:px-[100px]`}
+        >
           <div className={`${Style.boxWidth}`}>
             <Navbar />
           </div>
