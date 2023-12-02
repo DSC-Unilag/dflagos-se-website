@@ -5,7 +5,7 @@ import newwave from '../assets/newwave.webp';
 import requestMechanic from '../assets/Request_mechanic.jpeg';
 import myTherapist from '../assets/Mytherapist.ng_logo_dark.png';
 import Marquee from "react-fast-marquee";
-
+import { motion } from 'framer-motion';
 
 const Clients = () => {
 

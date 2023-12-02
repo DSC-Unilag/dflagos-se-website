@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 
 const Involved = () => {
   const navigate = useNavigate();
-  const [ref, inView] = useInView({ threshold: 0.8 });
+  const [ref, inView] = useInView();
   const controls = useAnimation();
   const isMobile = window.innerWidth <= 768;
 
