@@ -1,11 +1,22 @@
+import React from "react";
 import ArrowUp from "../assets/ArrowUp.svg";
 import blackArrowRight from "../assets/black-arrow-right.svg";
 import asset1 from "../assets/community-1.jpg";
 import asset2 from "../assets/community-2.jpg";
 import { useNavigate } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Involved = () => {
   const navigate = useNavigate();
+  const [ref, inView] = useInView({threshold: 0.5})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({x: 0, opacity:100})
+    }
+  },[inView])
 
   const navigateToWorkshops = () => {
     navigate("/workshops");
@@ -27,9 +38,13 @@ const Involved = () => {
         to apply here.
       </p>
       <div className="max-w-[430px] mx-auto min-[800px]:flex min-[800px]:max-w-[1180px]">
-        <div
+        <motion.div
           className="frame cursor-pointer p-14 min-[800px]:flex min-[800px]:flex-col min-[800px]:justify-between md:max-w-[580px] md:mr-4"
           onClick={navigateToWorkshops}
+          ref={ref}
+         initial={{opacity: 0, x: -100}}
+         animate={controls}
+         transition={{duration: 2}}
         >
           <div>
             <div className="header min-[800px]:mb-2">
@@ -46,8 +61,13 @@ const Involved = () => {
           <div className="img-container mt-8">
             <img src={asset1} className="object-cover md:h-[305px]" alt="" />
           </div>
-        </div>
-        <div className="frame cursor-pointer p-14 min-[800px]:flex min-[800px]:flex-col min-[800px]:justify-between md:max-w-[580px]">
+        </motion.div>
+        <motion.div 
+        ref={ref}
+        initial={{opacity: 0, x: 100}}
+        animate={controls}
+        transition={{duration: 2}}
+        className="frame cursor-pointer p-14 min-[800px]:flex min-[800px]:flex-col min-[800px]:justify-between md:max-w-[580px]">
           <div>
             <div className="header min-[800px]:mb-2">
               <p className="text-[32px] font-bold leading-[41px]">
@@ -64,7 +84,7 @@ const Involved = () => {
               alt=""
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

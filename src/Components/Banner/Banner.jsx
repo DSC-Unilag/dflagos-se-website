@@ -11,8 +11,21 @@ import arrow from "../../assets/bannerArrow.svg";
 import angleRight from "../../assets/angle_right.svg";
 import toast from "react-hot-toast";
 import Footer from "./../Footer";
+import { motion, useScroll } from "framer-motion";
+import {useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Banner = () => {
+
+  const [ref, inView] = useInView({threshold: 0.5})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({x: 0, opacity:100})
+    }
+  },[inView])
+
   const [uploadedImage, setUploadedImage] = useState(null);
   const [croppedImage, setCroppedImage] = useState(null);
   const [src, setSrc] = useState(null);
@@ -40,6 +53,8 @@ const Banner = () => {
     
     
   };
+
+
 
   const cropImage = () => {
     const canvas = document.createElement('canvas');

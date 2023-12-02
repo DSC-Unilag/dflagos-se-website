@@ -1,12 +1,27 @@
 import React from "react";
 import styles from "../style";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Testimonials = () => {
+  const [ref, inView] = useInView({threshold: 0.8})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({y: 0, opacity:100, transition: {ease: "easeOut", duration: 2}})
+    }
+  },[inView])
+
   return (
-    <section
+    <motion.section
       id="schedule"
       className={`${styles.paddingY} ${styles.flexCenter} flex-col 
   relative py-[70px] md:py-[100px] lg:py-[200px] text-[#fff]`}
+  ref={ref}
+  initial={{opacity: 0}}
+  animate={controls}
+  transition={{duration: 1}}
     >
       <div className="flex flex-col">
         <div className="flex flex-col">
@@ -20,7 +35,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
