@@ -62,29 +62,29 @@ const BreakoutSessions = () => {
   };
 
   const generatePdf = (userData) => {
-    const userDataEx = [
-      {
-        id: 3,
-        title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
-      },
-      {
-        id: 5,
-        title:
-          "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
-      },
-      {
-        id: 7,
-        title:
-          "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
-      },
-    ];
-    if (!userDataEx) {
+    // const userDataEx = [
+    //   {
+    //     id: 3,
+    //     title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
+    //   },
+    //   {
+    //     id: 5,
+    //     title:
+    //       "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
+    //   },
+    //   {
+    //     id: 7,
+    //     title:
+    //       "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
+    //   },
+    // ];
+    if (!userData) {
       console.error("User data not available");
       return;
     }
 
     let idsString = "";
-    for (let event of userDataEx) {
+    for (let event of userData) {
       idsString += event.id + eventIdsStringSeparator;
     }
 
@@ -97,7 +97,7 @@ const BreakoutSessions = () => {
     pdfDoc.text(`Ticket No: ${ticketNumber}`, 20, 30);
     pdfDoc.setTextColor(100, 100, 100);
     pdfDoc.text("Selected Sessions:", 20, 50);
-    userDataEx.forEach((user, index) => {
+    userData.forEach((user, index) => {
       pdfDoc.setFontSize(12);
       pdfDoc.setTextColor(0, 0, 0);
       pdfDoc.text(`${index + 1}. ${user.title}`, 20, 60 + index * 10);
@@ -134,9 +134,12 @@ const BreakoutSessions = () => {
       console.log(response);
       generatePdf(response);
       if (response) {
-        toast.success(`You have sucessfully RSVPd for ${eventCount} sessions`, {
-          position: "bottom-center",
-        });
+        toast.success(
+          `You have sucessfully RSVPd for ${eventCount} sessions. Present your RSVP Confirmation at the breakout session venue.`,
+          {
+            position: "bottom-center",
+          }
+        );
       }
     } catch (error) {
       if (error.message === "AxiosError: Request failed with status code 404") {
@@ -193,13 +196,10 @@ const BreakoutSessions = () => {
         ticketNumber={ticketNumber}
         isRsvping={isRsvping}
         handleTicketNumber={handleTicketNumber}
-        handleRsvpEvent={(e) => {
-          e.preventDefault();
-          generatePdf();
-        }}
+        handleRsvpEvent={handleRsvpEvent}
         errorState={errorState}
       />
-      <div>
+      <div className="opacity-0 w-0 h-0">
         <QRCode value={eventIdsString} id="qrcode" />
       </div>
     </form>

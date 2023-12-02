@@ -40,7 +40,7 @@ const Navbar = () => {
         className={`${
           toggle ? "flex flex-row" : "hidden"
         }  bg-[#fff] pt-[40px] w-[60%] px-[14px] shadow-xl absolute top-[20px] right-0 h-[100%] 
-          sidebar`}
+          sidebar z-20`}
       >
         <ul className="list-none flex flex-col flex-1">
           {navLinks.map((nav, index) => (
@@ -49,7 +49,7 @@ const Navbar = () => {
               className={`font-poppins font-normal cursor-pointer text-[16px] mr-3
               ${index === navLinks.length - 1 ? "mr-0" : "mb-4"} text-black`}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
