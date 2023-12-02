@@ -178,9 +178,7 @@ const BreakoutSessions = () => {
         errorState={errorState}
       />
       <div>
-        {userData.length !==0 &&
-         <QRCode value ={'https://erikmartinjordan.com'} id='qrcode'/>
-        }
+         <QRCode value ={'hello'} id='qrcode'/>
       </div>
       
     </form>
