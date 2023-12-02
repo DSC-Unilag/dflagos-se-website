@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../Navbar";
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
+import ImageCropper from "./ImageCropper";
 import html2canvas from "html2canvas";
 import Logo from "../../assets/Logo.png";
 import "../../styles/banner.css";
@@ -15,14 +16,13 @@ import Footer from "./../Footer";
 const Banner = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [croppedImage, setCroppedImage] = useState(null);
-  const [src, setSrc] = useState(null);
   const [crop, setCrop] = useState({
     aspect: 1,
-    // unit: '%', // Can be 'px' or '%'
-    // x: 25,
-    // y: 25,
-    // width: 50,
-    // height: 50
+    unit: '%', // Can be 'px' or '%'
+    x: 25,
+    y: 25,
+    width: 50,
+    height: 50
   });
   const [name, setName] = useState("");
   const [generating, setGenerating] = useState(false);
@@ -35,13 +35,24 @@ const Banner = () => {
     document.querySelector('input[type="file"]').click();
   };
 
-  const selectImage = (file) => {
-    setSrc(URL.createObjectURL(file));
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
     
-    
-  };
+    const reader = new FileReader();
+
+    reader.onload = () => {
+        setUploadedImage(reader.result);
+        //setSrc(reader.result);
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+};
+
 
   const cropImage = () => {
+
     const canvas = document.createElement('canvas');
     const scaleX = uploadedImage.naturalWidth / uploadedImage.width;
     const scaleY = uploadedImage.naturalHeight / uploadedImage.height;
@@ -56,7 +67,7 @@ const Banner = () => {
     ctx.imageSmoothingQuality = 'high';
 
     ctx.drawImage(
-        uploadedImage,
+        canvas,
         crop.x * scaleX,
         crop.y * scaleY,
         crop.width * scaleX,
@@ -68,29 +79,11 @@ const Banner = () => {
     );
 
     // Converting to base64
-    const base64Image = canvas.toDataURL('image/jpeg');
+    const base64Image = canvas.toDataURL('image/png');
+    // const blobImage = canvas.toBlob(URL.createObjectURL(image))
     setCroppedImage(base64Image);
 };
 
-const onImageLoaded = (image) => {
-  // Set the initial crop state based on the image dimensions
-  setCrop({ width: 50, height: 50, aspect: 1 / 1 }); // Adjust the initial dimensions as needed
-};
-
-  const handleImageUpload = (e) => {
-      const file = e.target.files[0];
-      
-      const reader = new FileReader();
-
-      reader.onload = () => {
-          setUploadedImage(reader.result);
-          setSrc(reader.result);
-      };
-
-      if (file) {
-          reader.readAsDataURL(file);
-      }
-  };
 
   // const handleImageUpload = (e) => {
   //   const file = e.target.files[0];
@@ -281,13 +274,19 @@ const onImageLoaded = (image) => {
               <ReactCrop
                 crop={crop}
                 onChange={c => setCrop(c)}
-                onImageLoaded={(image) => onImageLoaded(image)}
+                onComplete={(crop) => cropImage(crop)}
               >
-                <img src={src} />
+                <img src={uploadedImage} />
               </ReactCrop>
               <button onClick={cropImage}>Crop</button>
               <br />
               <br />
+              <img src={croppedImage} />
+              {/* <ImageCropper
+                imageToCrop={imageToCrop}
+                onImageCropped={(croppedImage) => setCroppedImage(croppedImage)}
+              /> */}
+              
           </div>
         )}
 
