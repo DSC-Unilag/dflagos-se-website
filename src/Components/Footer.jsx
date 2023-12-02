@@ -48,7 +48,10 @@ const Footer = () => {
           >
             GDSC Yabatech
           </a>
-          <a className="underline" href="https://gdsc.community.dev/">
+          <a
+            className="underline"
+            href="https://gdsc.community.dev/pan-atlantic-university/"
+          >
             GDSC PAN
           </a>
         </div>

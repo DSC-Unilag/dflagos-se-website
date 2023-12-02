@@ -28,7 +28,7 @@ export const navLinks = [
     title: "FAQs",
   },
   {
-    id: "https://devfest.dscunilag.dev/workshop",
+    id: "https://devfest.dscunilag.dev/workshops",
     title: "RSVP",
   },
   {
