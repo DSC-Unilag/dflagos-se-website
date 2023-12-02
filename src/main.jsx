@@ -7,7 +7,11 @@ import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Toaster />
+    <Toaster
+      toastOptions={{
+        duration: 5000,
+      }}
+    />
     <App />
   </BrowserRouter>
 );
