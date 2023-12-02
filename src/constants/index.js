@@ -16,20 +16,24 @@ export const eventIdsStringSeparator = "#!";
 
 export const navLinks = [
   {
-    id: "#about",
+    id: "https://devfest.dscunilag.dev/#about",
     title: "About",
   },
   {
-    id: "#schedule",
+    id: "https://devfest.dscunilag.dev/#schedule",
     title: "Schedule",
   },
   {
-    id: "#faqs",
+    id: "https://devfest.dscunilag.dev/#faqs",
     title: "FAQs",
   },
   {
     id: "https://dscunilag.dev/dflagos-se-cfv",
     title: "Volunteer",
+  },
+  {
+    id: "https://devfest.dscunilag.dev/banner",
+    title: "DP Generator",
   },
 ];
 
