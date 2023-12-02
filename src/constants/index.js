@@ -28,6 +28,10 @@ export const navLinks = [
     title: "FAQs",
   },
   {
+    id: "https://devfest.dscunilag.dev/workshop",
+    title: "RSVP",
+  },
+  {
     id: "https://dscunilag.dev/dflagos-se-cfv",
     title: "Volunteer",
   },
