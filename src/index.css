@@ -110,6 +110,16 @@ Variables
   background-image: url("/src/assets/TicketsBackground.svg");
 }
 
+html{
+  overflow: hidden;
+}
+
+body{
+  overflow: hidden;
+}
+
+
+
 :root {
   --black-gradient: linear-gradient(
     144.39deg,

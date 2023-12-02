@@ -36,10 +36,6 @@ const Hero = () => {
 
         <div className="flex flex-col lg:py-11 lg:ml-[70px]">
           <motion.p className="md:max-w-[470px] lg:max-w-[470px] mt-[45px] lg:mt-0 text-[#000] font-normal text-[24px] tracking-[-1.5px] leading-[34.2px] italic"
-          initial={{x: 100}}
-          ref={ref}
-          animate={controls}
-          transition={{duration: 1}}
           >
             Ultimate one-day event with speakers across Artificial Intelligence,
             Product, Mobile, Cloud, Intellectual Property and Startup Funding,
