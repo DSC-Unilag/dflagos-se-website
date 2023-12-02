@@ -12,7 +12,6 @@ import angleRight from "../../assets/angle_right.svg";
 import toast from "react-hot-toast";
 import Footer from "./../Footer";
 import { canvasPreview, toBlob } from "../../../utils/crop";
-import { motion, useScroll } from "framer-motion";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -42,7 +41,7 @@ const Banner = () => {
   const imgRef = useRef(null);
   const previewCanvasRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start({ x: 0, opacity: 100 });
     }
