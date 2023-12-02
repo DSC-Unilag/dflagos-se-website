@@ -14,7 +14,7 @@ const Involved = () => {
 
   React.useEffect(() => {
     if(inView){
-       controls.start({x: 0, opacity:100})
+       controls.start({x:0, opacity:100, scale:1})
     }
   },[inView])
 
@@ -28,15 +28,27 @@ const Involved = () => {
       className="involved px-6 min-[800px]:max-w-[1180px] mx-auto lg:py-[120px]"
     >
       <h1 className="font-bold text-[94px] leading-[81px] tracking-[-4.5px]">
-        <span className="block">Get</span>
+        <motion.div 
+          ref={ref}
+          initial={{opacity: 100, scale: 0.8}}
+           animate={controls}
+          transition={{duration: 1}}
+        >
+          <span className="block">Get</span>
         <span className="block"> Involved </span>
+        </motion.div>
       </h1>
-      <p className="header-text font-medium text-lg leading-7 max-w-[755px] ml-auto">
+      <motion.p 
+       ref={ref}
+       initial={{opacity: 100, scale: 0.5}}
+      animate={controls}
+       transition={{duration: 1}}
+      className="header-text font-medium text-lg leading-7 max-w-[755px] ml-auto">
         DevFest 2023 is open to individuals who are excited, to not just be a
         part of the event but also want to contribute to the success of the
         event. Want to be a key player in making DevFest SE a big hit? Feel free
         to apply here.
-      </p>
+      </motion.p>
       <div className="max-w-[430px] mx-auto min-[800px]:flex min-[800px]:max-w-[1180px]">
         <motion.div
           className="frame cursor-pointer p-14 min-[800px]:flex min-[800px]:flex-col min-[800px]:justify-between md:max-w-[580px] md:mr-4"

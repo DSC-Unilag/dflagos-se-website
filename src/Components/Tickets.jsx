@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Tickets = () => {
-  const [ref, inView] = useInView({threshold: 0.8})
+  const [ref, inView] = useInView({threshold: 0.9})
   const controls = useAnimation()
 
   React.useEffect(() => {

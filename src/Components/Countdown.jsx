@@ -1,12 +1,25 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ArrowRight from "../assets/ArrowRight.svg";
 import { useNavigate } from "react-router-dom";
 
 import cupDoodle from "./../assets/cup-doodle.svg";
 import connectDoodle from "./../assets/connect-doodle.svg";
 import kiteDoodle from "./../assets/kite-doodle.svg";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Countdown = () => {
+
+  const [ref, inView] = useInView({threshold: 0.5})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({x:0, opacity:100, scale:1})
+    }
+  },[inView])
+
+
   const navigate = useNavigate();
   const handleNavigate = () => {
     navigate("/workshops");
@@ -65,7 +78,12 @@ const Countdown = () => {
           alt=""
           className="absolute right-[60px] top-[100px] hidden min-[1280px]:block"
         />
-        <h1 className="text-[56px] font-bold">Are you ready?</h1>
+        <motion.h1 
+          ref={ref}
+          initial={{opacity: 100, scale: 0.5}}
+           animate={controls}
+          transition={{duration: 1}}
+        className="text-[56px] font-bold">Are you ready?</motion.h1>
         <div className="row">
           <div className="text-center">
             <div className="time mb-2">
