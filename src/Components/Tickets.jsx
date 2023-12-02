@@ -26,7 +26,7 @@ const Tickets = () => {
         ref={ref}
         initial={{y: -100, opacity:0}}
         animate={controls}
-        transition={{duration: 2}}
+        transition={{duration: 0.9}}
         >
           <p className="text-[44px] lg:text-[64px] font-bold mb-6">
             Guess What? <br />
@@ -51,7 +51,7 @@ const Tickets = () => {
           ref={ref}
           initial={{y: 100, opacity: 0}}
           animate={controls}
-          transition={{duration: 2}}
+          transition={{duration: 0.9}}
         >
           <img src={EventImage} alt="event" />
         </motion.div>
