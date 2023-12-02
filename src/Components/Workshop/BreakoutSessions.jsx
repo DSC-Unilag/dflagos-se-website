@@ -102,15 +102,30 @@ const BreakoutSessions = () => {
       pdfDoc.setTextColor(0, 0, 0);
       pdfDoc.text(`${index + 1}. ${user.title}`, 20, 60 + index * 10);
     });
-    const baseImage = document.getElementById("qrcode").toDataURL();
-
-    pdfDoc.addImage(baseImage, "PNG", 20, 90, 100, 100);
-    pdfDoc.save("RsvpConfirmation.pdf");
+   const baseImage = document.getElementById("qrcode").toDataURL()
+    console.log(baseImage)
+    pdfDoc.addImage(baseImage, 'PNG', 80 ,120, 100, 100);
+    pdfDoc.save("RsvpConfirmation.pdf")
   };
+
+  const handleTicketFormat = (input) => {
+    const pattern = /^DSCA\d{9}$/;
+    return pattern.test(input)
+  }
+ 
 
   const handleRsvpEvent = async (e) => {
     setIsRsvping(true);
     e.preventDefault();
+    const ticket = handleTicketFormat(ticketNumber)
+    console.log(ticket)
+    if(!ticket){
+      toast.error("Fill in a valid ticket number", {
+        position: "bottom-center"
+      })
+      setIsRsvping(false)
+      return;
+    }
     let ticket_id = ticketNumber;
     const data = {
       ticket_id,
@@ -141,6 +156,7 @@ const BreakoutSessions = () => {
           }
         );
       }
+
     } catch (error) {
       if (error.message === "AxiosError: Request failed with status code 404") {
         toast.error("Ticket not found", { position: "bottom-center" });
@@ -151,6 +167,7 @@ const BreakoutSessions = () => {
           position: "bottom-center",
         });
       }
+      setIsRsvping(false)
       console.log(error.message);
       throw new Error(error);
     } finally {
@@ -199,8 +216,8 @@ const BreakoutSessions = () => {
         handleRsvpEvent={handleRsvpEvent}
         errorState={errorState}
       />
-      <div className="opacity-0 w-0 h-0">
-        <QRCode value={eventIdsString} id="qrcode" />
+      <div className="hidden">
+         <QRCode value ={ticketNumber} id='qrcode'/>
       </div>
     </form>
   );
