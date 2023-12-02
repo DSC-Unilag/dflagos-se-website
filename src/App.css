@@ -142,7 +142,6 @@ body {
 }
 .involved h1 {
   color: #0d0d0d;
-  font-size: 74px;
   font-style: normal;
   font-weight: 700;
   line-height: 87%; /* 81.78px */
@@ -212,7 +211,6 @@ body {
   text-align: center;
 }
 .generate-banner h1 {
-  font-size: 70px;
   font-weight: bold;
 }
 .generate-banner p {
