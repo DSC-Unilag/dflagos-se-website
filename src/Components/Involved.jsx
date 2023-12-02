@@ -36,7 +36,7 @@ const Involved = () => {
               <p className="text-[32px] font-bold leading-[41px]">
                 RSVP for a session
               </p>
-              <img src={ArrowUp} alt="" />
+              <img className="hidden md:block" src={ArrowUp} alt="" />
             </div>
             <p>
               You could be a novice or a professional, our workshop sessions are
@@ -54,7 +54,7 @@ const Involved = () => {
                 Apply as a volunteer
               </p>
               <a href="https://dscunilag.dev/dflagos-se-cfv">
-                <img src={blackArrowRight} alt="" />
+                <img className="hidden md:block" src={blackArrowRight} alt="" />
               </a>
             </div>
             <p>Apply as a volunteer for DevFest Lagos Student Edition 2023</p>

@@ -62,22 +62,6 @@ const BreakoutSessions = () => {
   };
 
   const generatePdf = (userData) => {
-    // const userDataEx = [
-    //   {
-    //     id: 3,
-    //     title: "Transitioning from REST to GraphQL: Enhancing API Efficiency",
-    //   },
-    //   {
-    //     id: 5,
-    //     title:
-    //       "Unveiling the Power Within: Mastering Google Chrome DevTools for Web Excellence.",
-    //   },
-    //   {
-    //     id: 7,
-    //     title:
-    //       "Turbocharge Your Angular Applications: The Power of Real-time with Angular Signals",
-    //   },
-    // ];
     if (!userData) {
       console.error("User data not available");
       return;
@@ -146,7 +130,6 @@ const BreakoutSessions = () => {
     }
     try {
       const response = await createRsvpEvent(data);
-      console.log(response);
       generatePdf(response);
       if (response) {
         toast.success(
