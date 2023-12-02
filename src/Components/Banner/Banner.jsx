@@ -12,6 +12,9 @@ import angleRight from "../../assets/angle_right.svg";
 import toast from "react-hot-toast";
 import Footer from "./../Footer";
 import { canvasPreview, toBlob } from "../../../utils/crop";
+import { motion, useScroll } from "framer-motion";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function blobToBase64(blob) {
   return new Promise((resolve, _) => {
@@ -22,6 +25,8 @@ function blobToBase64(blob) {
 }
 
 const Banner = () => {
+  const [ref, inView] = useInView({ threshold: 0.5 });
+  const controls = useAnimation();
   const [uploadedImageSrc, setUploadedImageSrc] = useState("");
   const [crop, setCrop] = useState({
     aspect: 1,
@@ -36,7 +41,12 @@ const Banner = () => {
   const [generating, setGenerating] = useState(false);
   const imgRef = useRef(null);
   const previewCanvasRef = useRef(null);
-  const croppedUrlRef = useRef("");
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ x: 0, opacity: 100 });
+    }
+  }, [inView]);
 
   useEffect(() => {
     if (

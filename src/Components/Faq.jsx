@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import expand from "../assets/expand.svg";
 import close from "../assets/close.svg";
 import doodle1 from "../assets/doodle-1.png";
@@ -6,8 +6,19 @@ import doodle2 from "../assets/doodle-2.png";
 import doodle3 from "../assets/doodle-3.png";
 import doodle4 from "../assets/doodle-4.png";
 import doodle5 from "../assets/doodle-5.png";
+import { motion, useScroll } from "framer-motion";
+import {useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Faq = () => {
+  const [ref, inView] = useInView({threshold: 0.5})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({y: 0, opacity:100})
+    }
+  },[inView])
   const data = [
     {
       question: "What is DevFest Lagos Student Edition about?🧐",
@@ -72,12 +83,19 @@ const Faq = () => {
   return (
     <div id="faqs" className="faq">
       <div className="z-10 relative">
-        <h1 className="font font-bold text-[30px] z-50">
+        <motion.div
+          ref={ref}
+          initial={{opacity: 0, y: 100}}
+           animate={controls}
+           transition={{duration: 1}}>
+          <h1 className="font font-bold text-[30px] z-50">
           Lets answer some of your burning questions
         </h1>
         <p className="sub-heading">
           Check out our most asked questions here, mfjpm 😑🤚🏾
         </p>
+        </motion.div>
+        
         <div className="column">
           {data.map((item, index) => (
             <FaqItem

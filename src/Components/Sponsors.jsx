@@ -26,7 +26,7 @@ const Clients = () => {
      ref={ref}
      initial={{rotate: 50}}
      animate={controls}
-     transition={{duration: 2}}
+     transition={{duration: 1}}
      >
         <a href="https://google.com" target="_blank">
           <img src={Google} alt='Google'/>
@@ -37,7 +37,7 @@ const Clients = () => {
       ref={ref}
       initial={{rotate: -60}}
       animate={controls}
-      transition={{duration: 2}}
+      transition={{duration: 1}}
       >
         <a href="https://newwave.io" target="_blank">
           <img src={newwave} alt='Google'/>

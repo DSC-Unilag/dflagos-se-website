@@ -16,9 +16,20 @@ import GetBanner from "../GetBanner";
 import Faq from "../Faq";
 import Footer from "../Footer";
 import { motion, useScroll } from "framer-motion";
+import {useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 
 const HomePage = () => {
   const { scrollYProgress } = useScroll();
+  const [ref, inView] = useInView({threshold: 0.8})
+  const controls = useAnimation()
+
+  React.useEffect(() => {
+    if(inView){
+       controls.start({y: 0, opacity:100, transition: {ease: "easeOut", duration: 2}, rotate:[0, 0, 270, 270, 0]})
+    }
+  },[inView])
   return (
     <>
       <motion.div
@@ -58,7 +69,12 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}>
+      <div className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}
+        initial={{opacity: 0}}
+        ref={ref}
+        animate={controls}
+        transition={{duration: 1}}
+      >
         <div className={`${Style.boxWidth}`}>
           <Edition />
         </div>

@@ -3,6 +3,7 @@ import { ArrowRight } from "../assets";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 
+
 const Hero = () => {
   const [ref, inView] = useInView({threshold: 0.8})
   const controls = useAnimation()
@@ -23,7 +24,7 @@ const Hero = () => {
             style={{ fontWeight: 500 }}
             initial={{x:-100}}
             animate={controls}
-            transition={{duration: 2}}
+            transition={{duration: 1}}
           >
             DevFest Lagos <br className="hidden xs:block" />Student Edition
           </motion.p>
@@ -38,7 +39,7 @@ const Hero = () => {
           initial={{x: 100}}
           ref={ref}
           animate={controls}
-          transition={{duration: 2}}
+          transition={{duration: 1}}
           >
             Ultimate one-day event with speakers across Artificial Intelligence,
             Product, Mobile, Cloud, Intellectual Property and Startup Funding,

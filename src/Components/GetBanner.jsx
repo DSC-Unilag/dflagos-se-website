@@ -1,8 +1,26 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { motion, useScroll } from "framer-motion";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const GetBanner = () => {
+  const [ref, inView] = useInView({ threshold: 0.5 });
+  const controls = useAnimation();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ y: 0, opacity: 100 });
+    }
+  }, [inView]);
   return (
-    <div className="generate-banner">
+    <motion.div
+      className="generate-banner"
+      ref={ref}
+      initial={{ opacity: 0, y: -100 }}
+      animate={controls}
+      transition={{ duration: 1 }}
+    >
       <h1 className="text-[45px] md:text-[70px]" style={{ lineHeight: "110%" }}>
         Generate Custom Banner
       </h1>
@@ -11,7 +29,7 @@ const GetBanner = () => {
         banner for yourself
       </p>
       <Link to="/banner">Generate Banner</Link>
-    </div>
+    </motion.div>
   );
 };
 
