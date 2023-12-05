@@ -8,6 +8,9 @@ import {
   Jesus,
   Ijeoma,
   Salim,
+  Chukwurah,
+  Adesola,
+  Tijani,
 } from "../assets";
 
 export const breakoutLocationCodes = ["event1", "event2", "event3"];
@@ -287,5 +290,23 @@ export const speakers = [
     url: Goodness,
     name: "Goodness Ehizode",
     bio: "Software Engineer, Creative Writer and Researcher",
+  },
+  {
+    id: "speaker-10",
+    url: Chukwurah,
+    name: "Chukwuemeka Chukwurah",
+    bio: "Backend Engineer",
+  },
+  {
+    id: "speaker-11",
+    url: Adesola,
+    name: "Adesola Oguntimehin",
+    bio: "GRC analyst and founder of CyberPatron Network",
+  },
+  {
+    id: "speaker-12",
+    url: Tijani,
+    name: "Sheu Tijani",
+    bio: "Fullstack Software Engineer",
   },
 ];
