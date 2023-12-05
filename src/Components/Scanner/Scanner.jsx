@@ -2,9 +2,10 @@ import { useState } from "react";
 import Navbar from "../Navbar";
 import { breakoutLocationCodes } from "../../constants";
 import QrReader from "modern-react-qr-reader";
+import { QrScanner } from "@yudiel/react-qr-scanner";
 
 export const Scanner = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [code, setCode] = useState("");
   const [qrCodeData, setQrCodeData] = useState("No result");
 
@@ -30,6 +31,7 @@ export const Scanner = () => {
               Breakout Session Location Code
               <input
                 type="password"
+                className="mx-auto block border-2 rounded-lg border-[#ccc]"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
               />
@@ -59,15 +61,9 @@ export const Scanner = () => {
             </h1>
           </span>
           <p>Scan the QR Code of attendees to see their information</p>
-          <QrReader
-            facingMode="environment"
-            onError={console.warn}
-            onScan={(data) => {
-              if (data) {
-                console.log(data);
-              }
-            }}
-            className="w-full "
+          <QrScanner
+            onDecode={(result) => console.log(result)}
+            onError={(error) => console.log(error?.message)}
           />
         </div>
       )}
