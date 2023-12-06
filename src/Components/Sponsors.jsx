@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../style"
 import { Google} from '../assets'
-import newwave from '../assets/newwave.webp';
+import newwave from '../assets/newwave_logo.png';
 import requestMechanic from '../assets/Request_mechanic.jpeg';
 import myTherapist from '../assets/Mytherapist.ng_logo_dark.png';
 import Marquee from "react-fast-marquee";
