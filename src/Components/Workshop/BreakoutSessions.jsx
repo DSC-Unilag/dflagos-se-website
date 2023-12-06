@@ -78,7 +78,14 @@ const BreakoutSessions = () => {
     }
   };
 
-  const generatePdf = (userData) => {
+  const generatePdf = (eventsData) => {
+    if (!eventsData) {
+      console.error("User data not available");
+      return;
+    }
+
+    eventsData.sort((eventData1, eventData2) => eventData1.id - eventData2.id);
+
     const pdfDoc = new jsPDF();
     pdfDoc.setFontSize(16);
     pdfDoc.text("RSVP Confirmation", 20, 15);
@@ -86,7 +93,7 @@ const BreakoutSessions = () => {
     pdfDoc.text(`Ticket No: ${ticketNumber}`, 20, 30);
     pdfDoc.setTextColor(100, 100, 100);
     pdfDoc.text("Selected Sessions:", 20, 50);
-    userData.forEach((user, index) => {
+    eventsData.forEach((user, index) => {
       pdfDoc.setFontSize(12);
       pdfDoc.setTextColor(0, 0, 0);
       pdfDoc.text(`${index + 1}. ${user.title}`, 20, 60 + index * 10);
@@ -238,7 +245,7 @@ const BreakoutSessions = () => {
               <button
                 type="submit"
                 onClick={isRsvping ? () => {} : handleRsvpEvent}
-                className="text-[#000] border-2 border-[#000] rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full md:block md:w-auto md:shrink-0 md:ml-20"
+                className="text-[#000] border-2 border-[#000] rounded-[48px] bg-[#FFFAEB] p-4 mb-0 w-full font-bold"
               >
                 <ColorRing
                   visible={isRsvping}
