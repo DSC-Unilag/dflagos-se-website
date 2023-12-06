@@ -20,7 +20,6 @@ const Workshop = () => {
         <div className={`px-6 ${Style.flexCenter}`}>
           <div className={`${Style.boxWidth}`}>
             <ScheduleHero />
-            <Tab />
           </div>
         </div>
       </div>

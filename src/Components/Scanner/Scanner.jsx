@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "../Navbar";
 import { breakoutLocationCodes } from "../../constants";
-import QrReader from "modern-react-qr-reader";
 import { QrScanner } from "@yudiel/react-qr-scanner";
 
 export const Scanner = () => {

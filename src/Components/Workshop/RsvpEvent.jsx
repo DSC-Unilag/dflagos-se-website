@@ -1,45 +1,57 @@
-import { useState } from "react";
+import { ColorRing } from "react-loader-spinner";
+import arrow from "../../assets/bannerArrow.svg";
 const RsvpEvent = ({
   ticketNumber,
   handleTicketNumber,
-  handleRsvpEvent,
+  loadTicketSessions,
+  hasLoadedTicket,
   errorState,
-  isRsvping,
+  isLoading,
 }) => {
   return (
     <div className="mt-[80px] mb-[30px]">
-      <p className="text-[24px] leading-[38.25px] tracking-tighter">
-        RSVP for your selected breakout sessions by putting in your ticket
-        number.
+      <ColorRing
+        visible={true}
+        height="0"
+        width="0"
+        ariaLabel="blocks-loading"
+        wrapperStyle={{}}
+        wrapperClass="mx-auto opacity-0"
+        colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+      />
+      <p className="text-[24px] text-center mb-10 leading-[38.25px] tracking-tighter">
+        RSVP for breakout sessions by entering your ticket number.
       </p>
-      <div className="mt-4 border-4 border-[#0d0d0d] bg-[#FFFAEB] rounded-[64px] p-4 mb-4 md:flex">
+      <div className="mt-4 border-4 border-[#0d0d0d] bg-[#FFFAEB] rounded-[64px] p-4 mb-4 flex">
         <input
           onChange={handleTicketNumber}
           type="text"
           value={ticketNumber}
           name="ticketNumber"
-          className="px-4 py-3 rounded-[64px] w-full"
+          className="px-4 py-3 rounded-[64px] w-full border-2 border-[#000000]"
           placeholder="Enter your ticket number E.g DSCA231907690"
         />
         <button
           type="submit"
-          onClick={isRsvping ? () => {} : handleRsvpEvent}
-          className="text-[#000] border-2 border-[#000]  rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full hidden md:block md:w-auto md:shrink-0 md:ml-20"
+          onClick={isLoading ? () => {} : loadTicketSessions}
+          className=""
         >
-          <p className="font-bold">
-            {isRsvping ? "Please wait...." : "RSVP For Selected Sessions"}
-          </p>
+          <ColorRing
+            visible={isLoading}
+            height="40"
+            width="40"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="mx-auto"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+
+          {!isLoading && (
+            <img className="w-[50px] block shrink-0" src={arrow} />
+          )}
         </button>
       </div>
-      <button
-        type="submit"
-        onClick={isRsvping ? () => {} : handleRsvpEvent}
-        className="text-[#000] border-2 border-[#000]  rounded-[48px] bg-[#FFFAEB] p-4 lg:max-w-[250px] mb-0 w-full md:hidden"
-      >
-        <p className="font-bold">
-          {isRsvping ? "Please wait...." : "RSVP For Selected Sessions"}
-        </p>
-      </button>
+
       <p className="text-red-500 ml-[10px]">{errorState}</p>
     </div>
   );
