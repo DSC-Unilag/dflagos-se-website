@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import { Navbar } from "../Index";
 import { ScheduleHero, Tab } from "./index";
 import BreakoutSessions from "./BreakoutSessions";
+import BreakoutIndex from "./BreakoutIndex";
 
 const Workshop = () => {
   return (
@@ -28,10 +29,18 @@ const Workshop = () => {
       <div className="w-full overflow-hidden">
         <div className={`px-6 ${Style.flexCenter}`}>
           <div className={`${Style.boxWidth}`}>
-            <BreakoutSessions />
+            <BreakoutIndex />
           </div>
         </div>
       </div>
+
+      {/* <div className="w-full overflow-hidden">
+        <div className={`px-6 ${Style.flexCenter}`}>
+          <div className={`${Style.boxWidth}`}>
+            <BreakoutSessions />
+          </div>
+        </div>
+      </div> */}
 
       <Footer />
     </div>

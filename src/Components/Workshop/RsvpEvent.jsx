@@ -8,9 +8,8 @@ const RsvpEvent = ({
 }) => {
   return (
     <div className="mt-[80px] mb-[30px]">
-      <p className="text-[24px] leading-[38.25px] tracking-tighter">
-        RSVP for your selected breakout sessions by putting in your ticket
-        number.
+      <p className="text-[24px] text-center mb-10 leading-[38.25px] tracking-tighter">
+        RSVP for breakout sessions by entering your ticket number.
       </p>
       <div className="mt-4 border-4 border-[#0d0d0d] bg-[#FFFAEB] rounded-[64px] p-4 mb-4 md:flex">
         <input
@@ -18,7 +17,7 @@ const RsvpEvent = ({
           type="text"
           value={ticketNumber}
           name="ticketNumber"
-          className="px-4 py-3 rounded-[64px] w-full"
+          className="px-4 py-3 rounded-[64px] w-full border-2 border-[#000000]"
           placeholder="Enter your ticket number E.g DSCA231907690"
         />
         <button
