@@ -16,23 +16,29 @@ import GetBanner from "../GetBanner";
 import Faq from "../Faq";
 import Footer from "../Footer";
 import { motion, useScroll } from "framer-motion";
-import {useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
 
 const HomePage = () => {
   const isMobile = window.innerWidth <= 768;
   const { scrollYProgress } = useScroll();
-  const [ref, inView] = useInView({threshold: 0.8})
-  const controls = useAnimation()
+  const [ref, inView] = useInView({ threshold: 0.8 });
+  const controls = useAnimation();
 
   React.useEffect(() => {
-    if(inView){
-       controls.start({y: 0, opacity:100, transition: {ease: "easeOut", duration: 2}, rotate:[0, 0, 270, 270, 0]})
+    if (inView) {
+      controls.start({
+        y: 0,
+        opacity: 100,
+        transition: { ease: "easeOut", duration: 2 },
+        rotate: [0, 0, 270, 270, 0],
+      });
     }
-  },[inView])
+  }, [inView]);
   return (
-    <motion.div className={`animation-container ${isMobile ? 'disable-animation' : ''}`}>
+    <motion.div
+      className={`animation-container ${isMobile ? "disable-animation" : ""}`}
+    >
       <motion.div
         className="progress-bar"
         style={{ scaleX: scrollYProgress }}
@@ -70,11 +76,12 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}
-        initial={!isMobile &&{opacity: 0}}
+      <div
+        className={`${Style.paddingX} ${Style.flexStart} bg-[#0D0D0D]`}
+        initial={!isMobile && { opacity: 0 }}
         ref={ref}
         animate={controls}
-        transition={{duration: 1}}
+        transition={{ duration: 1 }}
       >
         <div className={`${Style.boxWidth}`}>
           <Edition />

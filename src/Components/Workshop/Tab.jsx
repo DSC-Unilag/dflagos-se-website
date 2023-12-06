@@ -8,7 +8,7 @@ const Tab = () => {
     setIndexState(index);
   };
   return (
-    <div className="tab mt-[49px] w-full">
+    <div className="tab mt-[49px] w-full mb-12">
       <div className="flex bg-[#FDE293] overflow-x-auto border-4 p-4 border-[#0d0d0d] rounded-[16px]">
         {Tabs.map((item, index) => (
           <button
