@@ -13,7 +13,14 @@ import {
   Tijani,
 } from "../assets";
 
-export const breakoutLocationCodes = ["event1", "event2", "event3"];
+export const breakoutLocationCodes = ["5VY1UVM83P", "3XJXRHFH6D", "JUZGQ3JWAY"];
+
+export const timeCodes = {
+  1: "MYWKLBUP",
+  2: "QILRK0Q5",
+  3: "ECW0C6W3",
+  4: "QRAQWC42",
+};
 
 export const eventIdsStringSeparator = "#!";
 
