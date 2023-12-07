@@ -5,14 +5,14 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Tickets = () => {
-  const [ref, inView] = useInView({threshold: 0.9})
-  const controls = useAnimation()
+  const [ref, inView] = useInView({ threshold: 0.9 });
+  const controls = useAnimation();
   const isMobile = window.innerWidth <= 768;
   React.useEffect(() => {
-    if(inView && !isMobile){
-       controls.start({y: 0, opacity:100})
+    if (inView && !isMobile) {
+      controls.start({ y: 0, opacity: 100 });
     }
-  },[inView])
+  }, [inView]);
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -21,12 +21,12 @@ const Tickets = () => {
   return (
     <div className="pt-[64px]">
       <div className="flex flex-col pb-12 lg:flex-row gap-[21.5px] lg:gap-[21.5px]">
-        <motion.div 
-        className="flex flex-col text-[#fff] lg:pb-[164px]"
-        ref={ref}
-        initial={!isMobile && {y: -100, opacity:0}}
-        animate={controls}
-        transition={{duration: 0.9}}
+        <motion.div
+          className="flex flex-col text-[#fff] lg:pb-[164px]"
+          ref={ref}
+          initial={!isMobile && { y: -100, opacity: 0 }}
+          animate={controls}
+          transition={{ duration: 0.9 }}
         >
           <p className="text-[44px] lg:text-[64px] font-bold mb-6">
             Guess What? <br />
@@ -39,7 +39,7 @@ const Tickets = () => {
           </p>
 
           <a
-            href="https://dscunilag.dev/df_lagos"
+            href="https://gdsc.community.dev/events/details/developer-student-clubs-university-of-lagos-presents-devfest-lagos-student-edition/"
             className="flex flex-row mt-[40px] text-[#000] border border-[#000] sm:mb-[50px] md:mb-0 justify-center items-center gap-[8px] rounded-[48px] py-[12px] px-[30px] bg-[#FFFAEB] hover:bg-[#dcd1b2] max-w-[293px]"
           >
             <p className=" font-bold">Grab A Free Ticket</p>
@@ -47,11 +47,12 @@ const Tickets = () => {
           </a>
         </motion.div>
 
-        <motion.div className=""
+        <motion.div
+          className=""
           ref={ref}
-          initial={!isMobile && {y: 100, opacity: 0}}
+          initial={!isMobile && { y: 100, opacity: 0 }}
           animate={controls}
-          transition={{duration: 0.9}}
+          transition={{ duration: 0.9 }}
         >
           <img src={EventImage} alt="event" />
         </motion.div>

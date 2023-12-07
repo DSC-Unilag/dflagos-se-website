@@ -11,6 +11,18 @@ export const getEventsData = async () => {
   }
 };
 
+export const verifyTicketID = async (data) => {
+  try {
+    const response = await axios.post(
+      "https://dfrsvpapi.azurewebsites.net/venue/verify",
+      data
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const createRsvpEvent = async (ticketId, data) => {
   try {
     const response = await axios.put(
