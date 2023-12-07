@@ -1,7 +1,4 @@
 import "../App.css";
-import PlaceHolder from "../assets/ph1.png";
-import PlaceHolder2 from "../assets/ph2.png";
-import PlaceHolder3 from "../assets/ph3.png";
 import {
   Goodness,
   Chinaza,
